@@ -338,6 +338,23 @@ const CourseDetails = () => {
                                       >
                                         Edit Session
                                       </button>
+                                      &nbsp;
+                                      <button
+                                        type="button"
+                                        className="btn editButton text-white px-3 btn-secondary mt-3"
+                                        // onClick={() => navigate("/test")}
+                                        onClick={()=>{navigate(`/test/${data.sessionId}`); console.log("346", data.sessionId)}}
+                                      >
+                                       Add Test
+                                      </button>
+                                      &nbsp;
+                                      <button
+                                        type="button"
+                                        className="btn editButton text-white px-3 btn-secondary mt-3"
+                                        onClick={()=>{navigate(`/testDetails/${data.sessionId}`) ; console.log("354", data.sessionId) }}
+                                      >
+                                       View Test
+                                      </button>
                                     </div>
                                   </div>
                                 </div>

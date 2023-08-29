@@ -2,19 +2,23 @@ import React, { useState, useEffect } from "react";
 // import { getToken } from "../util.token";
 import axios from "axios";
 import { getToken } from "../../util.token";
+import '../Css/Test.css'
+import { useParams } from 'react-router-dom';
 
 const TestForm = () => {
   const [forms, setForms] = useState([]);
-
+  const { sId } = useParams();
   useEffect(() => {
     handleAddForm();
+    console.log("sID", sId)
   },[]);
 
+  
   const handleAddForm = () => {
     setForms([
       ...forms,
       {
-        sessionId: "b5217fee-b37b-4e5e-9ac3-dd92e5d16e73",
+        sessionId: sId,
         question: "",
         option_1: "",
         option_2: "",
@@ -62,7 +66,7 @@ const TestForm = () => {
 
         setForms([
           {
-            sessionId: "38768668-edc9-4459-b4f7-038bc58e9b2f",
+            sessionId: "e414fb8c-a62e-4953-90d3-3f7ab2138ee0",
             question: "",
             option_1: "",
             option_2: "",
@@ -79,78 +83,6 @@ const TestForm = () => {
 
   return (
     <>
-      <style jsx>
-        {`
-          .test {
-            max-width: 95%;
-            margin: 50px auto;
-            position: relative;
-            box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-          }
-          .add-test .title {
-            text-align: left;
-            // letter-spacing: 3px;
-            font-size: 2.5em;
-            line-height: 48px;
-            padding-bottom: 20px;
-            color: #5543ca;
-            background: linear-gradient(to left, #f4524d 0%, #5543ca 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-          .test-form .form-field {
-            position: relative;
-            margin: 25px 0;
-          }
-          .test-form .input-text {
-            display: block;
-            width: 100%;
-            height: 36px;
-            border-width: 0 0 2px 0;
-            border-color: #5543ca;
-            font-size: 18px;
-            line-height: 26px;
-            font-weight: 400;
-          }
-     
-          .test-form .input-text:focus + .label,
-          .test-form .input-text.not-empty + .label {
-            transform: translateY(-24px);
-          }
-         
-          .test-form .input-text:focus {
-            outline: none;
-          }
-          .test-form .input-text:not([value=""]) + .label,
-          .test-form .input-text:focus + .label{
-            transform: translateY(-30px);
-          }
-          .test-form .label {
-            position: absolute;
-            bottom: 11px;
-            font-size: 18px;
-            line-height: 26px;
-            font-weight: 400;
-            color: #5543ca;
-            cursor: text;
-            text-transform: capitalize;
-            transition: transform 0.2s ease-in-in;
-          }
-          .add-test .submit-btn {
-            display: inline-block;
-            background-image: linear-gradient(125deg, #a72879, #064497);
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 16px;
-            padding: 8px 16px;
-            border: none;
-            width: 200px;
-            cursor: pointer;
-          }
-        `}
-      </style>
       <section className="container add-test">
         <h4 className="title mx-5 mt-3">Add Test</h4>
         {forms.map((form, index) => {
