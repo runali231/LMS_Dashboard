@@ -114,7 +114,7 @@ const AddCourse = () => {
                 </div>
               </div>
             </div>
-            <br className="d-none d-md-block"/>
+            <br className="d-none d-md-block" />
             <div className="row ">
               <div className="col-lg-6 mt-2 mt-md-0">
                 <div className="row">
@@ -140,20 +140,20 @@ const AddCourse = () => {
                     <label>Course Type</label>
                   </div>
                   <div className="col-lg-6 mt-2 mt-md-0">
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="sDate"
-                      placeholder="Enter Course Type"
-                      name="courseType"
+                    <select className="form-select" aria-label="Default select example"
                       value={courseType}
-                      onChange={(e) => setCourseType(e.target.value)}
-                    />
+                      onChange={(e) => setCourseType(e.target.value)}>
+                      <option value="" disabled>
+                        Select Payment Type
+                      </option>
+                      <option value="Paid">Paid</option>
+                      <option value="UnPaid">UnPaid</option>
+                    </select>
                   </div>
                 </div>
               </div>
             </div>
-            <br className="d-none d-md-block"/>
+            <br className="d-none d-md-block" />
             <div className="row">
               <div className="col-lg-6">
                 <div className="row">
@@ -192,7 +192,7 @@ const AddCourse = () => {
                 </div>
               </div>
             </div>
-            <br className="d-none d-md-block"/>
+            <br className="d-none d-md-block" />
             <div className="row">
               <div className="col-lg-6">
                 <div className="row">
@@ -231,7 +231,7 @@ const AddCourse = () => {
                 </div>
               </div>
             </div>
-            <br className="d-none d-md-block"/>
+            <br className="d-none d-md-block" />
             <div className="row">
               <div className="col-lg-6">
                 <div className="row">
@@ -250,7 +250,7 @@ const AddCourse = () => {
                     />
                   </div>
                 </div>
-              </div> 
+              </div>
               <div className="col-lg-6">
                 <div className="row">
                   <div className="col-lg-5 mt-2 mt-md-0">
@@ -270,7 +270,7 @@ const AddCourse = () => {
                 </div>
               </div>
             </div>
-            <br className="d-none d-md-block"/>
+            <br className="d-none d-md-block" />
             <div className="row">
               <div className="col-lg-6">
                 <div className="row">
@@ -309,7 +309,7 @@ const AddCourse = () => {
                 </div>
               </div>
             </div>
-            <br className="d-none d-md-block"/>
+            <br className="d-none d-md-block" />
             <div className="row">
               <div className="col-lg-6">
                 <div className="row">
@@ -348,7 +348,7 @@ const AddCourse = () => {
                 </div>
               </div>
             </div>
-            <br className="d-none d-md-block"/>
+            <br className="d-none d-md-block" />
             <div className="row">
               <div className="col-lg-6">
                 <div className="row">
@@ -401,7 +401,7 @@ const AddCourse = () => {
           </div>
         </div>
       </section>
-     
+
     </>
   );
 };

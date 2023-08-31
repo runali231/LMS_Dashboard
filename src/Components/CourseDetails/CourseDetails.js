@@ -4,7 +4,6 @@ import { getToken } from "../../util.token";
 import { useNavigate } from "react-router-dom";
 import { UploadImage, editCourseForm, editSession } from "./CourseDetailsApi";
 import '../Css/CourseDetails.css'
-// import { useRouter } from "next/router";
 
 const CourseDetails = () => {
   const [sessionList, setSessionList] = useState([]);
@@ -31,7 +30,7 @@ const CourseDetails = () => {
   const [sessionDescription, setSessionDescription] = useState("");
   const [sessionLink, setSessionLink] = useState("");
   const [duration, setDuration] = useState("");
-  const [sessionId, setSessionId] = useState();
+  const [sessionId, setSessionId] = useState("");
 
 
 
@@ -199,6 +198,72 @@ const CourseDetails = () => {
     setActiveTab(tabIndex);
   };
 
+
+  const deleteCourse = () => {
+    console.log("cId", id)
+    const token = getToken()
+    var url = new URL(
+      `http://localhost:801/api/CourseDetails`
+    );
+    const data = {
+      id: id,
+      userId: "820ef9fe-43c1-4a57-a279-d3238a7da437"
+    }
+
+    axios({
+      method: "delete",
+      url: url,
+      data: data,
+      withCredentials: true,
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        console.log("Delete Course", response);
+        alert("Course deleted successfully!")
+        navigate('/courses')
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+
+  const deleteSession = (sId) => {
+    console.log("sId", sId)
+    const token = getToken()
+    var url = new URL(
+      `http://localhost:801/api/SessionDetails`
+    );
+    const data = {
+      id: sId,
+      userId: "820ef9fe-43c1-4a57-a279-d3238a7da437"
+    }
+
+    axios({
+      method: "delete",
+      url: url,
+      data: data,
+      withCredentials: true,
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        console.log("Delete Session", response);
+        alert("session deleted successfully!")
+        getCourseDetails();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <>
 
@@ -281,8 +346,8 @@ const CourseDetails = () => {
                         // width="700"
                         // height="315"
                         // src="https://www.youtube.com/embed/VIDEO_ID"
-                        src="https://www.youtube.com/embed/eI4an8aSsgw"
-                        // src={courseVLink}
+                        // src="https://www.youtube.com/embed/eI4an8aSsgw"
+                        src={introVideolink}
                         frameBorder="0"
                         allowFullScreen
                         ng-show="showvideo"
@@ -299,6 +364,14 @@ const CourseDetails = () => {
                     >
                       Edit Course
                     </button>
+                    &nbsp;&nbsp;
+                    <button
+                      type="button"
+                      className="btn editButton text-white px-3 btn-secondary"
+                      onClick={deleteCourse}
+                    >
+                      Delete Course
+                    </button>
                   </div>
                   <div
                     className={`tab-pane fade ${activeTab === 1 ? "active" : ""
@@ -311,59 +384,76 @@ const CourseDetails = () => {
                           <h2>Instructor</h2>
                           <p>Lorem ipsum slt fdm dfsdsd fdf sewew trter dsds</p>
                         </div> */}
-                    {sessionList.map((data, index) => {
-                      return (
-                        <>
-                          <section className="team" key={data.sessionId}>
-                            <div className="container" key={data.sessionId}>
-                              <div className="row">
-                                <div className="col-lg-12 mt-4">
-                                  <div className="member d-lg-flex d-md-flex align-items-start">
-                                    <div className="member-info mt-3 mt-lg-0 mt-md-0">
-                                      <h4>{data.sessionName}</h4>
-                                      {/* <span>/Advanced Educator</span> */}
-                                      <p>{data.sessionDescription}</p>
-                                      {/* <br /> */}
-                                      <h5 className="mt-3" type="button" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal3" onClick={() => getSessionById(data.sessionId)}>
-                                        Section 1: Simple and atainable goals
-                                      </h5>
 
-                                      <button
-                                        type="button"
-                                        className="btn editButton text-white px-3 btn-secondary mt-3"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal2"
-                                        onClick={() => { getSessionById(data.sessionId) }}
-                                      >
-                                        Edit Session
-                                      </button>
-                                      &nbsp;
-                                      <button
-                                        type="button"
-                                        className="btn editButton text-white px-3 btn-secondary mt-3"
-                                        // onClick={() => navigate("/test")}
-                                        onClick={()=>{navigate(`/test/${data.sessionId}`); console.log("346", data.sessionId)}}
-                                      >
-                                       Add Test
-                                      </button>
-                                      &nbsp;
-                                      <button
-                                        type="button"
-                                        className="btn editButton text-white px-3 btn-secondary mt-3"
-                                        onClick={()=>{navigate(`/testDetails/${data.sessionId}`) ; console.log("354", data.sessionId) }}
-                                      >
-                                       View Test
-                                      </button>
+                    {
+                      sessionList.length === 0 ?
+                        <h3 className="text-center mt-5">Session is not available</h3> :
+
+
+                        sessionList.map((data, index) => {
+                          return (
+                            <>
+                              <section className="team" key={data.sessionId}>
+                                <div className="container" key={data.sessionId}>
+                                  <div className="row">
+                                    <div className="col-lg-12 mt-4">
+                                      <div className="member d-lg-flex d-md-flex align-items-start">
+                                        <div className="member-info mt-3 mt-lg-0 mt-md-0">
+                                          <h4>{data.sessionName}</h4>
+                                          {/* <span>/Advanced Educator</span> */}
+                                          <p>{data.sessionDescription}</p>
+                                          {/* <br /> */}
+                                          <h5 className="mt-3" type="button" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal3" onClick={() => getSessionById(data.sessionId)}>
+                                            View: {data.sessionName} Video
+                                          </h5>
+
+                                          <button
+                                            type="button"
+                                            className="btn editButton text-white px-3 btn-secondary mt-3"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal2"
+                                            onClick={() => { getSessionById(data.sessionId) }}
+                                          >
+                                            Edit Session
+                                          </button>
+                                          &nbsp;
+                                          <button
+                                            type="button"
+                                            className="btn editButton text-white px-3 btn-secondary mt-3"
+                                            onClick={() => { navigate(`/test/${data.sessionId}`); console.log("346", data.sessionId) }}
+                                          >
+                                            Add Test
+                                          </button>
+                                          &nbsp;
+                                          <button
+                                            type="button"
+                                            className="btn editButton text-white px-3 btn-secondary mt-3"
+                                            onClick={() => { navigate(`/testDetails/${data.sessionId}`); console.log("354", data.sessionId) }}
+                                          >
+                                            View Test
+                                          </button>
+                                          &nbsp;
+                                          <button
+                                            type="button"
+                                            className="btn editButton text-white px-3 btn-secondary mt-3"
+                                            onClick={()=>{deleteSession(data.sessionId)}}
+                                          >
+                                            Delete Session
+                                          </button>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                            </div>
-                          </section>
-                        </>
-                      );
-                    })}
+                              </section>
+                            </>
+                          );
+                        })
+
+
+                    }
+
                   </div>
                   <div
                     className={`tab-pane fade ${activeTab === 2 ? "active" : ""
@@ -524,7 +614,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="text"
                               className="form-control"
                               id="sDate"
@@ -544,7 +634,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="text"
                               className="form-control"
                               id="sDate"
@@ -588,7 +678,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="text"
                               className="form-control"
                               id="sDate"
@@ -610,7 +700,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="date"
                               className="form-control"
                               id="sDate"
@@ -631,7 +721,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="date"
                               className="form-control"
                               id="courseEndDate"
@@ -653,7 +743,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="text"
                               className="form-control"
                               id="sDate"
@@ -672,7 +762,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="text"
                               className="form-control"
                               id="discount"
@@ -694,7 +784,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="text"
                               className="form-control"
                               id="totalDuration"
@@ -713,7 +803,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="text"
                               className="form-control"
                               id="courseLang"
@@ -735,7 +825,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="text"
                               className="form-control"
                               id="instructor"
@@ -754,7 +844,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="text"
                               className="form-control"
                               id="skills"
@@ -796,7 +886,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="text"
                               className="form-control"
                               id="courseIncludes"
@@ -820,7 +910,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="file"
                               className="form-control"
                               id="image"
@@ -840,7 +930,7 @@ const CourseDetails = () => {
                           </div>
                           <div className="col-lg-6 mt-2 mt-md-0">
                             <input
-                            // defaultValue="Initial text"
+                              // defaultValue="Initial text"
                               type="text"
                               className="form-control"
                               id="introVideolink"
@@ -903,7 +993,7 @@ const CourseDetails = () => {
                         </div>
                         <div className="col-lg-6 mt-2 mt-md-0">
                           <input
-                          // defaultValue="Initial text"
+                            // defaultValue="Initial text"
                             type="text"
                             className="form-control"
                             id="sessionName"
@@ -946,7 +1036,7 @@ const CourseDetails = () => {
                         </div>
                         <div className="col-lg-6 mt-2 mt-md-0">
                           <input
-                          // defaultValue="Initial text"
+                            // defaultValue="Initial text"
                             type="text"
                             className="form-control"
                             id="sessionLink"
@@ -965,7 +1055,7 @@ const CourseDetails = () => {
                         </div>
                         <div className="col-lg-6 mt-2 mt-md-0">
                           <input
-                          // defaultValue="Initial text"
+                            // defaultValue="Initial text"
                             type="text"
                             className="form-control"
                             id="sDuration"

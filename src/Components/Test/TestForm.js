@@ -6,11 +6,12 @@ import '../Css/Test.css'
 import { useParams } from 'react-router-dom';
 
 const TestForm = () => {
+  const cId = localStorage.getItem("course_id");
   const [forms, setForms] = useState([]);
-  const { sId } = useParams();
+  const { id } = useParams();
   useEffect(() => {
     handleAddForm();
-    console.log("sID", sId)
+    console.log("sID", id)
   },[]);
 
   
@@ -18,7 +19,7 @@ const TestForm = () => {
     setForms([
       ...forms,
       {
-        sessionId: sId,
+        sessionId: id,
         question: "",
         option_1: "",
         option_2: "",
@@ -46,7 +47,7 @@ const TestForm = () => {
     const userId = "820ef9fe-43c1-4a57-a279-d3238a7da437";
     var url = new URL(`http://localhost:801/api/TestDetails`);
     const data = {
-      courseId: "a8b0f231-394e-4bff-9f22-ad6bbea24b09",
+      courseId: cId,
       userId: userId,
       testArray: forms,
     };
@@ -66,7 +67,7 @@ const TestForm = () => {
 
         setForms([
           {
-            sessionId: "e414fb8c-a62e-4953-90d3-3f7ab2138ee0",
+            sessionId: id,
             question: "",
             option_1: "",
             option_2: "",

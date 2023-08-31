@@ -7,11 +7,11 @@ import { useParams } from 'react-router-dom';
 const TestDetails = () => {
 
     const [testData, setTestData] = useState([])
-
+    const { id } = useParams();
     useEffect(() => {
         getTestDetails()
     }, [])
-    const { id } = useParams();
+
 
     const getTestDetails = () => {
         const cId = localStorage.getItem("course_id");
@@ -35,18 +35,53 @@ const TestDetails = () => {
         })
             .then((response) => {
                 console.log("perticular test details", response);
+                console.log(response.data);
                 console.log(response.data.data);
                 setTestData(response.data.data)
+                
             })
             .catch((error) => {
                 console.log(error);
             });
     };
 
+    const deleteTest = (tId) => {
+        console.log("tId", tId)
+        const token = getToken()
+        var url = new URL(
+            `http://localhost:801/api/TestDetails`
+        );
+        const data ={
+            id : tId,
+            userId : "820ef9fe-43c1-4a57-a279-d3238a7da437"
+        }
+
+        axios({
+            method: "delete",
+            url: url,
+            data: data,
+            withCredentials: true,
+            headers: {
+                "Content-Type": "application/json; charset=utf-8",
+                "Access-Control-Allow-Origin": "*",
+                Authorization: `Bearer ${token}`,
+            },
+        })
+            .then((response) => {
+                console.log("Delete Test", response);
+                alert("Delete test successfully!")
+                getTestDetails();
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
 
     return (
         <>
-            {
+            {testData.length === 0 ?
+                <h3 className="text-center mt-5">Test is not available</h3>
+                :
                 testData.map((data, index) => {
                     return (
                         <>
@@ -60,6 +95,13 @@ const TestDetails = () => {
                                                     <h5 className="mt-3" >
                                                         Answer: {data.Answer}
                                                     </h5>
+                                                    <button
+                                                        type="button"
+                                                        className="btn editButton text-white px-3 btn-secondary mt-3"
+                                                    onClick={()=>deleteTest(data.Id)}
+                                                    >
+                                                        Delete Test
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -70,6 +112,8 @@ const TestDetails = () => {
                     )
                 })
             }
+
+
         </>
     )
 }
