@@ -4,7 +4,7 @@ import { getToken } from "../../util.token";
 import { useNavigate } from "react-router-dom";
 import { UploadImage, editCourseForm, editSession } from "./CourseDetailsApi";
 import '../Css/CourseDetails.css'
-import { Edit } from "@material-ui/icons";
+import { Delete, Edit } from "@material-ui/icons";
 
 const CourseDetails = () => {
   const [sessionList, setSessionList] = useState([]);
@@ -38,6 +38,14 @@ const CourseDetails = () => {
 
   useEffect(() => {
     getCourseDetails();
+  }, []);
+
+  useEffect(() => {
+    // Initialize Bootstrap tooltips
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle1="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new window.bootstrap.Tooltip(tooltipTriggerEl);
+    });
   }, []);
 
   const navigate = useNavigate();
@@ -85,7 +93,7 @@ const CourseDetails = () => {
         console.log(error);
       });
   };
-
+ 
   const getSessionById = (sId) => {
     console.log("95", sId)
     const token = getToken();
@@ -398,6 +406,29 @@ const CourseDetails = () => {
                                 <div className="container" key={data.sessionId}>
                                   <div className="row">
                                     <div className="col-lg-12 mt-4">
+                                      <div className="row">
+                                        <div className="col-lg-6">
+
+                                        </div>
+                                        <div className="col-lg-6 text-end">
+                                          <button type="button" className="btn text-white px-3 btn-secondary btn-sm"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal2"
+                                            data-bs-toggle1="tooltip"
+                                            title="Edit Session"
+                                            onClick={() => { getSessionById(data.sessionId) }}><Edit /></button>
+                                            &nbsp;
+                                             <button
+                                            type="button"
+                                            data-bs-toggle1="tooltip"
+                                            title="Delete Session"
+                                            className="btn editButton text-white px-3 btn-secondary btn-sm "
+                                            onClick={() => { deleteSession(data.sessionId) }}
+                                          >
+                                            <Delete/>
+                                          </button>
+                                        </div>
+                                      </div>
                                       <div className="member d-lg-flex d-md-flex align-items-start">
                                         <div className="member-info mt-3 mt-lg-0 mt-md-0">
                                           <h4>{data.sessionName}</h4>
@@ -408,7 +439,7 @@ const CourseDetails = () => {
                                             data-bs-target="#exampleModal3" onClick={() => getSessionById(data.sessionId)}>
                                             View: {data.sessionName} Video
                                           </h5>
-
+{/* 
                                           <button
                                             type="button"
                                             className="btn editButton text-white px-3 btn-secondary mt-3"
@@ -417,14 +448,14 @@ const CourseDetails = () => {
                                             onClick={() => { getSessionById(data.sessionId) }}
                                           >
                                             Edit Session
-                                          
-                                          </button>
+
+                                          </button> */}
                                           {/* <button> <Edit/></button> */}
-                                           
+
                                           &nbsp;
                                           <button
                                             type="button"
-                                            className="btn editButton text-white px-3 btn-secondary mt-3"
+                                            className="btn editButton text-white px-3 btn-secondary mt-3 btn-sm" 
                                             onClick={() => { navigate(`/test/${data.sessionId}`); console.log("346", data.sessionId) }}
                                           >
                                             Add Test
@@ -432,19 +463,19 @@ const CourseDetails = () => {
                                           &nbsp;
                                           <button
                                             type="button"
-                                            className="btn editButton text-white px-3 btn-secondary mt-3"
+                                            className="btn editButton text-white px-3 btn-secondary mt-3 btn-sm"
                                             onClick={() => { navigate(`/testDetails/${data.sessionId}`); console.log("354", data.sessionId) }}
                                           >
                                             View Test
                                           </button>
                                           &nbsp;
-                                          <button
+                                          {/* <button
                                             type="button"
                                             className="btn editButton text-white px-3 btn-secondary mt-3"
-                                            onClick={()=>{deleteSession(data.sessionId)}}
+                                            onClick={() => { deleteSession(data.sessionId) }}
                                           >
                                             Delete Session
-                                          </button>
+                                          </button> */}
                                         </div>
                                       </div>
                                     </div>
@@ -576,7 +607,7 @@ const CourseDetails = () => {
                 <div className="col-lg-12 text-center px-4 mb-3">
                   <button
                     type="button"
-                    className="btn btn-secondary btn-lg btn-block w-100 me-5"
+                    className="btn btn-secondary btn-md btn-block w-100 me-5 "
                     onClick={() => navigate("/session")}
                   >
                     Add Session

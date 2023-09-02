@@ -5,7 +5,7 @@ import {Routes,Route, BrowserRouter as Router } from "react-router-dom";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // import "../node_modules/bootstrap/dist/css/bootstrap.css";
-// import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 // import "../node_modules/bootstrap/dist/js/bootstrap.bundle.js";
 
 // import "../node_modules/bootstrap/dist/js/bootstrap.js";

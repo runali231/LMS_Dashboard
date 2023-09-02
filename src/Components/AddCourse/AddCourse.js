@@ -1,7 +1,9 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { UploadImage, addCourseForm } from "./AddCourseApi";
+import { getToken } from "../../util.token";
+import axios from "axios";
 
 
 const AddCourse = () => {
@@ -22,6 +24,11 @@ const AddCourse = () => {
   const [introVideolink, setIntroVideolink] = useState("");
   const [learningPoints, setLearningPoints] = useState("");
   const [introMongoid, setIntroMongoid] = useState("");
+  const [selectedCourseCategory, setSelectedCourseCategory] = useState([]);
+
+  useEffect(() => {
+    getCourseCategory()
+  }, [])
 
 
   const navigate = useNavigate();
@@ -50,7 +57,6 @@ const AddCourse = () => {
         console.log(response.data.data);
         alert("Course added successfully!")
         navigate('/courses');
-        // router.push("/courses");
       })
       .catch((error) => {
         console.log(error);
@@ -68,11 +74,44 @@ const AddCourse = () => {
         console.log(error);
       });
   };
+  const handleCourseCategoryChange = (e) => {
+    const selectedValue = e.target.value;
+    setCourseCategory(selectedValue);
+    console.log(selectedValue)
+    getCourseCategory();
+  };
+
+  const getCourseCategory = () => {
+    const token = getToken()
+    const userId = "820ef9fe-43c1-4a57-a279-d3238a7da437";
+    var url = new URL(
+      `http://localhost:801/api/CourseDetails/GetCourseCategory?UserId=${userId}`
+    );
+
+    axios({
+      method: "get",
+      url: url,
+      withCredentials: true,
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        console.log("course category", response);
+        console.log(response.data.data);
+        setSelectedCourseCategory(response.data.data)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <>
       <section className="container mt-5">
         <h3 className="mx-4">Add Course Details</h3>
-
         <div className="card shadow p-2 m-3 mt-5">
           <div className="container py-3">
             <div className="row">
@@ -94,22 +133,27 @@ const AddCourse = () => {
                   </div>
                 </div>
               </div>
-
               <div className="col-lg-6 mt-2 mt-md-0">
                 <div className="row">
                   <div className="col-lg-5">
                     <label>Course Category</label>
                   </div>
                   <div className="col-lg-6 mt-2 mt-md-0">
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="sDate"
-                      placeholder="Enter Course Category"
-                      name="courseCategory"
-                      value={courseCategory}
-                      onChange={(e) => setCourseCategory(e.target.value)}
-                    />
+                    <select
+                      className="form-select"
+                      aria-label="Default select example"
+                      onChange={handleCourseCategoryChange}
+                      value={courseCategory} 
+                    >
+                      <option value="" disabled>
+                        Select Course Category
+                      </option>
+                      {selectedCourseCategory.map((category, index) => (
+                        <option key={index} value={category.CourseCategory}>
+                          {category.CourseCategory}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
               </div>
@@ -386,6 +430,27 @@ const AddCourse = () => {
                 </div>
               </div>
             </div>
+            <br className="d-none d-md-block" />
+            <div className="row">
+              <div className="col-lg-6">
+                <div className="row">
+                  <div className="col-lg-5 mt-2 mt-md-0">
+                    <label>Learning Points</label>
+                  </div>
+                  <div className="col-lg-6 mt-2 mt-md-0">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="learningPoints"
+                      placeholder="Enter learning points"
+                      name="learningPoints"
+                      value={learningPoints}
+                      onChange={(e) => setLearningPoints(e.target.value)}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
             <br />
             <div className="row">
               <div className="col-lg-6 mt-2 mt-md-0">
@@ -401,7 +466,6 @@ const AddCourse = () => {
           </div>
         </div>
       </section>
-
     </>
   );
 };
