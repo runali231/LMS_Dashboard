@@ -6,6 +6,7 @@ import Session from './Components/Session/Session';
 import Instructor from './Components/Instructor/Instructor';
 import TestForm from './Components/Test/TestForm';
 import TestDetails from './Components/Test/TestDetails';
+import Certificate from './Components/Certificate/Certificate';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -15,8 +16,9 @@ const routes1=[
     { path: '/courseDetails', name: 'CourseDetails', element:CourseDetails},
     { path: '/session', name: 'Session', element:Session},
     { path: '/test/:id', name: 'Test', element:TestForm},
-    { path: '/instructor', name: 'Test', element:Instructor},
-    { path: '/testDetails/:id', name: 'Test', element:TestDetails},
+    { path: '/instructor', name: 'Instructor', element:Instructor},
+    { path: '/testDetails/:id', name: 'TestDetails', element:TestDetails},
+    { path: '/certificate', name: 'Certificate', element:Certificate},
     
 
 ]

@@ -4,6 +4,7 @@ import { getToken } from "../../util.token";
 import { useNavigate } from "react-router-dom";
 import { UploadImage, editCourseForm, editSession } from "./CourseDetailsApi";
 import '../Css/CourseDetails.css'
+import { Edit } from "@material-ui/icons";
 
 const CourseDetails = () => {
   const [sessionList, setSessionList] = useState([]);
@@ -416,7 +417,10 @@ const CourseDetails = () => {
                                             onClick={() => { getSessionById(data.sessionId) }}
                                           >
                                             Edit Session
+                                          
                                           </button>
+                                          {/* <button> <Edit/></button> */}
+                                           
                                           &nbsp;
                                           <button
                                             type="button"
