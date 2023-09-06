@@ -117,7 +117,7 @@ const Home = (props) => {
         <div id="content" style={{ width: sidebar ? content : "100%" }}>
           {content && (
             <div className="top-navbar ">
-              <nav className="navbar navbar-expand-lg sticky-top bg-primary ">
+              <nav className="navbar navbar-expand-lg sticky-top " style={{backgroundColor: '#1B5A90'}}>
                 <button
                   type="button"
                   id="sidebar-collapse"

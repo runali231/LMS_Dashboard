@@ -11,6 +11,10 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 // import "../node_modules/bootstrap/dist/js/bootstrap.js";
 import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 
+import 'datatables.net-dt/css/jquery.dataTables.min.css';
+import 'datatables.net';
+import 'datatables.net-responsive-dt/css/responsive.dataTables.min.css';
+import 'datatables.net-responsive'; 
 import Home from "./Dashboard/Home";
 import SignUpForm from "./Components/Signup/Signup";
 import LoginForm from "./Components/Login/loginForm";

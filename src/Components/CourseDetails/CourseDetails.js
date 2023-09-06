@@ -276,7 +276,7 @@ const CourseDetails = () => {
   return (
     <>
 
-      <div className="container p-lg-5 pt-4">
+      <div className="container-fluid p-lg-5 pt-4">
         <h1 className="text-center fw-bold">
           {/* Management Skills: The Science Of Leadership */}
           {courseName}
@@ -335,7 +335,7 @@ const CourseDetails = () => {
                   </h4>
                 </li>
               </ul>
-              <div className="container">
+              <div className="container-fluid">
                 <div className="tab-content" id="myTabsContent">
                   <div
                     className={`py-3 px-lg-3 tab-pane fade show ${activeTab === 0 ? "active" : ""
@@ -403,7 +403,7 @@ const CourseDetails = () => {
                           return (
                             <>
                               <section className="team" key={data.sessionId}>
-                                <div className="container" key={data.sessionId}>
+                                <div className="container-fluid" key={data.sessionId}>
                                   <div className="row">
                                     <div className="col-lg-12 mt-4">
                                       <div className="row">
@@ -498,7 +498,7 @@ const CourseDetails = () => {
                     aria-labelledby="itemThree-tab"
                   >
                     <section className="team">
-                      <div className="container">
+                      <div className="container-fluid">
                         {/* <div className="section-title">
                           <h2>Instructor</h2>
                           <p>Lorem ipsum slt fdm dfsdsd fdf sewew trter dsds</p>
@@ -639,8 +639,8 @@ const CourseDetails = () => {
                 ></button>
               </div>
               <div className="modal-body">
-                <section className="container ">
-                  <div className="container py-3">
+                <section className="container-fluid ">
+                  <div className="container-fluid py-3">
                     <div className="row">
                       <div className="col-lg-6">
                         <div className="row">
@@ -1019,7 +1019,7 @@ const CourseDetails = () => {
                 ></button>
               </div>
               <div className="modal-body">
-                <div className="container py-3">
+                <div className="container-fluid py-3">
                   <div className="row">
                     <div className="col-lg-6">
                       <div className="row">
@@ -1140,7 +1140,7 @@ const CourseDetails = () => {
                 ></button>
               </div>
               <div className="modal-body">
-                <div className="container py-3">
+                <div className="container-fluid py-3">
                   <iframe
                     className="embed-responsive-item"
                     // width="700"
