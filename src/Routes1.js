@@ -10,6 +10,10 @@ import Certificate from './Components/Certificate/Certificate';
 import ParameterMaster from './Components/ParameterMaster/ParameterMaster';
 import ParameterValueMaster from './Components/ParameterMaster/ParameterValueMaster';
 import EmployeeMaster from './Components/EmployeeMaster/EmployeeMaster';
+import UserMaster from './Components/UserMaster/UserMaster';
+import CourseMaster from './Components/CourseMaster.js/CourseMaster';
+import EnrollmentMaster from './Components/EnrollmentMaster/EnrollmentMaster';
+import AssignmentMaster from './Components/Assignment Master/AssignmentMaster';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -25,6 +29,10 @@ const routes1=[
     { path: '/parameterMaster', name: 'ParameterMaster', element:ParameterMaster},
     { path: '/parameterValueMaster', name: 'ParameterValueMaster', element:ParameterValueMaster},
     { path: '/employeeMaster', name: 'EmployeeMaster', element:EmployeeMaster},
+    { path: '/userMaster', name: 'UserMaster', element:UserMaster},
+    { path: '/courseMaster', name: 'CourseMaster', element:CourseMaster},
+    { path: '/enrollmentMaster', name: 'EnrollmentMaster', element:EnrollmentMaster},
+    { path: '/assignmentMaster', name: 'AssignmentMaster', element:AssignmentMaster},
 
 ]
 export default routes1

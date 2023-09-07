@@ -87,7 +87,7 @@ a,a:hover,a:focus{
       width: 260px;
       overflow: auto;
       transition: all 0.3s;
-      background-color: #fff;
+      background-color: rgb(27, 90, 144);
       box-shadow: 0 10px 30px -12px rgba(0 0 0 / 10%),
       0 4px 25px 0px rgba(0 0 0 / 5%),
       0 8px 10px -5px rgba(0 0 0 / 5%)
@@ -113,8 +113,9 @@ a,a:hover,a:focus{
   }
   #sidebar .sidebar-header{
       padding: 20px;
-      background-color: #fff;
+      /* background-color: #fff; */
       border-bottom: 1px solid #eee;
+      background-color: rgb(27, 90, 144);
   }
   .sidebar-header h3{
       color: #333;
@@ -138,7 +139,7 @@ a,a:hover,a:focus{
       background-color: rgba(200, 200, 200, 0.2);
   }
   #sidebar ul li a:hover{
-      color: #333;
+      color: white;
       background-color: rgba(200, 200, 200, 0.2); ;
   }
   .drp-toggle::after{
@@ -162,7 +163,7 @@ a,a:hover,a:focus{
       font-weight: 400;
       display: block;
       text-align: left;
-      color: black;
+      color: white;
       text-decoration: none;
   }
   #sidebar ul li a span{
@@ -197,7 +198,6 @@ a,a:hover,a:focus{
   }
   .navbar{
       /* background-color: #2196f3; */
-      background-color: gray;
       color: #fff;
      right: 0;
     

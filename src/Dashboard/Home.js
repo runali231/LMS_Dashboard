@@ -54,7 +54,7 @@ const Home = (props) => {
           <nav className="sidebar" id="sidebar">
             <div className="sidebar-header">
               <h3>
-                <span text-align="center">LMS Dashboard</span>
+                <span text-align="center" className="text-light">LMS Dashboard</span>
               </h3>
             </div>
             <ul className="list-unstyled components">
@@ -71,7 +71,7 @@ const Home = (props) => {
                 {/* Rest of your small screen navigation */}
               </div>
               <br />
-              <li className="nav-title ms-3">
+              <li className="nav-title ms-3 text-light">
                 <strong>Masters</strong>
               </li>
               <li className="dropdown">
