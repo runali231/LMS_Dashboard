@@ -5,12 +5,6 @@ import { Edit } from "@material-ui/icons";
 import { Eye } from "react-bootstrap-icons";
 
 const EnrollmentMaster = () => {
-  const data = [
-    { name: "John", age: 30, country: "USA" },
-    { name: "Alice", age: 25, country: "Canada" },
-    { name: "Bob", age: 40, country: "UK" },
-    // Add more data here
-  ];
 
   useEffect(() => {
     $("#example").DataTable({
@@ -91,7 +85,7 @@ const EnrollmentMaster = () => {
                   </thead>
                   <tbody>
                     <tr>
-                      <td scope="row">
+                      <td >
                         <Edit
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModal2"
@@ -112,7 +106,7 @@ const EnrollmentMaster = () => {
                       <td>Grade</td>
                     </tr>
                     <tr>
-                      <td scope="row">
+                      <td >
                         <Edit
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModal2"
@@ -134,7 +128,7 @@ const EnrollmentMaster = () => {
                       <td>Grade</td>
                     </tr>
                     <tr>
-                      <td scope="row">
+                      <td >
                         <Edit
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModal2"
@@ -195,7 +189,7 @@ const EnrollmentMaster = () => {
                         id="enrollmentId"
                         name="enrollmentId"
                         className="form-control mt-3"
-                        autocomplete="off"
+                        autoComplete="off"
                         placeholder="Enter course name"
                         required
                       />
@@ -211,7 +205,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="enrollmentType"
                         name="enrollmentType"
-                        autocomplete="off"
+                        autoComplete="off"
                         className="form-control mt-3"
                         placeholder="Enter session name"
                         required
@@ -231,7 +225,7 @@ const EnrollmentMaster = () => {
                         id="enrollmentDate"
                         name="enrollmentDate"
                         className="form-control mt-3"
-                        autocomplete="off"
+                        autoComplete="off"
                         placeholder="Enter course duration"
                         required
                       />
@@ -247,7 +241,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="completionDate"
                         name="completionDate"
-                        autocomplete="off"
+                        autoComplete="off"
                         className="form-control mt-3"
                         placeholder="Enter course category"
                         required
@@ -267,7 +261,7 @@ const EnrollmentMaster = () => {
                         id="source"
                         name="source"
                         className="form-control mt-3"
-                        autocomplete="off"
+                        autoComplete="off"
                         placeholder="Enter course level"
                         required
                       />
@@ -283,7 +277,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="Grade"
                         name="Grade"
-                        autocomplete="off"
+                        autoComplete="off"
                         className="form-control mt-3"
                         placeholder="Enter price"
                         required
@@ -362,7 +356,7 @@ const EnrollmentMaster = () => {
                         id="courseName"
                         name="courseName"
                         className="form-control mt-3"
-                        autocomplete="off"
+                        autoComplete="off"
                         placeholder="Enter course name"
                         required
                       />
@@ -378,7 +372,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="sessionName"
                         name="sessionName"
-                        autocomplete="off"
+                        autoComplete="off"
                         className="form-control mt-3"
                         placeholder="Enter session name"
                         required
@@ -398,7 +392,7 @@ const EnrollmentMaster = () => {
                         id="courseDuration"
                         name="courseDuration"
                         className="form-control mt-3"
-                        autocomplete="off"
+                        autoComplete="off"
                         placeholder="Enter course duration"
                         required
                       />
@@ -414,7 +408,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="courseCategory"
                         name="courseCategory"
-                        autocomplete="off"
+                        autoComplete="off"
                         className="form-control mt-3"
                         placeholder="Enter course category"
                         required
@@ -434,7 +428,7 @@ const EnrollmentMaster = () => {
                         id="courseLevel"
                         name="courseLevel"
                         className="form-control mt-3"
-                        autocomplete="off"
+                        autoComplete="off"
                         placeholder="Enter course level"
                         required
                       />
@@ -450,7 +444,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="price"
                         name="price"
-                        autocomplete="off"
+                        autoComplete="off"
                         className="form-control mt-3"
                         placeholder="Enter price"
                         required
@@ -470,7 +464,7 @@ const EnrollmentMaster = () => {
                         id="studyMaterial"
                         name="studyMaterial"
                         className="form-control mt-3"
-                        autocomplete="off"
+                        autoComplete="off"
                         placeholder="Enter study material"
                         required
                       />
@@ -487,7 +481,7 @@ const EnrollmentMaster = () => {
                         id="certificate"
                         name="certificate"
                         className="form-control mt-3"
-                        autocomplete="off"
+                        autoComplete="off"
                         placeholder="Enter certificate"
                         required
                       />

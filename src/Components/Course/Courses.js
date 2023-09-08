@@ -45,7 +45,7 @@ const Courses = () => {
   // ... JSX component rendering ...
   return (
     <>
-      {isLoading ? <LoadingSpinner /> :
+      {/* {isLoading ? <LoadingSpinner /> :
         <section className="py-5">
           <div className="container">
             <h1 className="text-center fw-bold">All Courses</h1>
@@ -66,7 +66,7 @@ const Courses = () => {
                     <div className="card h-100 d-flex flex-column course-card">
                       {course.Card == null ? (
                         <img
-                          // src="/login.jpg"
+
                           src="NULL"
                           className="card-img-top"
                           width="400"
@@ -100,13 +100,13 @@ const Courses = () => {
                               className="card-text fw-bold"
                               style={{ color: "#4e0fa9" }}
                             >
-                             ₹ {course.Price}
+                              ₹ {course.Price}
 
                             </h2>
                         }
 
                         <h4 className="card-title fw-bold">{course.CourseName}</h4>
-                        {/* <p className="card-text">{course.CourseDiscription}</p> */}
+
                         <div className="row mt-4">
                           <div className="col-lg-6 col-6 text-start">
                             <h5>{course.CourseType}</h5>
@@ -122,8 +122,58 @@ const Courses = () => {
               </div>
             </div>
           </div>
+
         </section>
-      }
+
+      } */}
+      <div className="container-fluid py-5">
+        <div className="container py-5">
+          <div className="text-center mb-5">
+            <h5 className="text-primary text-uppercase mb-3" style={{ "letterSpacing": "5px" }}>Courses</h5>
+            <h1>Our Popular Courses</h1>
+          </div>
+          <div className="row">
+                <div className="col-lg-12 mt-3">
+                  <div className="form-group">
+                    <button className="btn btn-primary btn-lg d-block d-lg-inline-block mx-auto mx-lg-0 float-lg-end me-lg-5"
+                      type="submit" onClick={handleNavigate}>
+                      Add Course
+                    </button>
+                  </div>
+                </div>
+              </div>
+          <div className="row">
+            {
+              courses.map((course, index) => {
+                return (
+                  <div className="col-lg-4 col-md-6 mb-4">
+                    <div className="rounded overflow-hidden mb-2">
+                      {course.Card === " " ? <img className="img-fluid" src="" alt="" /> : <img className="img-fluid" src={base64ToDataURL(course.Card)} alt="" />}
+
+                      <div className="bg-secondary p-4">
+                        <div className="d-flex justify-content-between mb-3">
+                          <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
+                          <small className="m-0"><i className="far fa-clock text-primary mr-2"></i>01h 30m</small>
+                        </div>
+                        <div className="h5" onClick={() => { handleNavigate1(course.Id) }} style={{ "cursor": "pointer" }}>
+                          {course.CourseName}</div>
+                        <div className="border-top mt-4 pt-4">
+                          <div className="d-flex justify-content-between">
+                            <h6 className="m-0"><i className="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                            <h5 className="m-0">
+                              {course.Price === "" ? "Free" : `₹ ${course.Price}`}</h5>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })
+            }
+          </div>
+        </div>
+      </div>
     </>
   );
 };

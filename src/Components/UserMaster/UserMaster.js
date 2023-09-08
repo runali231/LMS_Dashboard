@@ -6,13 +6,7 @@ import { Eye } from 'react-bootstrap-icons';
 
 
 const UserMaster = () => {
-    const data = [
-        { name: 'John', age: 30, country: 'USA' },
-        { name: 'Alice', age: 25, country: 'Canada' },
-        { name: 'Bob', age: 40, country: 'UK' },
-        // Add more data here
-    ];
-
+   
     useEffect(() => {
         $('#example').DataTable({
             destroy: true,
@@ -71,7 +65,7 @@ const UserMaster = () => {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td scope="row"><Edit data-bs-toggle="modal"
+                                            <td ><Edit data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal1" />&nbsp;&nbsp;
                                                 <Eye data-bs-toggle="modal"
                                                     data-bs-target="#parameterValueMaster" />
@@ -89,7 +83,7 @@ const UserMaster = () => {
                                             <td>Remark</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><Edit data-bs-toggle="modal"
+                                            <td ><Edit data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal1" />&nbsp;&nbsp;
                                                 <Eye data-bs-toggle="modal"
                                                     data-bs-target="#parameterValueMaster" />
@@ -107,7 +101,7 @@ const UserMaster = () => {
                                             <td>Remark</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><Edit data-bs-toggle="modal"
+                                            <td ><Edit data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal1" />&nbsp;&nbsp;
                                                 <Eye data-bs-toggle="modal"
                                                     data-bs-target="#parameterValueMaster" />

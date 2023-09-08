@@ -14,6 +14,8 @@ import UserMaster from './Components/UserMaster/UserMaster';
 import CourseMaster from './Components/CourseMaster.js/CourseMaster';
 import EnrollmentMaster from './Components/EnrollmentMaster/EnrollmentMaster';
 import AssignmentMaster from './Components/Assignment Master/AssignmentMaster';
+import ContentMaster from './Components/ContentMaster/ContentMaster';
+import Course1 from './Components/Course/Course1';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -33,6 +35,8 @@ const routes1=[
     { path: '/courseMaster', name: 'CourseMaster', element:CourseMaster},
     { path: '/enrollmentMaster', name: 'EnrollmentMaster', element:EnrollmentMaster},
     { path: '/assignmentMaster', name: 'AssignmentMaster', element:AssignmentMaster},
+    { path: '/contentMaster', name: 'ContentMaster', element:ContentMaster},
+    { path: '/course1', name: 'Course1', element:Course1},
 
 ]
 export default routes1

@@ -4,7 +4,8 @@ import "../Css/DataTable.css";
 import { Edit } from "@material-ui/icons";
 import { Eye } from "react-bootstrap-icons";
 
-const AssignmentMaster = () => {
+const ContentMaster = () => {
+  
 
   useEffect(() => {
     $("#example").DataTable({
@@ -25,7 +26,7 @@ const AssignmentMaster = () => {
               <div className="card-header" style={{ backgroundColor: "white" }}>
                 <div className="row align-items-center">
                   <div className="col">
-                    <h5 className="card-title">Assignment Master</h5>
+                    <h5 className="card-title">Content Master</h5>
                   </div>
                   <div className="col-md-2  justify-content-end">
                     <input
@@ -73,15 +74,16 @@ const AssignmentMaster = () => {
                   >
                     <tr>
                       <th scope="col">Action</th>
-                      <th scope="col">Assignment Name</th>
-                      <th scope="col">Assignment Description</th>
-                      <th scope="col">Start Date</th>
-                      <th scope="col">End Date</th>               
+                      <th scope="col">Title</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Notes</th>
+                      <th scope="col">Image Url</th>  
+                      <th scope="col">Video Url</th>              
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td >
+                      <td>
                         <Edit
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModal2"
@@ -93,13 +95,14 @@ const AssignmentMaster = () => {
                         />
                       </td>
                 
-                      <td>Assignment Name</td>
-                      <td>Assignment Description</td>
-                      <td>Start Date</td>
-                      <td>End Date</td>         
+                      <td>Title</td>
+                      <td>Description</td>
+                      <td>Notes</td>
+                      <td>Image Url</td>  
+                      <td>Video Url</td>     
                     </tr>
                     <tr>
-                      <td >
+                      <td>
                         <Edit
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModal2"
@@ -111,13 +114,14 @@ const AssignmentMaster = () => {
                         />
                       </td>
 
-                      <td>Assignment Name</td>
-                      <td>Assignment Description</td>
-                      <td>Start Date</td>
-                      <td>End Date</td>  
+                      <td>Title</td>
+                      <td>Description</td>
+                      <td>Notes</td>
+                      <td>Image Url</td>  
+                      <td>Video Url</td>     
                     </tr>
                     <tr>
-                      <td >
+                      <td>
                         <Edit
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModal2"
@@ -129,10 +133,11 @@ const AssignmentMaster = () => {
                         />
                       </td>
 
-                      <td>Assignment Name</td>
-                      <td>Assignment Description</td>
-                      <td>Start Date</td>
-                      <td>End Date</td>  
+                      <td>Title</td>
+                      <td>Description</td>
+                      <td>Notes</td>
+                      <td>Image Url</td>  
+                      <td>Video Url</td>     
                     </tr>
                   </tbody>
                 </table>
@@ -153,7 +158,7 @@ const AssignmentMaster = () => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  Add New Assignment
+                  Add New Content
                 </h5>
                 <button
                   type="button"
@@ -167,15 +172,15 @@ const AssignmentMaster = () => {
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
-                        Assignment Name<span className="text-danger">*</span>
+                        Title<span className="text-danger">*</span>
                       </label>
                       <input
                         type="text"
-                        id="assignmentName"
-                        name="assignmentName"
+                        id="title"
+                        name="title"
                         className="form-control mt-3"
                         autoComplete="off"
-                        placeholder="Enter assignment name"
+                        placeholder="Enter title"
                         required
                       />
                     </div>
@@ -190,7 +195,7 @@ const AssignmentMaster = () => {
                       type="text"
                       className="form-control mt-3"
                       id="description"
-                      placeholder="Enter Assignment Description"
+                      placeholder="Enter Content Description"
                       name="description"
                     />
                       <span id="message"></span>
@@ -201,15 +206,15 @@ const AssignmentMaster = () => {
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
-                        Start Date<span className="text-danger">*</span>
+                        Notes<span className="text-danger">*</span>
                       </label>
                       <input
-                        type="date"
-                        id="startDate"
-                        name="endDate"
+                        type="text"
+                        id="notes"
+                        name="notes"
                         className="form-control mt-3"
                         autoComplete="off"
-                        
+                        placeholder="Enter notes"
                         required
                       />
                     </div>
@@ -218,12 +223,12 @@ const AssignmentMaster = () => {
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
-                        End Date<span className="text-danger">*</span>
+                        Image<span className="text-danger">*</span>
                       </label>
                       <input
-                        type="date"
-                        id="endDate"
-                        name="endDate"
+                        type="file"
+                        id="image"
+                        name="image"
                         autoComplete="off"
                         className="form-control mt-3"
                         required
@@ -232,7 +237,26 @@ const AssignmentMaster = () => {
                     </div>
                   </div>
                 </div>
-               
+                <div className="row mt-3">
+                  <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+                    <div className="form-group form-group-sm">
+                      <label className="control-label">
+                        video<span className="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="video"
+                        name="video"
+                        className="form-control mt-3"
+                        autoComplete="off"
+                        placeholder="Enter video link"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                 
+                </div>
               </div>
               <div className="modal-footer">
                 <button
@@ -259,7 +283,7 @@ const AssignmentMaster = () => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  Edit Assignment
+                  Edit Content
                 </h5>
                 <button
                   type="button"
@@ -273,15 +297,15 @@ const AssignmentMaster = () => {
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
-                        Assignment Name<span className="text-danger">*</span>
+                        Title<span className="text-danger">*</span>
                       </label>
                       <input
                         type="text"
-                        id="assignmentName"
-                        name="assignmentName"
+                        id="title"
+                        name="title"
                         className="form-control mt-3"
                         autoComplete="off"
-                        placeholder="Enter assignment name"
+                        placeholder="Enter title"
                         required
                       />
                     </div>
@@ -296,7 +320,7 @@ const AssignmentMaster = () => {
                       type="text"
                       className="form-control mt-3"
                       id="description"
-                      placeholder="Enter Assignment Description"
+                      placeholder="Enter Content Description"
                       name="description"
                     />
                       <span id="message"></span>
@@ -307,15 +331,15 @@ const AssignmentMaster = () => {
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
-                        Start Date<span className="text-danger">*</span>
+                        Notes<span className="text-danger">*</span>
                       </label>
                       <input
-                        type="date"
-                        id="startDate"
-                        name="endDate"
+                        type="text"
+                        id="notes"
+                        name="notes"
                         className="form-control mt-3"
                         autoComplete="off"
-                        
+                        placeholder="Enter notes"
                         required
                       />
                     </div>
@@ -324,12 +348,12 @@ const AssignmentMaster = () => {
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
-                        End Date<span className="text-danger">*</span>
+                        Image<span className="text-danger">*</span>
                       </label>
                       <input
-                        type="date"
-                        id="endDate"
-                        name="endDate"
+                        type="file"
+                        id="image"
+                        name="image"
                         autoComplete="off"
                         className="form-control mt-3"
                         required
@@ -338,7 +362,26 @@ const AssignmentMaster = () => {
                     </div>
                   </div>
                 </div>
-               
+                <div className="row mt-3">
+                  <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+                    <div className="form-group form-group-sm">
+                      <label className="control-label">
+                        video<span className="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="video"
+                        name="video"
+                        className="form-control mt-3"
+                        autoComplete="off"
+                        placeholder="Enter video link"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                 
+                </div>
               </div>
               <div className="modal-footer">
                 <button
@@ -358,4 +401,4 @@ const AssignmentMaster = () => {
   );
 };
 
-export default AssignmentMaster;
+export default ContentMaster;
