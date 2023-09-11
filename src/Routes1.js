@@ -11,11 +11,14 @@ import ParameterMaster from './Components/ParameterMaster/ParameterMaster';
 import ParameterValueMaster from './Components/ParameterMaster/ParameterValueMaster';
 import EmployeeMaster from './Components/EmployeeMaster/EmployeeMaster';
 import UserMaster from './Components/UserMaster/UserMaster';
-import CourseMaster from './Components/CourseMaster.js/CourseMaster';
+import CourseMaster from './Components/CourseMaster/CourseMaster';
 import EnrollmentMaster from './Components/EnrollmentMaster/EnrollmentMaster';
 import AssignmentMaster from './Components/Assignment Master/AssignmentMaster';
 import ContentMaster from './Components/ContentMaster/ContentMaster';
 import Course1 from './Components/Course/Course1';
+import Mentor from './Components/Mentor/Mentor';
+import CourseDetails1 from './Components/CourseDetails/CourseDetails1';
+import MentorDetails from './Components/Mentor/MentorDetails';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -37,6 +40,8 @@ const routes1=[
     { path: '/assignmentMaster', name: 'AssignmentMaster', element:AssignmentMaster},
     { path: '/contentMaster', name: 'ContentMaster', element:ContentMaster},
     { path: '/course1', name: 'Course1', element:Course1},
-
+    { path: '/mentor', name: 'Mentor', element:Mentor},
+    { path: '/mentorDetails', name: 'MentorDetails', element:MentorDetails},
+    { path: '/courseDetails1', name: 'CourseDetails1', element:CourseDetails1},
 ]
 export default routes1

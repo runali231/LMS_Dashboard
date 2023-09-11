@@ -1,4 +1,4 @@
-/******* Bootstrap Theming ********/
+****** Bootstrap Theming *******
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -201,9 +201,9 @@
     vertical-align: middle;
   }
   
-  table {
+  /* table {
     border-collapse: collapse;
-  }
+  } */
   
   caption {
     padding-top: 0.75rem;
@@ -1531,7 +1531,7 @@
     }
   }
   
-  .table {
+  /* .table {
     width: 100%;
     margin-bottom: 1rem;
     color: #6C6A74;
@@ -1813,67 +1813,9 @@
   .table-dark.table-hover tbody tr:hover {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.075);
-  }
+  } */
   
-  @media (max-width: 575.98px) {
-    .table-responsive-sm {
-      display: block;
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-    .table-responsive-sm > .table-bordered {
-      border: 0;
-    }
-  }
-  
-  @media (max-width: 767.98px) {
-    .table-responsive-md {
-      display: block;
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-    .table-responsive-md > .table-bordered {
-      border: 0;
-    }
-  }
-  
-  @media (max-width: 991.98px) {
-    .table-responsive-lg {
-      display: block;
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-    .table-responsive-lg > .table-bordered {
-      border: 0;
-    }
-  }
-  
-  @media (max-width: 1199.98px) {
-    .table-responsive-xl {
-      display: block;
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-    .table-responsive-xl > .table-bordered {
-      border: 0;
-    }
-  }
-  
-  .table-responsive {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  .table-responsive > .table-bordered {
-    border: 0;
-  }
-  
+ 
   .form-control {
     display: block;
     width: 100%;
@@ -2323,7 +2265,7 @@
       margin-bottom: 0;
     }
   }
-  
+/*   
   .btn {
     display: inline-block;
     font-weight: 400;
@@ -2338,7 +2280,7 @@
     line-height: 1.5;
     border-radius: 8px;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
+  } */
   
   @media (prefers-reduced-motion: reduce) {
     .btn {
@@ -2369,7 +2311,7 @@
     pointer-events: none;
   }
   
-  .btn-primary {
+  /* .btn-primary {
     color: #fff;
     background-color: #FF6600;
     border-color: #FF6600;
@@ -2404,7 +2346,7 @@
   .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
   .show > .btn-primary.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem rgba(255, 125, 38, 0.5);
-  }
+  } */
   
   .btn-secondary {
     color: #212529;
