@@ -19,6 +19,7 @@ import Course1 from './Components/Course/Course1';
 import Mentor from './Components/Mentor/Mentor';
 import CourseDetails1 from './Components/CourseDetails/CourseDetails1';
 import MentorDetails from './Components/Mentor/MentorDetails';
+import MentorChat from './Components/Mentor/MentorChat';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -43,5 +44,6 @@ const routes1=[
     { path: '/mentor', name: 'Mentor', element:Mentor},
     { path: '/mentorDetails', name: 'MentorDetails', element:MentorDetails},
     { path: '/courseDetails1', name: 'CourseDetails1', element:CourseDetails1},
+    { path: '/mentorChat', name: 'MentorChat', element:MentorChat},
 ]
 export default routes1
