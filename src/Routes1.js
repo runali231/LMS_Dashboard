@@ -20,6 +20,9 @@ import Mentor from './Components/Mentor/Mentor';
 import CourseDetails1 from './Components/CourseDetails/CourseDetails1';
 import MentorDetails from './Components/Mentor/MentorDetails';
 import MentorChat from './Components/Mentor/MentorChat';
+import MessagingInterface from './Components/Mentor/MessagingInterface';
+import Profile from './Components/Profile/Profile';
+import Scheduling from './Components/Scheduling/Scheduling';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -45,5 +48,8 @@ const routes1=[
     { path: '/mentorDetails', name: 'MentorDetails', element:MentorDetails},
     { path: '/courseDetails1', name: 'CourseDetails1', element:CourseDetails1},
     { path: '/mentorChat', name: 'MentorChat', element:MentorChat},
+    { path: '/messagingInterface', name: 'MessagingInterface', element:MessagingInterface},
+    { path: '/profile', name: 'Profile', element:Profile},
+    { path: '/scheduling', name: 'Scheduling', element:Scheduling},
 ]
 export default routes1

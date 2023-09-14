@@ -2884,7 +2884,7 @@ p {
     overflow: hidden;
     display: block;
     padding: 15px 15px;
-    background-color: #edf0f2;
+    /* background-color: #edf0f2; */
 }
 .curriculum-cont .accordion .card .card-header a.collapsed {
     background-color: #fff;

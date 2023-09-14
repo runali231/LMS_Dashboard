@@ -82,7 +82,7 @@ const TestDetails = () => {
 
     return (
         <>
-            <div className='container mt-5'>
+            <div className='container-fluid mt-5'>
                 <div className='row'>
                     <div className='col-lg-6 text-left'>
                         <h3>Test Details</h3>
@@ -100,7 +100,7 @@ const TestDetails = () => {
                     return (
                         <>
                             <section className="team" key={index}>
-                                <div className="container">
+                                <div className="container-fluid">
                                     <div className="row">
                                         <div className="col-lg-12 mt-4">
                                             <div className="member d-lg-flex d-md-flex align-items-start">
@@ -111,7 +111,8 @@ const TestDetails = () => {
                                                     </h5>
                                                     <button
                                                         type="button"
-                                                        className="btn editButton text-white px-3 btn-secondary mt-3"
+                                                        className="btn text-white px-3 btn-danger mt-3"
+                                                        
                                                         onClick={() => deleteTest(data.Id)}
                                                     >
                                                         Delete Test

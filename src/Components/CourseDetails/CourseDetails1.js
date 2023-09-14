@@ -448,7 +448,7 @@ const CourseDetails1 = () => {
                                                                                                     <button
                                                                                                         type="button"
                                                                                                         className="btn editButton text-white px-3 mt-3 btn-sm"
-                                                                                                        style={{"backgroundColor":"#4caf50"}}
+                                                                                                        style={{ "backgroundColor": "#4caf50" }}
                                                                                                         onClick={() => { navigate(`/test/${data.sessionId}`); console.log("346", data.sessionId) }}
                                                                                                     >
                                                                                                         Add Test
@@ -457,7 +457,7 @@ const CourseDetails1 = () => {
                                                                                                     <button
                                                                                                         type="button"
                                                                                                         className="btn editButton text-white px-3  mt-3 btn-sm"
-                                                                                                        style={{"backgroundColor":"rgb(27, 90, 144)"}}
+                                                                                                        style={{ "backgroundColor": "rgb(27, 90, 144)" }}
                                                                                                         onClick={() => { navigate(`/testDetails/${data.sessionId}`); console.log("354", data.sessionId) }}
                                                                                                     >
                                                                                                         View Test
@@ -466,7 +466,7 @@ const CourseDetails1 = () => {
                                                                                                     <button
                                                                                                         type="button"
                                                                                                         className="btn editButton text-white px-3 mt-3 btn-sm"
-                                                                                                        style={{"backgroundColor":" #2196F3"}}
+                                                                                                        style={{ "backgroundColor": " #2196F3" }}
                                                                                                         data-bs-toggle="modal"
                                                                                                         data-bs-target="#exampleModal2"
                                                                                                         onClick={() => { getSessionById(data.sessionId) }}
@@ -478,7 +478,7 @@ const CourseDetails1 = () => {
                                                                                                     <button
                                                                                                         type="button"
                                                                                                         className="btn editButton text-white px-3  mt-3 btn-sm"
-                                                                                                        style={{"backgroundColor":"red"}}
+                                                                                                        style={{ "backgroundColor": "red" }}
                                                                                                         onClick={() => { deleteSession(data.sessionId) }}
                                                                                                     >
                                                                                                         Delete Session
@@ -664,28 +664,28 @@ const CourseDetails1 = () => {
                                     </div>
                                 </div>
                             </div>
-                           <div className='row mt-3'>
-                            <div className='col'>
-                            <button
-                                type="button"
-                                className="btn editButton text-white px-3 btn-secondary"
-                                data-bs-toggle="modal"
-                                data-bs-target="#exampleModal1"
-                                style={{"backgroundColor":" #2196F3"}}
-                            >
-                                Edit Course
-                            </button>
-                            &nbsp;&nbsp;
-                            <button
-                                type="button"
-                                className="btn editButton text-white px-3 btn-secondary"
-                                style={{"backgroundColor":"red"}}
-                                onClick={deleteCourse}
-                            >
-                                Delete Course
-                            </button>
+                            <div className='row mt-3'>
+                                <div className='col'>
+                                    <button
+                                        type="button"
+                                        className="btn editButton text-white px-3 btn-secondary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal1"
+                                        style={{ "backgroundColor": " #2196F3" }}
+                                    >
+                                        Edit Course
+                                    </button>
+                                    &nbsp;&nbsp;
+                                    <button
+                                        type="button"
+                                        className="btn editButton text-white px-3 btn-secondary"
+                                        style={{ "backgroundColor": "red" }}
+                                        onClick={deleteCourse}
+                                    >
+                                        Delete Course
+                                    </button>
+                                </div>
                             </div>
-                           </div>
                         </div>
                         <div className="col-lg-3">
                             <div className="row">
@@ -703,9 +703,23 @@ const CourseDetails1 = () => {
                                         </ul>
                                         <div className="price-button pt-10">
                                             <span>Price : <b>₹ {price}</b></span>
-                                            <a className="main-btn" onClick={() => navigate("/session")}
+                                            <br/>
+                                            <a className="main-btn btn-block mt-3" onClick={() => navigate("/session")}
                                             >
                                                 Add Session</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className="row">
+                                <div className="col-lg-12 col-md-6">
+                                    <div className="course-features mt-30">
+                                        <div className=" pt-10">
+
+                                            <a className="main-btn btn-block" onClick={() => navigate("/messagingInterface")}
+                                            >
+                                                Communication</a>
                                         </div>
                                     </div>
                                 </div>
