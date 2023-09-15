@@ -631,7 +631,7 @@ const MentorChat = () => {
               </div>
               <h5>
                 {/* Add user name */}
-                {chatMessages[activeChat - 1].name}
+                {/* {chatMessages[activeChat - 1].name} */}
 
                 <br />
                 <span>Online</span>

@@ -717,7 +717,7 @@ const CourseDetails1 = () => {
                                     <div className="course-features mt-30">
                                         <div className=" pt-10">
 
-                                            <a className="main-btn btn-block" onClick={() => navigate("/messagingInterface")}
+                                            <a className="main-btn btn-block" onClick={() => navigate("/mentorChat")}
                                             >
                                                 Communication</a>
                                         </div>

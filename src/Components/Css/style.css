@@ -5552,7 +5552,7 @@
   .toast-body {
     padding: 0.75rem;
   }
-  
+/*   
   .modal-open {
     overflow: hidden;
   }
@@ -5560,9 +5560,9 @@
   .modal-open .modal {
     overflow-x: hidden;
     overflow-y: auto;
-  }
+  } */
   
-  .modal {
+  /* .modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -5572,9 +5572,9 @@
     height: 100%;
     overflow: hidden;
     outline: 0;
-  }
+  } */
   
-  .modal-dialog {
+  /* .modal-dialog {
     position: relative;
     width: auto;
     margin: 0.5rem;
@@ -5585,9 +5585,9 @@
     transition: transform 0.3s ease-out;
     transform: translate(0, -50px);
   }
-  
+   */
   @media (prefers-reduced-motion: reduce) {
-    .modal.fade .modal-dialog {
+    /* .modal.fade .modal-dialog {
       transition: none;
     }
   }
@@ -5724,10 +5724,11 @@
     width: 50px;
     height: 50px;
     overflow: scroll;
+ */
   }
   
   @media (min-width: 576px) {
-    .modal-dialog {
+    /* .modal-dialog {
       max-width: 500px;
       margin: 1.75rem auto;
     }
@@ -5746,11 +5747,11 @@
     }
     .modal-sm {
       max-width: 300px;
-    }
+    } */
   }
   
   @media (min-width: 992px) {
-    .modal-lg,
+    /* .modal-lg,
     .modal-xl {
       max-width: 800px;
     }
@@ -5759,7 +5760,7 @@
   @media (min-width: 1200px) {
     .modal-xl {
       max-width: 1140px;
-    }
+    } */
   }
   
   .tooltip {

@@ -23,6 +23,7 @@ import MentorChat from './Components/Mentor/MentorChat';
 import MessagingInterface from './Components/Mentor/MessagingInterface';
 import Profile from './Components/Profile/Profile';
 import Scheduling from './Components/Scheduling/Scheduling';
+import MeetingCalendar from './Components/Scheduling/MeetingCalendar';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -51,5 +52,7 @@ const routes1=[
     { path: '/messagingInterface', name: 'MessagingInterface', element:MessagingInterface},
     { path: '/profile', name: 'Profile', element:Profile},
     { path: '/scheduling', name: 'Scheduling', element:Scheduling},
+    { path: '/meetingCalendar', name: 'MeetingCalendar', element:MeetingCalendar},
+
 ]
 export default routes1
