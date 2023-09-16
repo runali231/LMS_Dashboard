@@ -24,10 +24,13 @@ import MessagingInterface from './Components/Mentor/MessagingInterface';
 import Profile from './Components/Profile/Profile';
 import Scheduling from './Components/Scheduling/Scheduling';
 import MeetingCalendar from './Components/Scheduling/MeetingCalendar';
+import AssignmentList from './Components/Instructor/AssignmentList';
+import GradeAnalytics from './Components/Instructor/GradeAnalytics';
+import GradeRecording from './Components/Instructor/GradeRecording';
+import FeedbackInterface from './Components/Instructor/FeedbackInterface';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
-
     { path: '/courses', name: 'Courses', element:Courses},
     { path: '/addCourse', name: 'AddCourse', element:AddCourse},
     { path: '/courseDetails', name: 'CourseDetails', element:CourseDetails},
@@ -53,6 +56,10 @@ const routes1=[
     { path: '/profile', name: 'Profile', element:Profile},
     { path: '/scheduling', name: 'Scheduling', element:Scheduling},
     { path: '/meetingCalendar', name: 'MeetingCalendar', element:MeetingCalendar},
+    { path: '/assignmentList', name: 'AssignmentList', element:AssignmentList},
+    { path: '/gradeAnalytics', name: 'GradeAnalytics', element:GradeAnalytics},
+    { path: '/gradeRecording', name: 'GradeRecording', element:GradeRecording},
+    { path: '/feedbackInterface', name: 'FeedbackInterface', element:FeedbackInterface},
 
 ]
 export default routes1

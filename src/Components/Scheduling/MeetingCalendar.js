@@ -23,53 +23,53 @@ function MeetingCalendar() {
         setIsModalOpen(false);
     };
 
-    //   useEffect(() => {
-    //     // Function to create a Zoom meeting
-    //     const createZoomMeeting = async () => {
-    //       const startTime = new Date(`${meetingDate}T${meetingTime}`);
-    //       const endTime = moment(startTime).add(1, 'hour').toDate();
+      useEffect(() => {
+        // Function to create a Zoom meeting
+        const createZoomMeeting = async () => {
+          const startTime = new Date(`${meetingDate}T${meetingTime}`);
+          const endTime = moment(startTime).add(1, 'hour').toDate();
 
-    //       try {
-    //         const response = await fetch('https://api.zoom.us/v2/users/me/meetings', {
-    //           method: 'POST',
-    //           headers: {
-    //             'Content-Type': 'application/json',
-    //             Authorization: `Bearer ${ZOOM_API_SECRET}`,
-    //           },
-    //           body: JSON.stringify({
-    //             topic: meetingTitle,
-    //             type: 2, // Scheduled meeting
-    //             start_time: startTime.toISOString(),
-    //             duration: 60, // Meeting duration in minutes (1 hour)
-    //             timezone: 'UTC', // Timezone
-    //           }),
-    //         });
+          try {
+            const response = await fetch('https://api.zoom.us/v2/users/me/meetings', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${ZOOM_API_SECRET}`,
+              },
+              body: JSON.stringify({
+                topic: meetingTitle,
+                type: 2, // Scheduled meeting
+                start_time: startTime.toISOString(),
+                duration: 60, // Meeting duration in minutes (1 hour)
+                timezone: 'UTC', // Timezone
+              }),
+            });
 
-    //         if (response.ok) {
-    //           const data = await response.json();
-    //           const newMeeting = {
-    //             title: meetingTitle,
-    //             start: startTime,
-    //             end: endTime,
-    //             desc: meetingTitle,
-    //             zoomMeetingId: data.id,
-    //           };
-    //           setEvents([...events, newMeeting]);
-    //           setIsModalOpen(false); // Close the modal after scheduling
-    //         } else {
-    //           // Handle errors
-    //           alert('Failed to create a Zoom meeting. Please try again later.');
-    //         }
-    //       } catch (error) {
-    //         console.error('Error creating Zoom meeting:', error);
-    //         alert('An error occurred while creating the Zoom meeting.');
-    //       }
-    //     };
+            if (response.ok) {
+              const data = await response.json();
+              const newMeeting = {
+                title: meetingTitle,
+                start: startTime,
+                end: endTime,
+                desc: meetingTitle,
+                zoomMeetingId: data.id,
+              };
+              setEvents([...events, newMeeting]);
+              setIsModalOpen(false); // Close the modal after scheduling
+            } else {
+              // Handle errors
+              alert('Failed to create a Zoom meeting. Please try again later.');
+            }
+          } catch (error) {
+            console.error('Error creating Zoom meeting:', error);
+            alert('An error occurred while creating the Zoom meeting.');
+          }
+        };
 
-    //     if (isModalOpen && meetingTitle && meetingDate && meetingTime) {
-    //       createZoomMeeting();
-    //     }
-    //   }, [isModalOpen, meetingTitle, meetingDate, meetingTime, events]);
+        if (isModalOpen && meetingTitle && meetingDate && meetingTime) {
+          createZoomMeeting();
+        }
+      }, [isModalOpen, meetingTitle, meetingDate, meetingTime, events]);
 
     const handleSelectSlot = (slotInfo) => {
         setSelectedSlot(slotInfo);
@@ -85,7 +85,11 @@ function MeetingCalendar() {
                 desc: meetingTitle,
             };
             setEvents([...events, newMeeting]);
-            setIsModalOpen(false); // Close the modal after scheduling
+            setIsModalOpen(false);
+             // Close the modal after scheduling
+             setMeetingTitle('');
+             setMeetingDate('');
+             setMeetingTime('');
         } else {
             // Handle validation or show an error message
             alert('Please fill in all fields.');
@@ -94,15 +98,17 @@ function MeetingCalendar() {
 
     const CustomModal = ({ isOpen, onClose }) => {
         return (
-            <div className={`modal ${isOpen ? 'open' : ''}`}>
+            <div className={`modal1 ${isOpen ? 'open' : ''}`}>
                 <div className="modal-dialog" >
                     <div className="modal-content">
                         <div className="modal-header">
+                           
                             <h5 className="modal-title">Schedule a New Meeting</h5>
                             <button type="button" className="close" onClick={onClose}>
                                 &times;
                             </button>
                         </div>
+                        <hr style={{"backgroundColor":"black"}}/>
                         <div className="modal-body">
                             <div className='row'>
                                 <div className='col-lg-12'>
@@ -135,6 +141,7 @@ function MeetingCalendar() {
                             </div>
 
                         </div>
+                        <hr style={{"backgroundColor":"black"}}/>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" onClick={onClose}>
                                 Close

@@ -115,6 +115,42 @@ const Home = (props) => {
                   </li>
                 </ul> */}
               </li>
+              <li className="dropdown">
+                <NavLink
+                  to="/assignmentList"
+                  role="button"
+                >
+                  <Puzzle style={{ fontSize: "22px" }} />
+                  <span className="ms-3">Assignment List</span>
+                </NavLink>
+                </li>
+                <li className="dropdown">
+                <NavLink
+                  to="/gradeAnalytics"
+                  role="button"
+                >
+                  <Puzzle style={{ fontSize: "22px" }} />
+                  <span className="ms-3">Grade Analytics</span>
+                </NavLink>
+                </li>
+                <li className="dropdown">
+                <NavLink
+                  to="/gradeRecording"
+                  role="button"
+                >
+                  <Puzzle style={{ fontSize: "22px" }} />
+                  <span className="ms-3">Grade Recording</span>
+                </NavLink>
+                </li>
+                <li className="dropdown">
+                <NavLink
+                  to="/feedbackInterface"
+                  role="button"
+                >
+                  <Puzzle style={{ fontSize: "22px" }} />
+                  <span className="ms-3">Feedback Interface</span>
+                </NavLink>
+                </li>
             </ul>
           </nav>
         )}

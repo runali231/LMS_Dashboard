@@ -1,5 +1,5 @@
 /* Modal background */
-.modal {
+ .modal1 {
   display: none;
   position: fixed;
   top: 0;
@@ -13,7 +13,7 @@
 }
 
 /* Modal content */
-.modal.open {
+.modal1.open {
   display: flex;
 }
 
@@ -28,7 +28,7 @@
 /* Modal title */
 .modal-title {
   margin: 0;
-}
+} 
 
 /* Close button */
 .close {
