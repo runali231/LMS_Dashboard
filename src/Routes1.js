@@ -22,12 +22,13 @@ import MentorDetails from './Components/Mentor/MentorDetails';
 import MentorChat from './Components/Mentor/MentorChat';
 import MessagingInterface from './Components/Mentor/MessagingInterface';
 import Profile from './Components/Profile/Profile';
-import Scheduling from './Components/Scheduling/Scheduling';
 import MeetingCalendar from './Components/Scheduling/MeetingCalendar';
 import AssignmentList from './Components/Instructor/AssignmentList';
 import GradeAnalytics from './Components/Instructor/GradeAnalytics';
 import GradeRecording from './Components/Instructor/GradeRecording';
 import FeedbackInterface from './Components/Instructor/FeedbackInterface';
+import ResourceManagement from './Components/ResourceManagement/ResourceManagement';
+import ResourceManagementAndSharing from './Components/ResourceManagement/RManagement3';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -54,12 +55,13 @@ const routes1=[
     { path: '/mentorChat', name: 'MentorChat', element:MentorChat},
     { path: '/messagingInterface', name: 'MessagingInterface', element:MessagingInterface},
     { path: '/profile', name: 'Profile', element:Profile},
-    { path: '/scheduling', name: 'Scheduling', element:Scheduling},
     { path: '/meetingCalendar', name: 'MeetingCalendar', element:MeetingCalendar},
     { path: '/assignmentList', name: 'AssignmentList', element:AssignmentList},
     { path: '/gradeAnalytics', name: 'GradeAnalytics', element:GradeAnalytics},
     { path: '/gradeRecording', name: 'GradeRecording', element:GradeRecording},
     { path: '/feedbackInterface', name: 'FeedbackInterface', element:FeedbackInterface},
+    { path: '/resourceManagement', name: 'ResourceManagement', element:ResourceManagement},
+    { path: '/rManagement3', name: 'RManagement3', element:ResourceManagementAndSharing}
 
 ]
 export default routes1
