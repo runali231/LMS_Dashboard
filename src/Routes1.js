@@ -29,6 +29,9 @@ import GradeRecording from './Components/Instructor/GradeRecording';
 import FeedbackInterface from './Components/Instructor/FeedbackInterface';
 import ResourceManagement from './Components/ResourceManagement/ResourceManagement';
 import ResourceManagementAndSharing from './Components/ResourceManagement/RManagement3';
+import ResourceOrganizer from './Components/ResourceManagement/ResourceOrganizar';
+import NotificationMessage from './Components/Notification/NotificationMessage';
+import Feedback from './Components/Feedback/Feedback';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -61,7 +64,9 @@ const routes1=[
     { path: '/gradeRecording', name: 'GradeRecording', element:GradeRecording},
     { path: '/feedbackInterface', name: 'FeedbackInterface', element:FeedbackInterface},
     { path: '/resourceManagement', name: 'ResourceManagement', element:ResourceManagement},
-    { path: '/rManagement3', name: 'RManagement3', element:ResourceManagementAndSharing}
-
+    { path: '/rManagement3', name: 'RManagement3', element:ResourceManagementAndSharing},
+    { path: '/resourceOrganizer', name: 'ResourceOrganizer', element:ResourceOrganizer},
+    { path: '/notificationMessage', name: 'NotificationMessage', element:NotificationMessage},
+    { path: '/feedback', name: 'Feedback', element:Feedback},
 ]
 export default routes1

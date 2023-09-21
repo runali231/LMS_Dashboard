@@ -1,8 +1,66 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Table, Button, Modal, Form } from 'react-bootstrap';
+import {
+  Table,
+  Button,
+  Modal,
+  Form,
+  FormControl,
+  InputGroup,
+} from 'react-bootstrap';
 import { Delete, Edit, ViewAgenda } from '@material-ui/icons';
 import { Share } from 'react-bootstrap-icons';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+function ResourceTable({ resources, handleEdit, handleDelete, handleShare, handleView }) {
+  return (
+    <div className="table-responsive">
+        <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Date Uploaded</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {resources.map((resource, index) => (
+          <tr key={index}>
+            <td>{resource.title}</td>
+            <td>{resource.type}</td>
+            <td>{resource.dateUploaded}</td>
+            <td>
+              <Button variant="primary" onClick={() => handleEdit(resource)}>
+                <Edit />
+              </Button>
+              &nbsp;
+              <Button variant="danger" onClick={() => handleDelete(resource.id)}>
+                <Delete />
+              </Button>
+              &nbsp;
+              <Button variant="info" onClick={() => handleShare(resource.id)}>
+                <Share />
+              </Button>
+              &nbsp;
+              <Button variant="success" onClick={() => handleView(resource)}>
+                <ViewAgenda />
+              </Button>
+              {resource.sharedLink && (
+                <a href={resource.sharedLink} target="_blank" rel="noopener noreferrer">
+                  Shared Link
+                </a>
+              )}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </Table>
+    </div>
+  
+  );
+}
 
 function ResourceManagementAndSharing() {
   const [resourceType, setResourceType] = useState('document');
@@ -38,9 +96,27 @@ function ResourceManagementAndSharing() {
 
   const handleUpload = () => {
     if (resourceType === 'link') {
-      setResources([...resources, { type: resourceType, link: resourceLink, title: resourceTitle, dateUploaded: getCurrentDate() }]);
+      setResources([
+        ...resources,
+        {
+          id: Date.now(),
+          type: resourceType,
+          link: resourceLink,
+          title: resourceTitle,
+          dateUploaded: getCurrentDate(),
+        },
+      ]);
     } else if (resourceFile) {
-      setResources([...resources, { type: resourceType, file: resourceFile, title: resourceTitle, dateUploaded: getCurrentDate() }]);
+      setResources([
+        ...resources,
+        {
+          id: Date.now(),
+          type: resourceType,
+          file: resourceFile,
+          title: resourceTitle,
+          dateUploaded: getCurrentDate(),
+        },
+      ]);
     }
     // Reset form fields
     setResourceType('document');
@@ -49,358 +125,164 @@ function ResourceManagementAndSharing() {
     setResourceTitle('');
   };
 
-  const [showEditModal, setShowEditModal] = useState(false);
-  const [selectedResource, setSelectedResource] = useState({});
-  const [newTitle, setNewTitle] = useState('');
+  // Filtering and searching state
+  const [filter, setFilter] = useState('');
+  const [filterType, setFilterType] = useState('all');
 
-  const [showShareModal, setShowShareModal] = useState(false);
-  const [selectedCourse, setSelectedCourse] = useState('');
-  const [selectedStudents, setSelectedStudents] = useState([]);
-  const [shareOption, setShareOption] = useState('entireClass');
-
-  const [showViewModal, setShowViewModal] = useState(false);
-  const [selectedViewResource, setSelectedViewResource] = useState({});
-
-  const openEditModal = (resource) => {
-    setSelectedResource(resource);
-    setNewTitle(resource.title);
-    setShowEditModal(true);
+  // Handle filtering by title
+  const handleFilterChange = (e) => {
+    setFilter(e.target.value);
   };
 
-  const closeEditModal = () => {
-    setShowEditModal(false);
-    setSelectedResource({});
-    setNewTitle('');
+  // Handle filtering by resource type
+  const handleFilterTypeChange = (e) => {
+    setFilterType(e.target.value);
   };
 
-  const handleEdit = () => {
-    const updatedResources = resources.map((resource) =>
-      resource.id === selectedResource.id
-        ? { ...resource, title: newTitle }
-        : resource
-    );
-    setResources(updatedResources);
-    closeEditModal();
+  // Filter and search resources
+  const filteredResources = resources.filter((resource) => {
+    const titleMatch = resource.title.toLowerCase().includes(filter.toLowerCase());
+    const typeMatch = filterType === 'all' || resource.type === filterType;
+    return titleMatch && typeMatch;
+  });
+
+  // Handle Edit, Delete, Share, and View functions
+  const handleEdit = (resource) => {
+    // Implement edit functionality here
   };
 
   const handleDelete = (resourceId) => {
-    const updatedResources = resources.filter(
-      (resource) => resource.id !== resourceId
-    );
-    setResources(updatedResources);
+    // Implement delete functionality here
   };
 
   const handleShare = (resourceId) => {
-    setSelectedResource(resources.find((resource) => resource.id === resourceId));
-    setShowShareModal(true);
+    // Implement share functionality here
   };
 
-  const closeShareModal = () => {
-    setShowShareModal(false);
-    setSelectedResource(null);
-    setSelectedCourse('');
-    setSelectedStudents([]);
-    setShareOption('entireClass');
-  };
-
-  const handleResourceShare = () => {
-    // Add your logic here to handle resource sharing with selected course/students
-    console.log(
-      'Sharing resource',
-      selectedResource,
-      'with course',
-      selectedCourse,
-      'and students',
-      selectedStudents
-    );
-    closeShareModal();
-  };
-
-  const openViewModal = (resource) => {
-    setSelectedViewResource(resource);
-    setShowViewModal(true);
-  };
-
-  const closeViewModal = () => {
-    setShowViewModal(false);
-    setSelectedViewResource({});
+  const handleView = (resource) => {
+    // Implement view functionality here
   };
 
   return (
     <div className="container-fluid mt-5">
-    
-
+   
       {/* Resource Upload */}
-      <div className='card'>
-       <div className='card-header'>
-       <h4>Resource Management</h4>
-       </div>
-       <div className='card-body'>
-       <div className="mb-3">
-          <label htmlFor="resourceType" className="form-label">Select Resource Type</label>
-          <select
-            id="resourceType"
-            className="form-select"
-            value={resourceType}
-            onChange={handleResourceTypeChange}
-          >
-            <option value="document">Document</option>
-            <option value="image">Image</option>
-            <option value="video">Video</option>
-            <option value="link">Link</option>
-          </select>
+      <div className="card mt-4">
+        <div className="card-header">
+          <h4>Study material upload</h4>
         </div>
-
-        {/* Title field */}
-        <div className="mb-3">
-          <label htmlFor="resourceTitle" className="form-label">Title</label>
-          <input
-            type="text"
-            className="form-control"
-            id="resourceTitle"
-            value={resourceTitle}
-            onChange={handleTitleChange}
-          />
-        </div>
-
-        {resourceType === 'link' ? (
+        <div className="card-body">
           <div className="mb-3">
-            <label htmlFor="resourceLink" className="form-label">Enter Link</label>
+            <label htmlFor="resourceType" className="form-label">Select Resource Type</label>
+            <select
+              id="resourceType"
+              className="form-select"
+              value={resourceType}
+              onChange={handleResourceTypeChange}
+            >
+              <option value="document">Document</option>
+              <option value="image">Image</option>
+              <option value="video">Video</option>
+              <option value="link">Link</option>
+            </select>
+          </div>
+
+          {/* Title field */}
+          <div className="mb-3">
+            <label htmlFor="resourceTitle" className="form-label">Title</label>
             <input
               type="text"
               className="form-control"
-              id="resourceLink"
-              value={resourceLink}
-              onChange={handleLinkChange}
+              id="resourceTitle"
+              value={resourceTitle}
+              onChange={handleTitleChange}
             />
           </div>
-        ) : (
-          <div className="mb-3">
-            <label htmlFor="resourceFile" className="form-label">Upload File</label>
-            <input
-              type="file"
-              className="form-control"
-              id="resourceFile"
-              onChange={handleFileChange}
-            />
-          </div>
-        )}
 
-        <button className="btn btn-primary" onClick={handleUpload}>Upload</button>
+          {resourceType === 'link' ? (
+            <div className="mb-3">
+              <label htmlFor="resourceLink" className="form-label">Enter Link</label>
+              <input
+                type="text"
+                className="form-control"
+                id="resourceLink"
+                value={resourceLink}
+                onChange={handleLinkChange}
+              />
+            </div>
+          ) : (
+            <div className="mb-3">
+              <label htmlFor="resourceFile" className="form-label">Upload File</label>
+              <input
+                type="file"
+                className="form-control"
+                id="resourceFile"
+                onChange={handleFileChange}
+              />
+            </div>
+          )}
+
+          <Button className="btn btn-primary" onClick={handleUpload}>Upload</Button>
+        </div>
+      </div>
+
+      {/* Search and Filter */}
+      <div className="card mt-4">
+        <div className="card-header">
+          <h4>Study material</h4>
+        </div>
+        <div className="card-body">
+          <InputGroup className="mb-3">
+            <FormControl
+              placeholder="Search by title"
+              aria-label="Search by title"
+              aria-describedby="basic-addon2"
+              value={filter}
+              onChange={handleFilterChange}
+            />
+            <Form.Select
+              aria-label="Select resource type"
+              value={filterType}
+              onChange={handleFilterTypeChange}
+            >
+              <option value="all">All Types</option>
+              <option value="document">Document</option>
+              <option value="image">Image</option>
+              <option value="video">Video</option>
+              <option value="link">Link</option>
+            </Form.Select>
+          </InputGroup>
+
+          <ResourceTable
+        resources={filteredResources}
+        handleEdit={handleEdit}
+        handleDelete={handleDelete}
+        handleShare={handleShare}
+        handleView={handleView}
+      />
+        </div>
       </div>
 
       {/* Resource Management Table */}
-    
-       </div>
-       
-<div className='card'>
-  <div className='card-body'>
-  <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Type</th>
-            <th>Date Uploaded</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {resources.map((resource, index) => (
-            <tr key={index}>
-              <td>{resource.title}</td>
-              <td>{resource.type}</td>
-              <td>{resource.dateUploaded}</td>
-              <td>
-                <Button variant="primary" onClick={() => openEditModal(resource)}>
-                  {/* Edit */}
-                  <Edit/>
-                </Button>
-                &nbsp;
-                <Button variant="danger" onClick={() => handleDelete(resource.id)}>
-                  {/* Delete */}
-                 <Delete/>
-                </Button>
-                &nbsp;
-                <Button variant="info" onClick={() => handleShare(resource.id)}>
-                  {/* Share */}
-                  <Share/>
-                </Button>
-                &nbsp;
-                <Button variant="success" onClick={() => openViewModal(resource)}>
-                  {/* View */}
-                  {/* <ViewAgendaOutlined/> */}
-                  <ViewAgenda/>
-                </Button>
-                {resource.sharedLink && (
-                  <a href={resource.sharedLink} target="_blank" rel="noopener noreferrer">
-                    Shared Link
-                  </a>
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-  </div>
-</div>
+   
+
       {/* Edit Modal */}
-      <Modal show={showEditModal} onHide={closeEditModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Edit Resource</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <label htmlFor="newTitle">New Title:</label>
-          <input
-            type="text"
-            id="newTitle"
-            value={newTitle}
-            onChange={(e) => setNewTitle(e.target.value)}
-            className="form-control"
-          />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={closeEditModal}>
-            Cancel
-          </Button>
-          <Button variant="primary" onClick={handleEdit}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
+      <Modal>
+        {/* Implement edit modal content */}
       </Modal>
 
       {/* Share Modal */}
-      <Modal show={showShareModal} onHide={closeShareModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Share Resource</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group controlId="selectCourse">
-              <Form.Label>Select Course:</Form.Label>
-              <Form.Control
-                as="select"
-                value={selectedCourse}
-                onChange={(e) => setSelectedCourse(e.target.value)}
-              >
-                <option value="">Select a course</option>
-                <option value="course1">Course 1</option>
-                <option value="course2">Course 2</option>
-              </Form.Control>
-            </Form.Group>
-
-            <Form.Group controlId="selectStudents">
-              <Form.Label>Select Students:</Form.Label>
-              <Form.Control
-                as="select"
-                multiple
-                value={selectedStudents}
-                onChange={(e) =>
-                  setSelectedStudents(
-                    Array.from(
-                      e.target.selectedOptions,
-                      (item) => item.value
-                    )
-                  )
-                }
-              >
-                <option value="student1">Student 1</option>
-                <option value="student2">Student 2</option>
-                <option value="student3">Student 3</option>
-              </Form.Control>
-            </Form.Group>
-
-            <Form.Group controlId="shareOption">
-              <Form.Label>Share Option:</Form.Label>
-              <Form.Check
-                type="radio"
-                label="Share with entire class"
-                name="shareOption"
-                value="entireClass"
-                checked={shareOption === 'entireClass'}
-                onChange={() => setShareOption('entireClass')}
-              />
-              <Form.Check
-                type="radio"
-                label="Share with selected students"
-                name="shareOption"
-                value="selectedStudents"
-                checked={shareOption === 'selectedStudents'}
-                onChange={() => setShareOption('selectedStudents')}
-              />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={closeShareModal}>
-            Cancel
-          </Button>
-          <Button variant="primary" onClick={handleResourceShare}>
-            Share
-          </Button>
-        </Modal.Footer>
+      <Modal>
+        {/* Implement share modal content */}
       </Modal>
 
       {/* View Modal */}
-      <Modal show={showViewModal} onHide={closeViewModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>View Resource</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h5>Title: {selectedViewResource.title}</h5>
-          <p>Type: {selectedViewResource.type}</p>
-          <p>Date Uploaded: {selectedViewResource.dateUploaded}</p>
-          {/* Add logic to display the resource content */}
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={closeViewModal}>
-            Close
-          </Button>
-        </Modal.Footer>
+      <Modal>
+        {/* Implement view modal content */}
       </Modal>
-      {/* View Modal */}
-<Modal show={showViewModal} onHide={closeViewModal}>
-  <Modal.Header closeButton>
-    <Modal.Title>View Resource</Modal.Title>
-  </Modal.Header>
-  <Modal.Body>
-    {/* <h5>Title: {selectedViewResource.title}</h5>
-    <p>Type: {selectedViewResource.type}</p>
-    <p>Date Uploaded: {selectedViewResource.dateUploaded}</p> */}
 
-    {/* Display the uploaded file content */}
-    {selectedViewResource.type === 'document' && (
-      <iframe
-        title={selectedViewResource.title}
-        src={URL.createObjectURL(selectedViewResource.file)}
-        width="100%"
-        height="500"
-      ></iframe>
-    )}
-    {selectedViewResource.type === 'image' && (
-      <img
-        src={URL.createObjectURL(selectedViewResource.file)}
-        alt={selectedViewResource.title}
-        style={{ maxWidth: '100%', maxHeight: '500px' }}
-      />
-    )}
-    {selectedViewResource.type === 'video' && (
-      <video
-        controls
-        width="100%"
-        height="auto"
-      >
-        <source src={URL.createObjectURL(selectedViewResource.file)} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    )}
-  </Modal.Body>
-  <Modal.Footer>
-    <Button variant="secondary" onClick={closeViewModal}>
-      Close
-    </Button>
-  </Modal.Footer>
-</Modal>
-
+      {/* Notification Container */}
+      <ToastContainer />
     </div>
   );
 }
