@@ -11,7 +11,7 @@ import ParameterMaster from './Components/ParameterMaster/ParameterMaster';
 import ParameterValueMaster from './Components/ParameterMaster/ParameterValueMaster';
 import EmployeeMaster from './Components/EmployeeMaster/EmployeeMaster';
 import UserMaster from './Components/UserMaster/UserMaster';
-import CourseMaster from './Components/CourseMaster.js/CourseMaster';
+import CourseMaster from './Components/CourseMaster/CourseMaster';
 import EnrollmentMaster from './Components/EnrollmentMaster/EnrollmentMaster';
 import AssignmentMaster from './Components/Assignment Master/AssignmentMaster';
 import ContentMaster from './Components/ContentMaster/ContentMaster';
