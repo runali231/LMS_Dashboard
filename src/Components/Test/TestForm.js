@@ -84,12 +84,12 @@ const TestForm = () => {
 
   return (
     <>
-      <section className="container add-test">
+      <section className="container-fluid add-test">
         <h4 className="title mx-5 mt-3">Add Test</h4>
         {forms.map((form, index) => {
           return (
             <>
-              <div key={index} className="container mt-4 test">
+              <div key={index} className="container-fluid mt-4 test">
                 <div className="test-form row">
                   <div className="form-field col-lg-12">
                     <input

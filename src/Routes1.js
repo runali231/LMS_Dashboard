@@ -16,10 +16,22 @@ import EnrollmentMaster from './Components/EnrollmentMaster/EnrollmentMaster';
 import AssignmentMaster from './Components/Assignment Master/AssignmentMaster';
 import ContentMaster from './Components/ContentMaster/ContentMaster';
 import Course1 from './Components/Course/Course1';
+import Mentor from './Components/Mentor/Mentor';
+import CourseDetails1 from './Components/CourseDetails/CourseDetails1';
+import MentorDetails from './Components/Mentor/MentorDetails';
+import MentorChat from './Components/Mentor/MentorChat';
+import MessagingInterface from './Components/Mentor/MessagingInterface';
+import Profile from './Components/Profile/Profile';
+import MeetingCalendar from './Components/Scheduling/MeetingCalendar';
+import AssignmentList from './Components/Instructor/AssignmentList';
+import GradeAnalytics from './Components/Instructor/GradeAnalytics';
+import GradeRecording from './Components/Instructor/GradeRecording';
+import FeedbackInterface from './Components/Instructor/FeedbackInterface';
+import ResourceManagement from './Components/ResourceManagement/ResourceManagement';
+import ResourceManagementAndSharing from './Components/ResourceManagement/RManagement3';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
-
     { path: '/courses', name: 'Courses', element:Courses},
     { path: '/addCourse', name: 'AddCourse', element:AddCourse},
     { path: '/courseDetails', name: 'CourseDetails', element:CourseDetails},
@@ -37,6 +49,19 @@ const routes1=[
     { path: '/assignmentMaster', name: 'AssignmentMaster', element:AssignmentMaster},
     { path: '/contentMaster', name: 'ContentMaster', element:ContentMaster},
     { path: '/course1', name: 'Course1', element:Course1},
+    { path: '/mentor', name: 'Mentor', element:Mentor},
+    { path: '/mentorDetails', name: 'MentorDetails', element:MentorDetails},
+    { path: '/courseDetails1', name: 'CourseDetails1', element:CourseDetails1},
+    { path: '/mentorChat', name: 'MentorChat', element:MentorChat},
+    { path: '/messagingInterface', name: 'MessagingInterface', element:MessagingInterface},
+    { path: '/profile', name: 'Profile', element:Profile},
+    { path: '/meetingCalendar', name: 'MeetingCalendar', element:MeetingCalendar},
+    { path: '/assignmentList', name: 'AssignmentList', element:AssignmentList},
+    { path: '/gradeAnalytics', name: 'GradeAnalytics', element:GradeAnalytics},
+    { path: '/gradeRecording', name: 'GradeRecording', element:GradeRecording},
+    { path: '/feedbackInterface', name: 'FeedbackInterface', element:FeedbackInterface},
+    { path: '/resourceManagement', name: 'ResourceManagement', element:ResourceManagement},
+    { path: '/rManagement3', name: 'RManagement3', element:ResourceManagementAndSharing}
 
 ]
 export default routes1

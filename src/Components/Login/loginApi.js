@@ -1,4 +1,5 @@
 const BaseUrl = "http://localhost:800/";
+// const BaseUrl ="https://lmsapi.initialinfinity.com/"
 
 export const loginUser = async (email, password) => {
   try {

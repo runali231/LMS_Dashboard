@@ -22,7 +22,8 @@ const Courses = () => {
   };
 
   const handleNavigate1 = (course) => {
-    navigate('/courseDetails');
+    // navigate('/courseDetails');
+    navigate('/courseDetails1');
     localStorage.setItem("course_id", course);
   };
 

@@ -110,10 +110,14 @@ const AddCourse = () => {
 
   return (
     <>
-      <section className="container mt-5">
-        <h3 className="mx-4">Add Course Details</h3>
+      <section className="container-fluid mt-5">
+       
         <div className="card shadow p-2 m-3 mt-5">
-          <div className="container py-3">
+          <div className="card-header" style={{"backgroundColor":"white"}}>
+          <h3 className="mx-4">Add Course Details</h3>
+          </div>
+          <div className="card-body">
+          <div className="container-fluid py-3">
             <div className="row">
               <div className="col-lg-6">
                 <div className="row">
@@ -464,6 +468,8 @@ const AddCourse = () => {
               </div>
             </div>
           </div>
+          </div>
+         
         </div>
       </section>
     </>

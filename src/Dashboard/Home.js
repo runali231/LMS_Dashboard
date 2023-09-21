@@ -11,11 +11,16 @@ import {
 } from "react-bootstrap-icons";
 import { NavLink } from "react-router-dom";
 import TheContent from "../TheContent";
+import '../Components/Css/Profile.css';
 
 const Home = (props) => {
   const [sidebar, setSidebar] = useState({ data: true });
   const [content, setContent] = useState(true);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setIsSubMenuOpen(!isSubMenuOpen);
+  };
   const name = !sidebar;
   useEffect(() => {
     const styles = {
@@ -76,18 +81,18 @@ const Home = (props) => {
               </li>
               <li className="dropdown">
                 <NavLink
-                  to="/homeSubmenu1"
-                  data-bs-toggle="collapse"
-                  aria-expanded="false"
-                  className="dropdown-toggle"
-                  data-bs-target="#homeSubmenu1"
+                  to="/courses"
+                  // data-bs-toggle="collapse"
+                  // aria-expanded="false"
+                  // className="dropdown-toggle"
+                  // data-bs-target="#homeSubmenu1"
                   role="button"
-                  aria-controls="homeSubmenu1"
+                // aria-controls="homeSubmenu1"
                 >
                   <Puzzle style={{ fontSize: "22px" }} />
                   <span className="ms-3">Courses</span>
                 </NavLink>
-                <ul className="collapse list-unstyled menu" id="homeSubmenu1">
+                {/* <ul className="collapse list-unstyled menu" id="homeSubmenu1">
                   <li>
                     <NavLink to="/addCourse" onClick={() => setSidebar(!sidebar)}>
                       Add Course
@@ -108,8 +113,44 @@ const Home = (props) => {
                       Test
                     </NavLink>
                   </li>
-                </ul>
+                </ul> */}
               </li>
+              <li className="dropdown">
+                <NavLink
+                  to="/assignmentList"
+                  role="button"
+                >
+                  <Puzzle style={{ fontSize: "22px" }} />
+                  <span className="ms-3">Assignment List</span>
+                </NavLink>
+                </li>
+                <li className="dropdown">
+                <NavLink
+                  to="/gradeAnalytics"
+                  role="button"
+                >
+                  <Puzzle style={{ fontSize: "22px" }} />
+                  <span className="ms-3">Grade Analytics</span>
+                </NavLink>
+                </li>
+                <li className="dropdown">
+                <NavLink
+                  to="/gradeRecording"
+                  role="button"
+                >
+                  <Puzzle style={{ fontSize: "22px" }} />
+                  <span className="ms-3">Grade Recording</span>
+                </NavLink>
+                </li>
+                <li className="dropdown">
+                <NavLink
+                  to="/feedbackInterface"
+                  role="button"
+                >
+                  <Puzzle style={{ fontSize: "22px" }} />
+                  <span className="ms-3">Feedback Interface</span>
+                </NavLink>
+                </li>
             </ul>
           </nav>
         )}
@@ -117,7 +158,7 @@ const Home = (props) => {
         <div id="content" style={{ width: sidebar ? content : "100%" }}>
           {content && (
             <div className="top-navbar ">
-              <nav className="navbar navbar-expand-lg sticky-top " style={{backgroundColor: '#1B5A90'}}>
+              <nav className="navbar navbar-expand-lg sticky-top " style={{ backgroundColor: '#1B5A90' }}>
                 <button
                   type="button"
                   id="sidebar-collapse"
@@ -191,13 +232,42 @@ const Home = (props) => {
 
                       </NavLink>
                     </li>
-                    <li className="nav-item">
-                      <NavLink className="nav-link" to="/">
+                    <li className="nav-item ">
+                      <div className="nav-link" onClick={toggleMenu} >
                         {/* <span className="material-icons">person</span> */}
 
                         <PersonFill style={{ fontSize: '24px', color: 'white' }} />
 
-                      </NavLink>
+                        <div className={`sub-menu-wrap ${isSubMenuOpen ? 'open-menu' : ''}`} id="subMenu" style={{ "backgroundColor": "rgb(27, 90, 144)" }}>
+                          <div className='sub-menu'>
+                            <div className='user-info'>
+                              <img src='Images/user.png' alt='User' />
+                              <h4>Runali Kadam</h4>
+                            </div>
+                          </div>
+                          <hr className="sub-menu-hr"/>
+                          <NavLink to="/profile" className='sub-menu-link'>
+                            <img src='Images/profile.png' alt='Profile' />
+                            <p>Edit Profile</p>
+                            <span></span>
+                          </NavLink>
+                          <NavLink to="/" className='sub-menu-link'>
+                            <img src='Images/setting.png' alt='Settings' />
+                            <p>Setting & Privacy</p>
+                            <span></span>
+                          </NavLink>
+                          <NavLink to="/" className='sub-menu-link'>
+                            <img src='Images/help.png' alt='Help' />
+                            <p>Help & Support</p>
+                            <span></span>
+                          </NavLink>
+                          <NavLink to="/" className='sub-menu-link'>
+                            <img src='Images/logout.png' alt='Logout' />
+                            <p>Logout</p>
+                            <span></span>
+                          </NavLink>
+                        </div>
+                      </div>
                     </li>
                     <li className="nav-item">
                       <NavLink className="nav-link" to="/">

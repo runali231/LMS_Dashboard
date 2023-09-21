@@ -274,7 +274,7 @@ a,a:hover,a:focus{
 }
 .navbar-nav li a{
     position: relative;
-    display: block;
+    /* display: block; */
     padding: 10px 15px!important;
 }
 
