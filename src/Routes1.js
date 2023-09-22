@@ -32,6 +32,8 @@ import ResourceManagementAndSharing from './Components/ResourceManagement/RManag
 import ResourceOrganizer from './Components/ResourceManagement/ResourceOrganizar';
 import NotificationMessage from './Components/Notification/NotificationMessage';
 import Feedback from './Components/Feedback/Feedback';
+import Assessment from './Components/Assessment/Assessment';
+import CountDownTimer from './Components/Assessment/CountDownTimer';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -68,5 +70,8 @@ const routes1=[
     { path: '/resourceOrganizer', name: 'ResourceOrganizer', element:ResourceOrganizer},
     { path: '/notificationMessage', name: 'NotificationMessage', element:NotificationMessage},
     { path: '/feedback', name: 'Feedback', element:Feedback},
+    { path: '/assessment', name: 'Assessment', element:Assessment},
+    { path: '/countDownTimer', name: 'CountDownTimer', element:CountDownTimer},
+    
 ]
 export default routes1
