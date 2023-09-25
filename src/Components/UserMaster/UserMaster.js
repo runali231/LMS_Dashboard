@@ -151,7 +151,7 @@ const UserMaster = () => {
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Employee Name <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-3" autoComplete="off" placeholder="Enter name" required />
+                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-2" autoComplete="off" placeholder="Enter name" required />
                                         </div>
                                     </div>
 
@@ -159,18 +159,18 @@ const UserMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Email Id <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" maxLength="10" className="form-control mt-3" placeholder="Enter contact number" required />
+                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" maxLength="10" className="form-control mt-2" placeholder="Enter contact number" required />
                                             <span id="message"></span>
 
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="row mt-3">
+                                <div className="row mt-2">
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Date of Birth <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-3" autoComplete="off" placeholder="Enter name" required />
+                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-2" autoComplete="off" placeholder="Enter name" required />
                                         </div>
                                     </div>
 
@@ -178,18 +178,18 @@ const UserMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Contact No  <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" maxLength="10" className="form-control mt-3" placeholder="Enter contact number" required />
+                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" maxLength="10" className="form-control mt-2" placeholder="Enter contact number" required />
                                             <span id="message"></span>
 
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="row mt-3">
+                                <div className="row mt-2">
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Designation <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-3" autoComplete="off" placeholder="Enter name" required />
+                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-2" autoComplete="off" placeholder="Enter name" required />
                                         </div>
                                     </div>
 
@@ -197,18 +197,18 @@ const UserMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Address <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" maxLength="10" className="form-control mt-3" placeholder="Enter contact number" required />
+                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" maxLength="10" className="form-control mt-2" placeholder="Enter contact number" required />
                                             <span id="message"></span>
 
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="row mt-3">
+                                <div className="row mt-2">
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Gender<span className="text-danger">*</span></label>
-                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-3" autoComplete="off" placeholder="Enter name" required />
+                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-2" autoComplete="off" placeholder="Enter name" required />
                                         </div>
                                     </div>
 
@@ -255,7 +255,7 @@ const UserMaster = () => {
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Employee Name <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-3" autoComplete="off" placeholder="Enter name" required />
+                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-2" autoComplete="off" placeholder="Enter name" required />
                                         </div>
                                     </div>
 
@@ -263,18 +263,18 @@ const UserMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Email Id <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" maxLength="10" className="form-control mt-3" placeholder="Enter contact number" required />
+                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" maxLength="10" className="form-control mt-2" placeholder="Enter contact number" required />
                                             <span id="message"></span>
 
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="row mt-3">
+                                <div className="row mt-2">
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Date of Birth <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-3" autoComplete="off" placeholder="Enter name" required />
+                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-2" autoComplete="off" placeholder="Enter name" required />
                                         </div>
                                     </div>
 
@@ -282,18 +282,18 @@ const UserMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Contact No  <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" maxLength="10" className="form-control mt-3" placeholder="Enter contact number" required />
+                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" maxLength="10" className="form-control mt-2" placeholder="Enter contact number" required />
                                             <span id="message"></span>
 
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="row mt-3">
+                                <div className="row mt-2">
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Designation <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-3" autoComplete="off" placeholder="Enter name" required />
+                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-2" autoComplete="off" placeholder="Enter name" required />
                                         </div>
                                     </div>
 
@@ -301,18 +301,18 @@ const UserMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Address <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" maxLength="10" className="form-control mt-3" placeholder="Enter contact number" required />
+                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" maxLength="10" className="form-control mt-2" placeholder="Enter contact number" required />
                                             <span id="message"></span>
 
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="row mt-3">
+                                <div className="row mt-2">
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Gender<span className="text-danger">*</span></label>
-                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-3" autoComplete="off" placeholder="Enter name" required />
+                                            <input type="text" id="txtEmployeeName" name="txtEmployeeName" className="form-control mt-2" autoComplete="off" placeholder="Enter name" required />
                                         </div>
                                     </div>
 

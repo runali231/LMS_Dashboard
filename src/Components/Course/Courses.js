@@ -143,7 +143,7 @@ const Courses = () => {
                   </div>
                 </div>
               </div>
-          <div className="row">
+          <div className="row mt-4">
             {
               courses.map((course, index) => {
                 return (

@@ -178,7 +178,7 @@ const ContentMaster = () => {
                         type="text"
                         id="title"
                         name="title"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter title"
                         required
@@ -193,7 +193,7 @@ const ContentMaster = () => {
                       </label>
                       <textarea
                       type="text"
-                      className="form-control mt-3"
+                      className="form-control mt-2"
                       id="description"
                       placeholder="Enter Content Description"
                       name="description"
@@ -202,7 +202,7 @@ const ContentMaster = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row mt-3">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
@@ -212,7 +212,7 @@ const ContentMaster = () => {
                         type="text"
                         id="notes"
                         name="notes"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter notes"
                         required
@@ -230,14 +230,14 @@ const ContentMaster = () => {
                         id="image"
                         name="image"
                         autoComplete="off"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         required
                       />
                       <span id="message"></span>
                     </div>
                   </div>
                 </div>
-                <div className="row mt-3">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
@@ -247,7 +247,7 @@ const ContentMaster = () => {
                         type="text"
                         id="video"
                         name="video"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter video link"
                         required
@@ -303,7 +303,7 @@ const ContentMaster = () => {
                         type="text"
                         id="title"
                         name="title"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter title"
                         required
@@ -318,7 +318,7 @@ const ContentMaster = () => {
                       </label>
                       <textarea
                       type="text"
-                      className="form-control mt-3"
+                      className="form-control mt-2"
                       id="description"
                       placeholder="Enter Content Description"
                       name="description"
@@ -327,7 +327,7 @@ const ContentMaster = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row mt-3">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
@@ -337,7 +337,7 @@ const ContentMaster = () => {
                         type="text"
                         id="notes"
                         name="notes"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter notes"
                         required
@@ -355,14 +355,14 @@ const ContentMaster = () => {
                         id="image"
                         name="image"
                         autoComplete="off"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         required
                       />
                       <span id="message"></span>
                     </div>
                   </div>
                 </div>
-                <div className="row mt-3">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
@@ -372,7 +372,7 @@ const ContentMaster = () => {
                         type="text"
                         id="video"
                         name="video"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter video link"
                         required

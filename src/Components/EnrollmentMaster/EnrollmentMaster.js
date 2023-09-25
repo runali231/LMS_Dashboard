@@ -188,7 +188,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="enrollmentId"
                         name="enrollmentId"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter course name"
                         required
@@ -206,7 +206,7 @@ const EnrollmentMaster = () => {
                         id="enrollmentType"
                         name="enrollmentType"
                         autoComplete="off"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         placeholder="Enter session name"
                         required
                       />
@@ -214,7 +214,7 @@ const EnrollmentMaster = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row mt-3">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
@@ -224,7 +224,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="enrollmentDate"
                         name="enrollmentDate"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter course duration"
                         required
@@ -242,7 +242,7 @@ const EnrollmentMaster = () => {
                         id="completionDate"
                         name="completionDate"
                         autoComplete="off"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         placeholder="Enter course category"
                         required
                       />
@@ -250,7 +250,7 @@ const EnrollmentMaster = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row mt-3">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
@@ -260,7 +260,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="source"
                         name="source"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter course level"
                         required
@@ -278,7 +278,7 @@ const EnrollmentMaster = () => {
                         id="Grade"
                         name="Grade"
                         autoComplete="off"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         placeholder="Enter price"
                         required
                       />
@@ -286,14 +286,14 @@ const EnrollmentMaster = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row mt-3">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
                         Enrollment status<span className="text-danger">*</span>
                       </label>
                       <select
-                        className="form-select mt-3"
+                        className="form-select mt-2"
                         aria-label="Default select example"
                         
                       >
@@ -355,7 +355,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="courseName"
                         name="courseName"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter course name"
                         required
@@ -373,7 +373,7 @@ const EnrollmentMaster = () => {
                         id="sessionName"
                         name="sessionName"
                         autoComplete="off"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         placeholder="Enter session name"
                         required
                       />
@@ -381,7 +381,7 @@ const EnrollmentMaster = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row mt-3">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
@@ -391,7 +391,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="courseDuration"
                         name="courseDuration"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter course duration"
                         required
@@ -409,7 +409,7 @@ const EnrollmentMaster = () => {
                         id="courseCategory"
                         name="courseCategory"
                         autoComplete="off"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         placeholder="Enter course category"
                         required
                       />
@@ -417,7 +417,7 @@ const EnrollmentMaster = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row mt-3">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
@@ -427,7 +427,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="courseLevel"
                         name="courseLevel"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter course level"
                         required
@@ -445,7 +445,7 @@ const EnrollmentMaster = () => {
                         id="price"
                         name="price"
                         autoComplete="off"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         placeholder="Enter price"
                         required
                       />
@@ -453,7 +453,7 @@ const EnrollmentMaster = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row mt-3">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
@@ -463,7 +463,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="studyMaterial"
                         name="studyMaterial"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter study material"
                         required
@@ -480,7 +480,7 @@ const EnrollmentMaster = () => {
                         type="text"
                         id="certificate"
                         name="certificate"
-                        className="form-control mt-3"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter certificate"
                         required
@@ -488,14 +488,14 @@ const EnrollmentMaster = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row mt-3">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
                       <label className="control-label">
                         Enrollment status<span className="text-danger">*</span>
                       </label>
                       <select
-                        className="form-select mt-3"
+                        className="form-select mt-2"
                         aria-label="Default select example"
                         
                       >

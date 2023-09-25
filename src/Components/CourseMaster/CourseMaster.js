@@ -148,7 +148,7 @@ const CourseMaster = () => {
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Course Name <span className="text-danger">*</span></label>
-                                            <input type="text" id="courseName" name="courseName" className="form-control mt-3" autocomplete="off" placeholder="Enter course name" required />
+                                            <input type="text" id="courseName" name="courseName" className="form-control mt-2" autocomplete="off" placeholder="Enter course name" required />
                                         </div>
                                     </div>
 
@@ -156,18 +156,18 @@ const CourseMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Session Name<span className="text-danger">*</span></label>
-                                            <input type="text" id="sessionName" name="sessionName" autocomplete="off" className="form-control mt-3" placeholder="Enter session name" required />
+                                            <input type="text" id="sessionName" name="sessionName" autocomplete="off" className="form-control mt-2" placeholder="Enter session name" required />
                                             <span id="message"></span>
 
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="row mt-3">
+                                <div className="row mt-2">
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Course Duration<span className="text-danger">*</span></label>
-                                            <input type="text" id="courseDuration" name="courseDuration" className="form-control mt-3" autocomplete="off" placeholder="Enter course duration" required />
+                                            <input type="text" id="courseDuration" name="courseDuration" className="form-control mt-2" autocomplete="off" placeholder="Enter course duration" required />
                                         </div>
                                     </div>
 
@@ -175,18 +175,18 @@ const CourseMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Course Category<span className="text-danger">*</span></label>
-                                            <input type="text" id="courseCategory" name="courseCategory" autocomplete="off" className="form-control mt-3" placeholder="Enter course category" required />
+                                            <input type="text" id="courseCategory" name="courseCategory" autocomplete="off" className="form-control mt-2" placeholder="Enter course category" required />
                                             <span id="message"></span>
 
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="row mt-3">
+                                <div className="row mt-2">
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Course level <span className="text-danger">*</span></label>
-                                            <input type="text" id="courseLevel" name="courseLevel" className="form-control mt-3" autocomplete="off" placeholder="Enter course level" required />
+                                            <input type="text" id="courseLevel" name="courseLevel" className="form-control mt-2" autocomplete="off" placeholder="Enter course level" required />
                                         </div>
                                     </div>
 
@@ -194,25 +194,25 @@ const CourseMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Price <span className="text-danger">*</span></label>
-                                            <input type="text" id="price" name="price" autocomplete="off"  className="form-control mt-3" placeholder="Enter price" required />
+                                            <input type="text" id="price" name="price" autocomplete="off"  className="form-control mt-2" placeholder="Enter price" required />
                                             <span id="message"></span>
 
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="row mt-3">
+                                <div className="row mt-2">
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Study Material<span className="text-danger">*</span></label>
-                                            <input type="text" id="studyMaterial" name="studyMaterial" className="form-control mt-3" autocomplete="off" placeholder="Enter study material" required />
+                                            <input type="text" id="studyMaterial" name="studyMaterial" className="form-control mt-2" autocomplete="off" placeholder="Enter study material" required />
                                         </div>
                                     </div>
 
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Certificate<span className="text-danger">*</span></label>
-                                            <input type="text" id="certificate" name="certificate" className="form-control mt-3" autocomplete="off" placeholder="Enter certificate" required />
+                                            <input type="text" id="certificate" name="certificate" className="form-control mt-2" autocomplete="off" placeholder="Enter certificate" required />
                                         </div>
                                     </div>
 
@@ -258,7 +258,7 @@ const CourseMaster = () => {
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Course Name <span className="text-danger">*</span></label>
-                                            <input type="text" id="courseName" name="courseName" className="form-control mt-3" autocomplete="off" placeholder="Enter course name" required />
+                                            <input type="text" id="courseName" name="courseName" className="form-control mt-2" autocomplete="off" placeholder="Enter course name" required />
                                         </div>
                                     </div>
 
@@ -266,18 +266,18 @@ const CourseMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Session Name<span className="text-danger">*</span></label>
-                                            <input type="text" id="sessionName" name="sessionName" autocomplete="off" className="form-control mt-3" placeholder="Enter session name" required />
+                                            <input type="text" id="sessionName" name="sessionName" autocomplete="off" className="form-control mt-2" placeholder="Enter session name" required />
                                             <span id="message"></span>
 
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="row mt-3">
+                                <div className="row mt-2">
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Course Duration<span className="text-danger">*</span></label>
-                                            <input type="text" id="courseDuration" name="courseDuration" className="form-control mt-3" autocomplete="off" placeholder="Enter course duration" required />
+                                            <input type="text" id="courseDuration" name="courseDuration" className="form-control mt-2" autocomplete="off" placeholder="Enter course duration" required />
                                         </div>
                                     </div>
 
@@ -285,18 +285,18 @@ const CourseMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Course Category<span className="text-danger">*</span></label>
-                                            <input type="text" id="courseCategory" name="courseCategory" autocomplete="off" className="form-control mt-3" placeholder="Enter course category" required />
+                                            <input type="text" id="courseCategory" name="courseCategory" autocomplete="off" className="form-control mt-2" placeholder="Enter course category" required />
                                             <span id="message"></span>
 
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="row mt-3">
+                                <div className="row mt-2">
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Course level <span className="text-danger">*</span></label>
-                                            <input type="text" id="courseLevel" name="courseLevel" className="form-control mt-3" autocomplete="off" placeholder="Enter course level" required />
+                                            <input type="text" id="courseLevel" name="courseLevel" className="form-control mt-2" autocomplete="off" placeholder="Enter course level" required />
                                         </div>
                                     </div>
 
@@ -304,25 +304,25 @@ const CourseMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Price <span className="text-danger">*</span></label>
-                                            <input type="text" id="price" name="price" autocomplete="off"  className="form-control mt-3" placeholder="Enter price" required />
+                                            <input type="text" id="price" name="price" autocomplete="off"  className="form-control mt-2" placeholder="Enter price" required />
                                             <span id="message"></span>
 
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="row mt-3">
+                                <div className="row mt-2">
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Study Material<span className="text-danger">*</span></label>
-                                            <input type="text" id="studyMaterial" name="studyMaterial" className="form-control mt-3" autocomplete="off" placeholder="Enter study material" required />
+                                            <input type="text" id="studyMaterial" name="studyMaterial" className="form-control mt-2" autocomplete="off" placeholder="Enter study material" required />
                                         </div>
                                     </div>
 
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                                         <div className="form-group form-group-sm">
                                             <label className="control-label">Certificate<span className="text-danger">*</span></label>
-                                            <input type="text" id="certificate" name="certificate" className="form-control mt-3" autocomplete="off" placeholder="Enter certificate" required />
+                                            <input type="text" id="certificate" name="certificate" className="form-control mt-2" autocomplete="off" placeholder="Enter certificate" required />
                                         </div>
                                     </div>
 

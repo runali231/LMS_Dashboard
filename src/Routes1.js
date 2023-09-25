@@ -34,6 +34,7 @@ import NotificationMessage from './Components/Notification/NotificationMessage';
 import Feedback from './Components/Feedback/Feedback';
 import Assessment from './Components/Assessment/Assessment';
 import CountDownTimer from './Components/Assessment/CountDownTimer';
+import PdfViewer from './Components/pdf/PdfViewer';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -72,6 +73,7 @@ const routes1=[
     { path: '/feedback', name: 'Feedback', element:Feedback},
     { path: '/assessment', name: 'Assessment', element:Assessment},
     { path: '/countDownTimer', name: 'CountDownTimer', element:CountDownTimer},
+    { path: '/pdfViewer', name: 'pdfViewer', element:PdfViewer},
     
 ]
 export default routes1
