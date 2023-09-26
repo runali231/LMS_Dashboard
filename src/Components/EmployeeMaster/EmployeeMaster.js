@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import $ from 'jquery';
 import '../Css/DataTable.css'
-import { Edit } from '@material-ui/icons';
 import { Eye } from 'react-bootstrap-icons';
+import { Table, Button } from 'react-bootstrap';
+import { Delete, Edit } from '@material-ui/icons';
 
 
 const EmployeeMaster = () => {
@@ -71,7 +72,7 @@ const EmployeeMaster = () => {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td scope="row"><Edit data-bs-toggle="modal"
+                                            <td ><Edit data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal1" />&nbsp;&nbsp;
                                                 <Eye data-bs-toggle="modal"
                                                     data-bs-target="#parameterValueMaster" />
@@ -89,7 +90,7 @@ const EmployeeMaster = () => {
                                             <td>Remark</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><Edit data-bs-toggle="modal"
+                                            <td><Edit data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal1" />&nbsp;&nbsp;
                                                 <Eye data-bs-toggle="modal"
                                                     data-bs-target="#parameterValueMaster" />
@@ -107,7 +108,7 @@ const EmployeeMaster = () => {
                                             <td>Remark</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><Edit data-bs-toggle="modal"
+                                            <td ><Edit data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal1" />&nbsp;&nbsp;
                                                 <Eye data-bs-toggle="modal"
                                                     data-bs-target="#parameterValueMaster" />
@@ -126,6 +127,75 @@ const EmployeeMaster = () => {
                                         </tr>
                                     </tbody>
                                 </table>
+
+                                <Table striped bordered hover>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Action</th>
+                                            <th scope="col">Employee Id</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Designation</th>
+                                            <th scope="col">Date of Birth</th>
+                                            <th scope="col">Contact No.</th>
+                                            <th scope="col">Email Id</th>
+                                            <th scope="col">Address</th>
+                                            <th scope="col">Gender</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Remark</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr key={1}>
+                                        <td ><Edit data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal1" />&nbsp;&nbsp;
+                                                <Eye data-bs-toggle="modal"
+                                                    data-bs-target="#parameterValueMaster" />
+                                            </td>
+
+                                            <td>Employee Id</td>
+                                            <td>Name</td>
+                                            <td>Designation</td>
+                                            <td>Date of Birth</td>
+                                            <td>Contact No.</td>
+                                            <td>Email Id</td>
+                                            <td>Address</td>
+                                            <td>Gender</td>
+                                            <td>Status</td>
+                                            <td>Remark</td>
+                                        </tr>
+                                        <tr key={1}>
+                                            <td>Student 2</td>
+
+                                            <td>
+                                                <Button
+                                                    variant="primary"
+
+                                                >
+                                                    Provide Feedback
+                                                </Button>
+                                            </td>
+                                            <td>
+                                                <Button
+                                                    variant="primary"
+
+                                                >
+
+                                                    <Edit />
+                                                </Button>
+                                            </td>
+                                            <td>
+                                                <Button
+                                                    variant="primary"
+
+                                                >
+
+                                                    <Delete />
+                                                </Button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
                             </div>
                         </div>
                     </div>
@@ -165,7 +235,7 @@ const EmployeeMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Email Id <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off"  className="form-control mt-2" placeholder="Enter contact number" required />
+                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" className="form-control mt-2" placeholder="Enter contact number" required />
                                             <span id="message"></span>
 
                                         </div>
@@ -184,7 +254,7 @@ const EmployeeMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Contact No  <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off"  className="form-control mt-2" placeholder="Enter contact number" required />
+                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" className="form-control mt-2" placeholder="Enter contact number" required />
                                             <span id="message"></span>
 
                                         </div>
@@ -203,7 +273,7 @@ const EmployeeMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Address <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off"  className="form-control mt-2" placeholder="Enter contact number" required />
+                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" className="form-control mt-2" placeholder="Enter contact number" required />
                                             <span id="message"></span>
 
                                         </div>
@@ -269,7 +339,7 @@ const EmployeeMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Email Id <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off"  className="form-control " placeholder="Enter contact number" required />
+                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" className="form-control " placeholder="Enter contact number" required />
                                             <span id="message"></span>
 
                                         </div>
@@ -288,7 +358,7 @@ const EmployeeMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Contact No  <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off"  className="form-control " placeholder="Enter contact number" required />
+                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" className="form-control " placeholder="Enter contact number" required />
                                             <span id="message"></span>
 
                                         </div>
@@ -307,8 +377,8 @@ const EmployeeMaster = () => {
                                         <div className="form-group form-group-sm">
 
                                             <label className="control-label">Address <span className="text-danger">*</span></label>
-                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off" 
-                                             className="form-control " placeholder="Enter contact number" required />
+                                            <input type="text" id="txtContactDetails" name="txtContactDetails" autoComplete="off"
+                                                className="form-control " placeholder="Enter contact number" required />
                                             <span id="message"></span>
 
                                         </div>
