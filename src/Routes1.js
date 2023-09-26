@@ -35,6 +35,8 @@ import Feedback from './Components/Feedback/Feedback';
 import Assessment from './Components/Assessment/Assessment';
 import CountDownTimer from './Components/Assessment/CountDownTimer';
 import PdfViewer from './Components/pdf/PdfViewer';
+import VideoLectures from './Components/pdf/VideoLectures';
+import PptLectures from './Components/pdf/PptLectures';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -73,7 +75,9 @@ const routes1=[
     { path: '/feedback', name: 'Feedback', element:Feedback},
     { path: '/assessment', name: 'Assessment', element:Assessment},
     { path: '/countDownTimer', name: 'CountDownTimer', element:CountDownTimer},
-    { path: '/pdfViewer', name: 'pdfViewer', element:PdfViewer},
+    { path: '/pdfViewer', name: 'PdfViewer', element:PdfViewer},
+    { path: '/videoLectures', name: 'VideoLectures', element:VideoLectures},
+    { path: '/pptLectures', name: 'PptLectures', element:PptLectures},
     
 ]
 export default routes1

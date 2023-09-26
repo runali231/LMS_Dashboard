@@ -6521,9 +6521,9 @@
     display: table-cell !important;
   }
   
-  .d-flex {
+  /* .d-flex {
     display: flex !important;
-  }
+  } */
   
   .d-inline-flex {
     display: inline-flex !important;
