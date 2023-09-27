@@ -3,6 +3,7 @@ import $ from 'jquery';
 import '../Css/DataTable.css'
 import { Edit} from '@material-ui/icons';
 import { Eye } from 'react-bootstrap-icons';
+import { Table } from 'react-bootstrap';
 
 
 const ParameterMaster = () => {
@@ -20,6 +21,10 @@ const ParameterMaster = () => {
       responsive: true
     });
   }, []);
+  const headerCellStyle = {
+    backgroundColor: 'rgb(27, 90, 144)', // Replace with your desired background color
+    color: '#fff', // Optional: Set the text color to contrast with the background
+  };
   return (
     <>
       <div className='container-fluid'>
@@ -51,7 +56,7 @@ const ParameterMaster = () => {
                 </div>
               </div>
               <div className='card-body pt-5'>
-                <table id="example" className="display mt-5 table-responsive table-borderless hover-table" style={{ width: '100%' }}>
+                {/* <table id="example" className="display mt-5 table-responsive table-borderless hover-table" style={{ width: '100%' }}>
 
                   <thead className='text-light' style={{ backgroundColor: '#1B5A90' }}>
                     <tr>
@@ -102,7 +107,97 @@ const ParameterMaster = () => {
                       <td>06/09/2023</td>
                     </tr>
                   </tbody>
-                </table>
+                </table> */}
+                <div className="row " >
+                  <div className="col-lg-3 d-flex"><h6 className='mt-2'>Show</h6>&nbsp;&nbsp;<select className="form-select w-auto" aria-label="Default select example">
+                    <option selected>10</option>
+                    <option value="1">10</option>
+                    <option value="2">50</option>
+                    <option value="3">100</option>
+                  </select>&nbsp;&nbsp;
+                    <h6 className='mt-2'>entries</h6></div>
+                </div>
+                <br />
+                <Table striped borderless hover responsive className="border text-center" >
+                  <thead >
+                    <tr>
+                    <th scope="col" style={headerCellStyle}>Action</th>
+                      <th scope="col" style={headerCellStyle}>Code</th>
+                      <th scope="col" style={headerCellStyle}>Name</th>
+                      <th scope="col" style={headerCellStyle}>Status</th>
+                      <th scope="col" style={headerCellStyle}>Updated by</th>
+                      <th scope="col" style={headerCellStyle}>Updated date</th>
+                      
+
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr key={1}>
+                    <td scope="row"><Edit data-bs-toggle="modal"
+                        data-bs-target="#exampleModal1" />&nbsp;&nbsp;
+                        <Eye data-bs-toggle="modal"
+                          data-bs-target="#parameterValueMaster" />
+                      </td>
+                      <td>1</td>
+                      <td>BloodGroup</td>
+                      <td>Status</td>
+                      <td>Chetan</td>
+                      <td>06/09/2023</td>
+                    </tr>
+                    <tr key={2}>
+                    <td scope="row"><Edit data-bs-toggle="modal"
+                        data-bs-target="#exampleModal1" />&nbsp;&nbsp;
+                        <Eye data-bs-toggle="modal"
+                          data-bs-target="#parameterValueMaster" />
+                      </td>
+                      <td>1</td>
+                      <td>BloodGroup</td>
+                      <td>Status</td>
+                      <td>Chetan</td>
+                      <td>06/09/2023</td>
+                    </tr>
+                    <tr key={3}>
+                    <td scope="row"><Edit data-bs-toggle="modal"
+                        data-bs-target="#exampleModal1" />&nbsp;&nbsp;
+                        <Eye data-bs-toggle="modal"
+                          data-bs-target="#parameterValueMaster" />
+                      </td>
+                      <td>1</td>
+                      <td>BloodGroup</td>
+                      <td>Status</td>
+                      <td>Chetan</td>
+                      <td>06/09/2023</td>
+                    </tr>
+                  </tbody>
+                </Table>
+                <div className="row">
+                  <div className='col-lg-4'>
+                    <h6>Showing 1 to 3 of 3 entries</h6>
+                  </div>
+                  <div className='col-lg-4'>
+
+                  </div>
+                  <div className='col-lg-4'>
+                    <nav aria-label="Page navigation example">
+                      <ul className="pagination justify-content-end">
+                        <li className="page-item">
+                          <a className="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li className="page-item active"><a className="page-link" href="#">1</a></li>
+                        <li className="page-item"><a className="page-link" href="#">2</a></li>
+                        <li className="page-item"><a className="page-link" href="#">3</a></li>
+                        <li className="page-item">
+                          <a className="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

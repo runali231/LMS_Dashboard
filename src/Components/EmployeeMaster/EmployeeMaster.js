@@ -7,6 +7,10 @@ import { Delete, Edit } from '@material-ui/icons';
 
 
 const EmployeeMaster = () => {
+    const headerCellStyle = {
+        backgroundColor: 'rgb(27, 90, 144)', // Replace with your desired background color
+        color: '#fff', // Optional: Set the text color to contrast with the background
+    };
     const data = [
         { name: 'John', age: 30, country: 'USA' },
         { name: 'Alice', age: 25, country: 'Canada' },
@@ -29,10 +33,10 @@ const EmployeeMaster = () => {
                 <div className="card m-3" style={{ 'boxShadow': '0px 1px 5px rgba(0, 0, 0, 0.1)' }}>
                     <div className='row'>
                         <div className='col-lg-12'>
-                            <div className="card-header" style={{ backgroundColor: 'white' }}>
+                            <div className="card-header" /* style={{ backgroundColor: 'white' }} */>
                                 <div className="row align-items-center">
                                     <div className="col">
-                                        <h5 className="card-title">Employee Master</h5>
+                                        <h4 className="card-title">Employee Master</h4>
                                     </div>
                                     <div className="col-md-2  justify-content-end">
 
@@ -52,8 +56,8 @@ const EmployeeMaster = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='card-body pt-5'>
-                                <table id="example" className="display mt-5 table-responsive table-borderless hover-table" style={{ width: '100%' }}>
+                            <div className='card-body pt-3'>
+                                {/* <table id="example" className="display mt-5 table-responsive table-borderless hover-table" style={{ width: '100%' }}>
 
                                     <thead className='text-light' style={{ backgroundColor: '#1B5A90' }}>
                                         <tr>
@@ -126,76 +130,123 @@ const EmployeeMaster = () => {
                                             <td>Remark</td>
                                         </tr>
                                     </tbody>
-                                </table>
-
-                                <Table striped bordered hover>
-                                    <thead>
+                                </table> */}
+                                <div className="row " >
+                                    <div className="col-lg-3 d-flex"><h6 className='mt-2'>Show</h6>&nbsp;&nbsp;<select className="form-select w-auto" aria-label="Default select example">
+                                        <option selected>10</option>
+                                        <option value="1">10</option>
+                                        <option value="2">50</option>
+                                        <option value="3">100</option>
+                                    </select>&nbsp;&nbsp;
+                                        <h6 className='mt-2'>entries</h6></div>
+                                </div>
+                                <br />
+                                <Table striped borderless hover responsive className="border text-center" >
+                                    <thead >
                                         <tr>
-                                            <th scope="col">Action</th>
-                                            <th scope="col">Employee Id</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Designation</th>
-                                            <th scope="col">Date of Birth</th>
-                                            <th scope="col">Contact No.</th>
-                                            <th scope="col">Email Id</th>
-                                            <th scope="col">Address</th>
-                                            <th scope="col">Gender</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col">Remark</th>
+                                            <th scope="col" style={headerCellStyle}>Action</th>
+                                            <th scope="col" style={headerCellStyle}>Employee Id</th>
+                                            <th scope="col" style={headerCellStyle}>Name</th>
+                                            <th scope="col" style={headerCellStyle}>Designation</th>
+                                            <th scope="col" style={headerCellStyle}>Date of Birth</th>
+                                            <th scope="col" style={headerCellStyle}>Contact No.</th>
+                                            <th scope="col" style={headerCellStyle}>Email Id</th>
+                                            <th scope="col" style={headerCellStyle}>Address</th>
+                                            <th scope="col" style={headerCellStyle}>Gender</th>
+                                            <th scope="col" style={headerCellStyle}>Status</th>
+                                            <th scope="col" style={headerCellStyle}>Remark</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
                                         <tr key={1}>
-                                        <td ><Edit data-bs-toggle="modal"
+                                            <td className='d-flex'><Edit data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal1" />&nbsp;&nbsp;
                                                 <Eye data-bs-toggle="modal"
                                                     data-bs-target="#parameterValueMaster" />
                                             </td>
 
-                                            <td>Employee Id</td>
-                                            <td>Name</td>
-                                            <td>Designation</td>
-                                            <td>Date of Birth</td>
-                                            <td>Contact No.</td>
-                                            <td>Email Id</td>
-                                            <td>Address</td>
-                                            <td>Gender</td>
-                                            <td>Status</td>
+                                            <td>1321</td>
+                                            <td>Mansi</td>
+                                            <td>Software Developer</td>
+                                            <td>21/2/2001</td>
+                                            <td>985654644</td>
+                                            <td>mansi@gmail.com</td>
+                                            <td>Mhape</td>
+                                            <td>Female</td>
+                                            <td>Active</td>
                                             <td>Remark</td>
                                         </tr>
-                                        <tr key={1}>
-                                            <td>Student 2</td>
-
-                                            <td>
-                                                <Button
-                                                    variant="primary"
-
-                                                >
-                                                    Provide Feedback
-                                                </Button>
+                                        <tr key={2}>
+                                            <td className='d-flex'><Edit data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal1" />&nbsp;&nbsp;
+                                                <Eye data-bs-toggle="modal"
+                                                    data-bs-target="#parameterValueMaster" />
                                             </td>
-                                            <td>
-                                                <Button
-                                                    variant="primary"
 
-                                                >
-
-                                                    <Edit />
-                                                </Button>
+                                            <td>1321</td>
+                                            <td>Mansi</td>
+                                            <td>Software Developer</td>
+                                            <td>21/2/2001</td>
+                                            <td>985654644</td>
+                                            <td>mansi@gmail.com</td>
+                                            <td>Mhape</td>
+                                            <td>Female</td>
+                                            <td>Active</td>
+                                            <td>Remark</td>
+                                        </tr>
+                                        <tr key={3}>
+                                            <td className='d-flex text-center'>
+                                                {/* <Button>  */}
+                                                <Edit data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal1" />
+                                                {/* </Button> */}
+                                                &nbsp;&nbsp;
+                                                {/* <Button> */}
+                                                <Eye data-bs-toggle="modal"
+                                                    data-bs-target="#parameterValueMaster" />
+                                                {/* </Button> */}
                                             </td>
-                                            <td>
-                                                <Button
-                                                    variant="primary"
-
-                                                >
-
-                                                    <Delete />
-                                                </Button>
-                                            </td>
+                                            <td>1321</td>
+                                            <td>Mansi</td>
+                                            <td>Software Developer</td>
+                                            <td>21/2/2001</td>
+                                            <td>985654644</td>
+                                            <td>mansi@gmail.com</td>
+                                            <td>Mhape</td>
+                                            <td>Female</td>
+                                            <td>Active</td>
+                                            <td>Remark</td>
                                         </tr>
                                     </tbody>
                                 </Table>
+                                <div className="row">
+                                    <div className='col-lg-4'>
+                                        <h6>Showing 1 to 3 of 3 entries</h6>
+                                    </div>
+                                    <div className='col-lg-4'>
+
+                                    </div>
+                                    <div className='col-lg-4'>
+                                        <nav aria-label="Page navigation example">
+                                            <ul className="pagination justify-content-end">
+                                                <li className="page-item">
+                                                    <a className="page-link" href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                </li>
+                                                <li className="page-item active"><a className="page-link" href="#">1</a></li>
+                                                <li className="page-item"><a className="page-link" href="#">2</a></li>
+                                                <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                                <li className="page-item">
+                                                    <a className="page-link" href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

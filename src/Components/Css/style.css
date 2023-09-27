@@ -1948,10 +1948,10 @@
     height: auto;
   }
   
-  .form-group {
+  /* .form-group {
     margin-bottom: 1rem;
   }
-  
+   */
   .form-text {
     display: block;
     margin-top: 0.25rem;
@@ -2968,7 +2968,7 @@
   .dropdown-toggle:empty::after {
     margin-left: 0;
   }
-  
+/*   
   .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -2987,7 +2987,7 @@
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-  }
+  } */
   
   .dropdown-menu-left {
     right: auto;
@@ -4658,7 +4658,7 @@
     color: #6c757d;
   }
   
-  .pagination {
+  /* .pagination {
     display: flex;
     padding-left: 0;
     list-style: none;
@@ -4746,7 +4746,7 @@
   .pagination-sm .page-item:last-child .page-link {
     border-top-right-radius: 0.2rem;
     border-bottom-right-radius: 0.2rem;
-  }
+  } */
   
   .badge {
     display: inline-block;
