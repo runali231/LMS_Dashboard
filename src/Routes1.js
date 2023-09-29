@@ -37,6 +37,12 @@ import CountDownTimer from './Components/Assessment/CountDownTimer';
 import PdfViewer from './Components/pdf/PdfViewer';
 import VideoLectures from './Components/pdf/VideoLectures';
 import PptLectures from './Components/pdf/PptLectures';
+import InstructorPayout from './Components/InstructorPayout/InstructorPayout';
+import PaymentInformation from './Components/InstructorPayout/PaymentInformation';
+import PendingPayout from './Components/InstructorPayout/PendingPayout';
+import PendingPayout1 from './Components/InstructorPayout/PendingPayout1';
+import PayToInstructor from './Components/InstructorPayout/PayToInstructor';
+import Invoice from './Components/InstructorPayout/Invoice';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -78,6 +84,11 @@ const routes1=[
     { path: '/pdfViewer', name: 'PdfViewer', element:PdfViewer},
     { path: '/videoLectures', name: 'VideoLectures', element:VideoLectures},
     { path: '/pptLectures', name: 'PptLectures', element:PptLectures},
-    
+    { path: '/instructorPayout', name: 'InstructorPayout', element:InstructorPayout},
+    { path: '/paymentInformation', name: 'PaymentInformation', element:PaymentInformation},
+    { path: '/pendingPayout', name: 'PendingPayout', element:PendingPayout},
+    { path: '/pendingPayout1', name: 'PendingPayout1', element:PendingPayout1},
+    { path: '/payToInstrcutor', name: 'PayToInstrcutor', element:PayToInstructor},
+    { path: '/invoice', name: 'Invoice', element:Invoice},
 ]
 export default routes1
