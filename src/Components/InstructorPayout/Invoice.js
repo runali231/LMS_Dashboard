@@ -64,11 +64,11 @@ const Invoice = () => {
                                         <p>Email: admin@mediacity.co.in</p>
                                     </div>
                                     <div className='col-lg-4'>
-                                      
-                                        <p><strong>OrderID</strong></p>
-                                        <p>Address: Company 12345 South Main Street Anywhere Rajasthan, INDIA</p>
-                                        <p>Phone: 9123456789</p>
-                                        <p>Email: admin@mediacity.co.in</p>
+                                      <p></p>
+                                        <p><strong>OrderId:</strong>#000005, #000001</p>
+                                        <p><stron>Payment Method:</stron></p>
+                                        <p><strong>Currency:</strong> USD</p>
+                                       
                                     </div>
                                 </div>
                              
@@ -107,7 +107,7 @@ const Invoice = () => {
                                         </tr>
                                     </tbody>
                                 </Table>
-                                <button type="button" className="btn btn-secondary mt-3">Print Invoice</button>
+                                <button type="button" className="btn btn-danger mt-3">Print Invoice</button>
                             </div>
                          </div>
                     </div> 

@@ -43,6 +43,10 @@ import PendingPayout from './Components/InstructorPayout/PendingPayout';
 import PendingPayout1 from './Components/InstructorPayout/PendingPayout1';
 import PayToInstructor from './Components/InstructorPayout/PayToInstructor';
 import Invoice from './Components/InstructorPayout/Invoice';
+import CompletedPayout from './Components/InstructorPayout/CompletedPayout';
+import BankDetails from './Components/InstructorPayout/BankDetails';
+import AllMessages from './Components/InstructorPayout/AllMessages';
+import Language from './Components/InstructorPayout/Language';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -90,5 +94,9 @@ const routes1=[
     { path: '/pendingPayout1', name: 'PendingPayout1', element:PendingPayout1},
     { path: '/payToInstrcutor', name: 'PayToInstrcutor', element:PayToInstructor},
     { path: '/invoice', name: 'Invoice', element:Invoice},
+    { path: '/completedPayout', name: 'CompletedPayout', element:CompletedPayout},
+    { path: '/bankDetails', name: 'BankDetails', element:BankDetails},
+    { path: '/allMessages', name: 'AllMessages', element:AllMessages},
+    { path: '/language', name: 'Language', element:Language},
 ]
 export default routes1
