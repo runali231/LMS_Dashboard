@@ -47,6 +47,8 @@ import CompletedPayout from './Components/InstructorPayout/CompletedPayout';
 import BankDetails from './Components/InstructorPayout/BankDetails';
 import AllMessages from './Components/InstructorPayout/AllMessages';
 import Language from './Components/InstructorPayout/Language';
+import SocialLoginSetting from './Components/SiteSetting/SocialLoginSetting';
+import SiteSetting from './Components/SiteSetting/SiteSetting';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -98,5 +100,7 @@ const routes1=[
     { path: '/bankDetails', name: 'BankDetails', element:BankDetails},
     { path: '/allMessages', name: 'AllMessages', element:AllMessages},
     { path: '/language', name: 'Language', element:Language},
+    { path: '/siteSetting', name: 'SiteSetting', element:SiteSetting},
+    { path: '/socialLoginSetting', name: 'SocialLoginSetting', element:SocialLoginSetting},
 ]
 export default routes1

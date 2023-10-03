@@ -1,0 +1,8 @@
+.nav-link.active {
+    background-color: #007bff; /* Change to your desired highlight color */
+    color: #fff; /* Change to your desired text color */
+}
+.nav-link.active-underline {
+    border-bottom: 2px solid blue; /* Adjust the color and style as needed */
+    color: blue; /* Adjust the text color to match the underline */
+  }
