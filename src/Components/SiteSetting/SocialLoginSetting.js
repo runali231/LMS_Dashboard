@@ -1,7 +1,14 @@
 import React, { useEffect } from "react";
 import $ from "jquery";
 import "../Css/DataTable.css";
-import { Eye, EyeFill, Facebook, Google } from "react-bootstrap-icons";
+import {
+  Eye,
+  EyeFill,
+  Facebook,
+  Google,
+  Linkedin,
+  Twitter,
+} from "react-bootstrap-icons";
 import { Table, Button } from "react-bootstrap";
 import { Delete, Edit, GitHub, ViewAgenda } from "@material-ui/icons";
 import { NavLink } from "react-router-dom";
@@ -395,6 +402,202 @@ const SocialLoginSetting = () => {
                     <div className="form-group form-group-sm">
                       <label className="control-label fw-bold">
                         Enable Amazon Login:
+                        <span className="text-danger">*</span>
+                      </label>
+                      <br />
+                      <button className="btn btn-success">Enable</button>
+                    </div>
+                  </div>
+                </div>
+
+                <br />
+                <div className="row">
+                  <div className="col-lg-6 mt-3 ">
+                    <button
+                      type="submit"
+                      className="btn btn-primary btn-lg"
+                      //   onClick={handleAddCourseForm}
+                    >
+                      Save
+                    </button>
+                  </div>
+                </div>
+                {/* </div> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <div className="card">
+              <div className="card-header">
+                <h5 className="fw-bold">
+                  <Linkedin /> LinkedIn Login Setting
+                </h5>
+              </div>
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                    <div className="form-group form-group-sm">
+                      <label className="control-label fw-bold">
+                        Client ID:
+                        <span className="text-danger">*</span>
+                      </label>
+                      <br />
+                      <input
+                        type="text"
+                        id="clientId"
+                        name="clientId"
+                        className="form-control "
+                        autoComplete="off"
+                        placeholder="Enter Client Id"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="row mt-4">
+                  <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                    <div className="form-group form-group-sm">
+                      <label className="control-label fw-bold">
+                        Client Secret Key:
+                        <span className="text-danger">*</span>
+                      </label>
+                      <div className="input-group">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Enter Client Secret Key"
+                        />
+                        <span className="input-group-text">
+                          <EyeFill />
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="row mt-4">
+                  <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                    <div className="form-group form-group-sm">
+                      <label className="control-label fw-bold">
+                        Callback URL:
+                        <span className="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="callbackUrl"
+                        name="callbackUrl"
+                        className="form-control "
+                        autoComplete="off"
+                        placeholder="Enter Callback Url"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="row mt-4">
+                  <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                    <div className="form-group form-group-sm">
+                      <label className="control-label fw-bold">
+                        Enable LinkedIn Login:
+                        <span className="text-danger">*</span>
+                      </label>
+                      <br />
+                      <button className="btn btn-success">Enable</button>
+                    </div>
+                  </div>
+                </div>
+
+                <br />
+                <div className="row">
+                  <div className="col-lg-6 mt-3 ">
+                    <button
+                      type="submit"
+                      className="btn btn-primary btn-lg"
+                      //   onClick={handleAddCourseForm}
+                    >
+                      Save
+                    </button>
+                  </div>
+                </div>
+                {/* </div> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <div className="card">
+              <div className="card-header">
+                <h5 className="fw-bold">
+                  <Twitter /> Twitter Login Setting
+                </h5>
+              </div>
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                    <div className="form-group form-group-sm">
+                      <label className="control-label fw-bold">
+                        Client ID:
+                        <span className="text-danger">*</span>
+                      </label>
+                      <br />
+                      <input
+                        type="text"
+                        id="clientId"
+                        name="clientId"
+                        className="form-control "
+                        autoComplete="off"
+                        placeholder="Enter Client Id"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="row mt-4">
+                  <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                    <div className="form-group form-group-sm">
+                      <label className="control-label fw-bold">
+                        Client Secret Key:
+                        <span className="text-danger">*</span>
+                      </label>
+                      <div className="input-group">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Enter Client Secret Key"
+                        />
+                        <span className="input-group-text">
+                          <EyeFill />
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="row mt-4">
+                  <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                    <div className="form-group form-group-sm">
+                      <label className="control-label fw-bold">
+                        Callback URL:
+                        <span className="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="callbackUrl"
+                        name="callbackUrl"
+                        className="form-control "
+                        autoComplete="off"
+                        placeholder="Enter Callback Url"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="row mt-4">
+                  <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                    <div className="form-group form-group-sm">
+                      <label className="control-label fw-bold">
+                        Enable Twitter Login:
                         <span className="text-danger">*</span>
                       </label>
                       <br />

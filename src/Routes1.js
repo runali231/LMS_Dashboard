@@ -49,6 +49,10 @@ import AllMessages from './Components/InstructorPayout/AllMessages';
 import Language from './Components/InstructorPayout/Language';
 import SocialLoginSetting from './Components/SiteSetting/SocialLoginSetting';
 import SiteSetting from './Components/SiteSetting/SiteSetting';
+import ZoomSetting from './Components/ZoomLiveMeetings/ZoomSetting';
+import CreateNewMeeting from './Components/ZoomLiveMeetings/CreareNewMeeting';
+import ViewMeeting from './Components/ZoomLiveMeetings/ViewMeeting';
+import AllMeetings from './Components/ZoomLiveMeetings/AllMeetings';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -102,5 +106,9 @@ const routes1=[
     { path: '/language', name: 'Language', element:Language},
     { path: '/siteSetting', name: 'SiteSetting', element:SiteSetting},
     { path: '/socialLoginSetting', name: 'SocialLoginSetting', element:SocialLoginSetting},
+    { path: '/zoomSetting', name: 'ZoomSetting', element:ZoomSetting},
+    { path: '/createNewMeeting', name: 'CreateNewMeeting', element:CreateNewMeeting},
+    { path: '/viewMeeting', name: 'ViewMeeting', element:ViewMeeting},
+    { path: '/allMeetings', name: 'AllMeetings', element:AllMeetings},
 ]
 export default routes1
