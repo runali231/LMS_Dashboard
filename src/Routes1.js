@@ -53,6 +53,9 @@ import ZoomSetting from './Components/ZoomLiveMeetings/ZoomSetting';
 import CreateNewMeeting from './Components/ZoomLiveMeetings/CreareNewMeeting';
 import ViewMeeting from './Components/ZoomLiveMeetings/ViewMeeting';
 import AllMeetings from './Components/ZoomLiveMeetings/AllMeetings';
+import Category from './Components/Category/Category';
+import SubCategory from './Components/Category/SubCategory';
+import ChildCategory from './Components/Category/ChildCategory';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -110,5 +113,8 @@ const routes1=[
     { path: '/createNewMeeting', name: 'CreateNewMeeting', element:CreateNewMeeting},
     { path: '/viewMeeting', name: 'ViewMeeting', element:ViewMeeting},
     { path: '/allMeetings', name: 'AllMeetings', element:AllMeetings},
+    { path: '/category', name: 'Category', element:Category},
+    { path: '/subCategory', name: 'SubCategory', element:SubCategory},
+    { path: '/childCategory', name: 'ChildCategory', element:ChildCategory},
 ]
 export default routes1
