@@ -56,6 +56,17 @@ import AllMeetings from './Components/ZoomLiveMeetings/AllMeetings';
 import Category from './Components/Category/Category';
 import SubCategory from './Components/Category/SubCategory';
 import ChildCategory from './Components/Category/ChildCategory';
+import Course from './Container/Course';
+import CourseInsertForm from './Container/CourseInsertForm';
+import CoursesTab from './Container/CoursesTab';
+import CourseInclude from './Container/CourseInclude';
+import WhatLearns from './Container/WhatLearns';
+import CourseChapter from './Container/CourseChapter';
+import CourseClass from './Container/CourseClass';
+import RelatedCourse from './Container/RelatedCourse';
+import Question from './Container/Question';
+import QuizTopic from './Container/QuizTopic';
+
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -116,5 +127,16 @@ const routes1=[
     { path: '/category', name: 'Category', element:Category},
     { path: '/subCategory', name: 'SubCategory', element:SubCategory},
     { path: '/childCategory', name: 'ChildCategory', element:ChildCategory},
+    { path: '/cCourses', name: 'CCourses', element:Course},
+    { path: '/courseInsertForm', name: 'CourseInsertForm', element:CourseInsertForm},
+    { path: '/coursesTab', name: 'CoursesTab', element:CoursesTab},
+    { path: '/courseInclude', name: 'CourseInclude', element:CourseInclude},
+    { path: '/whatLearns', name: 'WhatLearns', element:WhatLearns},
+    { path: '/courseChapter', name: 'CourseChapter', element:CourseChapter},
+    { path: '/courseClass', name: 'CourseClass', element:CourseClass},
+    { path: '/relatedCourse', name: 'RelatedCourse', element:RelatedCourse},
+    { path: '/question', name: 'Question', element:Question},
+    { path: '/quizTopic', name: 'QuizTopic', element:QuizTopic},
+
 ]
 export default routes1
