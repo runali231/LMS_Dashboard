@@ -66,6 +66,7 @@ import CourseClass from './Container/CourseClass';
 import RelatedCourse from './Container/RelatedCourse';
 import Question from './Container/Question';
 import QuizTopic from './Container/QuizTopic';
+import EditCourse from './Container/EditCourse';
 
 
 const routes1=[
@@ -129,6 +130,7 @@ const routes1=[
     { path: '/childCategory', name: 'ChildCategory', element:ChildCategory},
     { path: '/cCourses', name: 'CCourses', element:Course},
     { path: '/courseInsertForm', name: 'CourseInsertForm', element:CourseInsertForm},
+    { path: '/editCourse', name: 'EditCourse', element:EditCourse},
     { path: '/coursesTab', name: 'CoursesTab', element:CoursesTab},
     { path: '/courseInclude', name: 'CourseInclude', element:CourseInclude},
     { path: '/whatLearns', name: 'WhatLearns', element:WhatLearns},

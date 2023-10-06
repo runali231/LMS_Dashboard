@@ -5,12 +5,12 @@ import GeneralSetting from "./GeneralSetting";
 import SeoSetting from "./SeoSetting";
 import MailSetting from "./MailSetting";
 import CustomStyleAndJs from "./CustomStyleAndJs";
-import "../Css/SiteSetting.css"
+// import "../Css/SiteSetting.css"
 
 // ...
 
 const SiteSetting = () => {
-  const [activeTab, setActiveTab] = useState("language"); // Default tab is 'language'
+  const [activeTab, setActiveTab] = useState("generalSetting"); // Default tab is 'language'
 
   return (
     <>
@@ -34,20 +34,23 @@ const SiteSetting = () => {
                     <NavLink
                     to=''
                       className={`nav-link ${
-                        activeTab === "generalSetting" ? "active-underline" : ""
+                        activeTab === "generalSetting" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("generalSetting")}
+                      style={{ borderBottom: activeTab === "generalSetting" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">General Setting</span>
                     </NavLink>
                   </li>
+                  <br/>
                   <li className="nav-item">
                     <NavLink
                       className={`nav-link ${
                         activeTab === "setSetting" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("setSetting")}
+                      style={{ borderBottom: activeTab === "setSetting" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Seo Setting</span>
@@ -59,6 +62,7 @@ const SiteSetting = () => {
                         activeTab === "mailSetting" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("mailSetting")}
+                      style={{ borderBottom: activeTab === "mailSetting" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Mail Setting</span>
@@ -70,6 +74,7 @@ const SiteSetting = () => {
                         activeTab === "customStyleAndJs" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("customStyleAndJs")}
+                      style={{ borderBottom: activeTab === "customStyleAndJs" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Custom Style & JS</span>
@@ -81,6 +86,7 @@ const SiteSetting = () => {
                         activeTab === "socialLoginSetting" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("socialLoginSetting")}
+                      style={{ borderBottom: activeTab === "socialLoginSetting" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">

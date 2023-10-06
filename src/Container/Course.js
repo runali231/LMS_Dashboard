@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
-import $ from "jquery";
-import { Eye } from "react-bootstrap-icons";
-import { Table, Button } from "react-bootstrap";
-import { Add, Delete, Description, Edit } from "@material-ui/icons";
-import { NavLink } from "react-router-dom";
+import React from "react";
+import { Table } from "react-bootstrap";
+import { Add, Delete, Edit } from "@material-ui/icons";
+import { useNavigate } from "react-router-dom";
 
 const Course = () => {
+  const navigate = useNavigate();
   const headerCellStyle = {
     backgroundColor: "rgb(27, 90, 144)", // Replace with your desired background color
     color: "#fff", // Optional: Set the text color to contrast with the background
@@ -46,13 +45,13 @@ const Course = () => {
                     <div
                       className="btn btn-add"
                       title="Add New"
-                      onClick={() => {}}
+                      onClick={() => {
+                        navigate("/courseInsertForm");
+                      }}
                     >
                       <button
                         className="btn btn-md text-light"
                         type="button"
-                        data-bs-toggle="modal"
-                        data-bs-target="#addSubCategory"
                         style={{ backgroundColor: "#1B5A90" }}
                       >
                         <Add />
@@ -80,7 +79,7 @@ const Course = () => {
                   </div>
                 </div>
                 <br />
-                <Table striped  hover responsive className="border ">
+                <Table striped hover responsive className="border ">
                   <thead>
                     <tr>
                       <th scope="col" style={headerCellStyle}>
@@ -117,9 +116,7 @@ const Course = () => {
                       <td>1</td>
                       <td>Wordpress Theme Development</td>
                       <td>I don't mess around. I do this for...</td>
-                      <td>
-                         wordpress-theme-development
-                      </td>
+                      <td>wordpress-theme-development</td>
                       <td>design</td>
                       <td>
                         <button className="btn btn-success">Yes</button>
@@ -130,8 +127,9 @@ const Course = () => {
                       <td>
                         <button
                           className="btn btn-success"
-                          data-bs-toggle="modal"
-                          data-bs-target="#editSubCategory"
+                          onClick={() => {
+                            navigate("/coursesTab");
+                          }}
                         >
                           <Edit />
                         </button>
@@ -145,10 +143,11 @@ const Course = () => {
                     <tr key={2}>
                       <td>2</td>
                       <td>Wordpress Theme Development</td>
-                      <td>I don't mess around. I do this for...I don't mess around. I do this for...</td>
                       <td>
-                         wordpress-theme-development
+                        I don't mess around. I do this for...I don't mess
+                        around. I do this for...
                       </td>
+                      <td>wordpress-theme-development</td>
                       <td>design</td>
                       <td>
                         <button className="btn btn-success">Yes</button>
@@ -159,8 +158,9 @@ const Course = () => {
                       <td>
                         <button
                           className="btn btn-success"
-                          data-bs-toggle="modal"
-                          data-bs-target="#editSubCategory"
+                          onClick={() => {
+                            navigate("/coursesTab");
+                          }}
                         >
                           <Edit />
                         </button>
@@ -175,9 +175,7 @@ const Course = () => {
                       <td>3</td>
                       <td>Wordpress Theme Development</td>
                       <td>I don't mess around. I do this for...</td>
-                      <td>
-                         wordpress-theme-development
-                      </td>
+                      <td>wordpress-theme-development</td>
                       <td>design</td>
                       <td>
                         <button className="btn btn-success">Yes</button>
@@ -188,8 +186,9 @@ const Course = () => {
                       <td>
                         <button
                           className="btn btn-success"
-                          data-bs-toggle="modal"
-                          data-bs-target="#editSubCategory"
+                          onClick={() => {
+                            navigate("/coursesTab");
+                          }}
                         >
                           <Edit />
                         </button>
@@ -241,236 +240,6 @@ const Course = () => {
                         </li>
                       </ul>
                     </nav>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="modal fade"
-                id="addSubCategory"
-                tabIndex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-                //  id="dialog-AddEmployee" role="dialog"
-              >
-                <div className="modal-dialog modal-lg">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5
-                        className="modal-title fw-bold"
-                        id="exampleModalLabel"
-                      >
-                        Add Sub Category
-                      </h5>
-                      <button
-                        type="button"
-                        className="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div className="modal-body">
-                      <div className="row">
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-                          <div className="form-group form-group-sm">
-                            <label className="control-label fw-bold">
-                              Category:
-                              <span className="text-danger">*</span>
-                            </label>
-                            <select
-                              class="form-select"
-                              id="sel1"
-                              name="sellist1"
-                            >
-                              <option>Please Select</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 mt-4 mt-lg-0">
-                          <div className="form-group form-group-sm">
-                            <label className="control-label fw-bold">
-                              Category:
-                              <span className="text-danger">*</span>
-                            </label>
-                            <br />
-                            <button className="btn btn-success">Add</button>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row mt-4">
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                          <div className="form-group form-group-sm">
-                            <label className="control-label fw-bold">
-                              Sub Category
-                              <span className="text-danger">*</span>
-                            </label>
-                            <div className="input-group">
-                              <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Enter Sub Category"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 mt-4 mt-lg-0">
-                          <div className="form-group form-group-sm">
-                            <label className="control-label fw-bold">
-                              Icon
-                              <span className="text-danger">*</span>
-                            </label>
-                            <input
-                              type="text"
-                              id="icon"
-                              name="icon"
-                              className="form-control "
-                              autoComplete="off"
-                              placeholder="Enter Icon"
-                              required
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row mt-4">
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                          <div className="form-group form-group-sm">
-                            <label className="control-label fw-bold">
-                              Status
-                              <span className="text-danger">*</span>
-                            </label>
-                            <br />
-                            <button className="btn btn-success">Enable</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="modal-footer">
-                      <button
-                        type="button"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                        className="btn btn-primary text-white me-auto"
-                      >
-                        Add Sub Category
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="modal fade"
-                id="editSubCategory"
-                tabIndex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-                //  id="dialog-AddEmployee" role="dialog"
-              >
-                <div className="modal-dialog modal-lg">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5
-                        className="modal-title fw-bold"
-                        id="exampleModalLabel"
-                      >
-                        Edit Sub Category
-                      </h5>
-                      <button
-                        type="button"
-                        className="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div className="modal-body">
-                      <div className="row">
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-                          <div className="form-group form-group-sm">
-                            <label className="control-label fw-bold">
-                              Category:
-                              <span className="text-danger">*</span>
-                            </label>
-                            <select
-                              className="form-select"
-                              id="sel1"
-                              name="sellist1"
-                            >
-                              <option>Please Select</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 mt-4 mt-lg-0">
-                          <div className="form-group form-group-sm">
-                            <label className="control-label fw-bold">
-                              Category:
-                              <span className="text-danger">*</span>
-                            </label>
-                            <br />
-                            <button className="btn btn-success">Add</button>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row mt-4">
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                          <div className="form-group form-group-sm">
-                            <label className="control-label fw-bold">
-                              Sub Category
-                              <span className="text-danger">*</span>
-                            </label>
-                            <div className="input-group">
-                              <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Enter Sub Category"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 mt-4 mt-lg-0">
-                          <div className="form-group form-group-sm">
-                            <label className="control-label fw-bold">
-                              Icon
-                              <span className="text-danger">*</span>
-                            </label>
-                            <input
-                              type="text"
-                              id="icon"
-                              name="icon"
-                              className="form-control "
-                              autoComplete="off"
-                              placeholder="Enter Icon"
-                              required
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row mt-4">
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                          <div className="form-group form-group-sm">
-                            <label className="control-label fw-bold">
-                              Status
-                              <span className="text-danger">*</span>
-                            </label>
-                            <br />
-                            <button className="btn btn-success">Enable</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="modal-footer">
-                      <button
-                        type="button"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                        className="btn btn-primary text-white me-auto"
-                      >
-                        Edit Sub Category
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>

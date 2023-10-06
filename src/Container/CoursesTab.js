@@ -7,13 +7,14 @@ import CourseClass from "./CourseClass";
 import RelatedCourse from "./RelatedCourse";
 import Question from "./Question";
 import QuizTopic from "./QuizTopic";
+import EditCourse from "./EditCourse";
 // import CustomStyleAndJs from "./Container/CustomStyleAndJs";
 // import "../Css/SiteSetting.css"
 
 // ...
 
 const CoursesTab = () => {
-  const [activeTab, setActiveTab] = useState("language"); // Default tab is 'language'
+  const [activeTab, setActiveTab] = useState("editCourse"); // Default tab is 'language'
 
   return (
     <>
@@ -37,9 +38,10 @@ const CoursesTab = () => {
                     <NavLink
                       to=""
                       className={`nav-link ${
-                        activeTab === "courses" ? "active-underline" : ""
+                        activeTab === "editCourse" ? "active show" : ""
                       }`}
-                      onClick={() => setActiveTab("courses")}
+                      onClick={() => setActiveTab("editCourse")}
+                      style={{ borderBottom: activeTab === "editCourse" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Courses</span>
@@ -51,6 +53,7 @@ const CoursesTab = () => {
                         activeTab === "courseInclude" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("courseInclude")}
+                      style={{ borderBottom: activeTab === "courseInclude" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Course Include</span>
@@ -62,6 +65,7 @@ const CoursesTab = () => {
                         activeTab === "whatLearns" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("whatLearns")}
+                      style={{ borderBottom: activeTab === "whatLearns" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">What Learns</span>
@@ -73,6 +77,7 @@ const CoursesTab = () => {
                         activeTab === "courseChapter" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("courseChapter")}
+                      style={{ borderBottom: activeTab === "courseChapter" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Course Chapter</span>
@@ -84,6 +89,7 @@ const CoursesTab = () => {
                         activeTab === "courseClass" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("courseClass")}
+                      style={{ borderBottom: activeTab === "courseClass" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Course Class</span>
@@ -95,6 +101,7 @@ const CoursesTab = () => {
                         activeTab === "relatedCourse" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("relatedCourse")}
+                      style={{ borderBottom: activeTab === "relatedCourse" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Related Course</span>
@@ -106,6 +113,7 @@ const CoursesTab = () => {
                         activeTab === "question" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("question")}
+                      style={{ borderBottom: activeTab === "question" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Question</span>
@@ -117,6 +125,7 @@ const CoursesTab = () => {
                         activeTab === "answer" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("answer")}
+                      style={{ borderBottom: activeTab === "answer" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Answer</span>
@@ -128,6 +137,7 @@ const CoursesTab = () => {
                         activeTab === "review&Rating" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("review&Rating")}
+                      style={{ borderBottom: activeTab === "review&Rating" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Review & Rating</span>
@@ -139,6 +149,7 @@ const CoursesTab = () => {
                         activeTab === "announcement" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("announcement")}
+                      style={{ borderBottom: activeTab === "announcement" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Announcement</span>
@@ -150,6 +161,7 @@ const CoursesTab = () => {
                         activeTab === "reviewReport" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("reviewReport")}
+                      style={{ borderBottom: activeTab === "reviewReport" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Review Report</span>
@@ -161,6 +173,7 @@ const CoursesTab = () => {
                         activeTab === "quizTopic" ? "active show" : ""
                       }`}
                       onClick={() => setActiveTab("quizTopic")}
+                      style={{ borderBottom: activeTab === "quizTopic" ? "3px solid rgb(27, 90, 144)" : "" }}
                     >
                       <span className="hidden-sm-up"></span>
                       <span className="hidden-xs-down">Quiz Topic</span>
@@ -169,7 +182,9 @@ const CoursesTab = () => {
                 </ul>
 
                 {/* Add content for each tab */}
-                {activeTab === "course" && <>{/* <GeneralSetting /> */}</>}
+                {activeTab === "editCourse" && <>{
+                  <EditCourse/>
+                }</>}
                 {activeTab === "courseInclude" && (
                   <>
                     <CourseInclude />
