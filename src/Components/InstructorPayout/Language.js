@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import { Table } from "react-bootstrap";
 import { Cancel, Delete, Edit } from "@material-ui/icons";
 import { Check } from "react-bootstrap-icons";
+import { NavLink } from "react-router-dom";
+
 
 const Language = () => {
+  const [activeTab, setActiveTab] = useState();
   const headerCellStyle = {
     backgroundColor: "rgb(27, 90, 144)", // Replace with your desired background color
     color: "#fff", // Optional: Set the text color to contrast with the background
@@ -27,48 +30,53 @@ const Language = () => {
                 </div>
               </div>
               <div className="card-body pt-3">
-                <ul className="nav nav-tabs" role="tablist">
-                  <li className="nav-item">
-                    <a
-                      className="nav-link active show"
-                      data-toggle="tab"
-                      href="#profile2"
-                      role="tab"
-                      aria-selected="true"
-                    >
-                      <span className="hidden-sm-up"></span>
-                      <span className="hidden-xs-down">Language</span>
-                    </a>{" "}
-                  </li>
-                  <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      data-toggle="tab"
-                      href="#home2"
-                      role="tab"
-                      aria-selected="false"
-                    >
-                      <span className="hidden-sm-up"></span>
-                      <span className="hidden-xs-down">
-                        Front Static Word Translation
-                      </span>
-                    </a>{" "}
-                  </li>
-                  <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      data-toggle="tab"
-                      href="#profile3"
-                      role="tab"
-                      aria-selected="false"
-                    >
-                      <span className="hidden-sm-up"></span>
-                      <span className="hidden-xs-down">
-                        Admin Static Word Translation
-                      </span>
-                    </a>{" "}
-                  </li>
-                </ul>
+              <ul className="nav nav-tabs" role="tablist">
+      <li className="nav-item">
+        <NavLink
+          className={`nav-link ${activeTab === 'language' ? 'active' : ''}`}
+          onClick={() => setActiveTab("language")}
+          style={{ borderBottom: activeTab === "language" ? "3px solid rgb(27, 90, 144)" : "" }}
+        >
+          Language
+        </NavLink>
+      </li>
+      <li className="nav-item">
+        <NavLink
+          className={`nav-link ${activeTab === 'fontStaticWordTranslation' ? 'active' : ''}`}
+          onClick={() => setActiveTab("fontStaticWordTranslation")}
+          style={{ borderBottom: activeTab === "fontStaticWordTranslation" ? "3px solid rgb(27, 90, 144)" : "" }}
+        >
+          Front Static Word Translation
+        </NavLink>
+      </li>
+      <li className="nav-item">
+        <NavLink
+          className={`nav-link ${activeTab === 'adminStaticWordTranslation' ? 'active' : ''}`}
+          onClick={() => setActiveTab("adminStaticWordTranslation")}
+          style={{ borderBottom: activeTab === "adminStaticWordTranslation" ? "3px solid rgb(27, 90, 144)" : "" }}
+          
+        >
+          Admin Static Word Translation
+        </NavLink>
+      </li>
+    </ul>
+
+                {/* Add content for each tab */}
+                {activeTab === "language" && (
+                  <>
+                  
+                  </>
+                )}
+                {activeTab === "fontStaticWordTranslation" && (
+                  <>
+                    
+                  </>
+                )}
+                {activeTab === "adminStaticWordTranslation" && (
+                  <>
+                   
+                  </>
+                )}
                 <button
                   className="btn btn-primary mt-4"
                   data-bs-toggle="modal"
@@ -241,7 +249,7 @@ const Language = () => {
           </div>
         </div>
 
-        <div
+        {/* <div
           className="modal fade"
           id="exampleModal1"
           tabIndex="-1"
@@ -327,7 +335,7 @@ const Language = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
