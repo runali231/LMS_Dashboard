@@ -67,6 +67,8 @@ import RelatedCourse from './Container/RelatedCourse';
 import Question from './Container/Question';
 import QuizTopic from './Container/QuizTopic';
 import EditCourse from './Container/EditCourse';
+import QuizQuestion from './Container/QuizQuestion';
+import Answer from './Container/Answer';
 
 
 const routes1=[
@@ -139,6 +141,8 @@ const routes1=[
     { path: '/relatedCourse', name: 'RelatedCourse', element:RelatedCourse},
     { path: '/question', name: 'Question', element:Question},
     { path: '/quizTopic', name: 'QuizTopic', element:QuizTopic},
+    { path: '/quizQuestion', name: 'QuizQuestion', element:QuizQuestion},
+    { path: '/answer', name: 'Answer', element:Answer},
 
 ]
 export default routes1

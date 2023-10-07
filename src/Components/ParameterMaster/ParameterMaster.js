@@ -1,26 +1,11 @@
-import React, { useEffect } from 'react'
-import $ from 'jquery';
-import '../Css/DataTable.css'
+import React from 'react'
 import { Edit} from '@material-ui/icons';
 import { Eye } from 'react-bootstrap-icons';
 import { Table } from 'react-bootstrap';
 
 
 const ParameterMaster = () => {
-  const data = [
-    { name: 'John', age: 30, country: 'USA' },
-    { name: 'Alice', age: 25, country: 'Canada' },
-    { name: 'Bob', age: 40, country: 'UK' },
-    // Add more data here
-  ];
 
-  useEffect(() => {
-    $('#example').DataTable({
-      destroy: true,
-      searching: false,
-      responsive: true
-    });
-  }, []);
   const headerCellStyle = {
     backgroundColor: 'rgb(27, 90, 144)', // Replace with your desired background color
     color: '#fff', // Optional: Set the text color to contrast with the background
@@ -118,7 +103,7 @@ const ParameterMaster = () => {
                     <h6 className='mt-2'>entries</h6></div>
                 </div>
                 <br />
-                <Table striped borderless hover responsive className="border text-center" >
+                <Table striped hover responsive className="border text-center" >
                   <thead >
                     <tr>
                     <th scope="col" style={headerCellStyle}>Action</th>
@@ -134,7 +119,7 @@ const ParameterMaster = () => {
                   <tbody>
 
                     <tr key={1}>
-                    <td scope="row"><Edit data-bs-toggle="modal"
+                    <td><Edit data-bs-toggle="modal"
                         data-bs-target="#exampleModal1" />&nbsp;&nbsp;
                         <Eye data-bs-toggle="modal"
                           data-bs-target="#parameterValueMaster" />
@@ -146,7 +131,7 @@ const ParameterMaster = () => {
                       <td>06/09/2023</td>
                     </tr>
                     <tr key={2}>
-                    <td scope="row"><Edit data-bs-toggle="modal"
+                    <td><Edit data-bs-toggle="modal"
                         data-bs-target="#exampleModal1" />&nbsp;&nbsp;
                         <Eye data-bs-toggle="modal"
                           data-bs-target="#parameterValueMaster" />
@@ -158,7 +143,7 @@ const ParameterMaster = () => {
                       <td>06/09/2023</td>
                     </tr>
                     <tr key={3}>
-                    <td scope="row"><Edit data-bs-toggle="modal"
+                    <td ><Edit data-bs-toggle="modal"
                         data-bs-target="#exampleModal1" />&nbsp;&nbsp;
                         <Eye data-bs-toggle="modal"
                           data-bs-target="#parameterValueMaster" />
@@ -179,20 +164,44 @@ const ParameterMaster = () => {
 
                   </div>
                   <div className='col-lg-4'>
-                    <nav aria-label="Page navigation example">
+                  <nav aria-label="Page navigation example">
                       <ul className="pagination justify-content-end">
                         <li className="page-item">
-                          <a className="page-link" href="#" aria-label="Previous">
+                          <button
+                            className="page-link"
+                            /* onClick={handlePrevious} */ aria-label="Previous"
+                          >
                             <span aria-hidden="true">&laquo;</span>
-                          </a>
+                          </button>
                         </li>
-                        <li className="page-item active"><a className="page-link" href="#">1</a></li>
-                        <li className="page-item"><a className="page-link" href="#">2</a></li>
-                        <li className="page-item"><a className="page-link" href="#">3</a></li>
+                        <li className="page-item active">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(1)} */
+                          >
+                            1
+                          </button>
+                        </li>
                         <li className="page-item">
-                          <a className="page-link" href="#" aria-label="Next">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(2)} */
+                          >
+                            2
+                          </button>
+                        </li>
+                        <li className="page-item">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(3)} */
+                          >
+                            3
+                          </button>
+                        </li>
+                        <li className="page-item">
+                          <button
+                            className="page-link"
+                            /* onClick={handleNext} */ aria-label="Next"
+                          >
                             <span aria-hidden="true">&raquo;</span>
-                          </a>
+                          </button>
                         </li>
                       </ul>
                     </nav>

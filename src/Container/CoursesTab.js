@@ -8,6 +8,8 @@ import RelatedCourse from "./RelatedCourse";
 import Question from "./Question";
 import QuizTopic from "./QuizTopic";
 import EditCourse from "./EditCourse";
+import Answer from "./Answer";
+import NotificationMessage from "../Components/Notification/NotificationMessage";
 // import CustomStyleAndJs from "./Container/CustomStyleAndJs";
 // import "../Css/SiteSetting.css"
 
@@ -215,9 +217,19 @@ const CoursesTab = () => {
                     <Question />
                   </>
                 )}
+                  {activeTab === "answer" && (
+                  <>
+                    <Answer />
+                  </>
+                )}
                  {activeTab === "quizTopic" && (
                   <>
                     <QuizTopic />
+                  </>
+                )}
+                {activeTab === "announcement" && (
+                  <>
+                    <NotificationMessage />
                   </>
                 )}
               </div>

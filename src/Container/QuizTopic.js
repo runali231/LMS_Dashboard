@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { Eye } from "react-bootstrap-icons";
-import { Table, Button } from "react-bootstrap";
-import { Add, Delete, Description, Edit } from "@material-ui/icons";
-import { NavLink } from "react-router-dom";
+import React from "react";
+import { Table } from "react-bootstrap";
+import { Add, Delete, Edit } from "@material-ui/icons";
+import { useNavigate } from 'react-router-dom';
 
 const QuizTopic = () => {
+  const navigate = useNavigate();
   const headerCellStyle = {
     backgroundColor: "rgb(27, 90, 144)", // Replace with your desired background color
     color: "#fff", // Optional: Set the text color to contrast with the background
@@ -79,7 +79,7 @@ const QuizTopic = () => {
                 <button className="btn btn-danger">Delete Answer</button>
             </div>
             <div className="col">
-                <button className="btn btn-success">Add Question</button>
+                <button className="btn btn-success" onClick={()=> navigate('/quizQuestion')}>Add Question</button>
             </div>
                  <div className="col">
                 <button className="btn btn-success"><Edit/></button>
@@ -102,7 +102,7 @@ const QuizTopic = () => {
                 <button className="btn btn-danger">Delete Answer</button>
             </div>
             <div className="col">
-                <button className="btn btn-success">Add Question</button>
+                <button className="btn btn-success" onClick={()=> navigate('/quizQuestion')}>Add Question</button>
             </div>
                  <div className="col">
                 <button className="btn btn-success"><Edit/></button>
@@ -125,7 +125,7 @@ const QuizTopic = () => {
                 <button className="btn btn-danger">Delete Answer</button>
             </div>
             <div className="col">
-                <button className="btn btn-success">Add Question</button>
+                <button className="btn btn-success" onClick={()=> navigate('/quizQuestion')}>Add Question</button>
             </div>
                  <div className="col">
                 <button className="btn btn-success"><Edit/></button>
@@ -144,35 +144,47 @@ const QuizTopic = () => {
           </div>
           <div className="col-lg-4"></div>
           <div className="col-lg-4">
-            <nav aria-label="Page navigation example">
-              <ul className="pagination justify-content-end">
-                <li className="page-item">
-                  <a className="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                  </a>
-                </li>
-                <li className="page-item active">
-                  <a className="page-link" href="#">
-                    1
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    2
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    3
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
+          <nav aria-label="Page navigation example">
+                      <ul className="pagination justify-content-end">
+                        <li className="page-item">
+                          <button
+                            className="page-link"
+                            /* onClick={handlePrevious} */ aria-label="Previous"
+                          >
+                            <span aria-hidden="true">&laquo;</span>
+                          </button>
+                        </li>
+                        <li className="page-item active">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(1)} */
+                          >
+                            1
+                          </button>
+                        </li>
+                        <li className="page-item">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(2)} */
+                          >
+                            2
+                          </button>
+                        </li>
+                        <li className="page-item">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(3)} */
+                          >
+                            3
+                          </button>
+                        </li>
+                        <li className="page-item">
+                          <button
+                            className="page-link"
+                            /* onClick={handleNext} */ aria-label="Next"
+                          >
+                            <span aria-hidden="true">&raquo;</span>
+                          </button>
+                        </li>
+                      </ul>
+                    </nav>
           </div>
         </div>
       </div>

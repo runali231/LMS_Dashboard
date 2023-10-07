@@ -155,7 +155,7 @@ const ContentMaster = () => {
                     <h6 className='mt-2'>entries</h6></div>
                 </div>
                 <br />
-                <Table striped borderless hover responsive className="border text-center" >
+                <Table striped hover responsive className="border text-center" >
                   <thead >
                     <tr>
                     <th scope="col" style={headerCellStyle}>Action</th>
@@ -171,7 +171,7 @@ const ContentMaster = () => {
                   <tbody>
 
                     <tr key={1}>
-                    <td scope="row"><Edit data-bs-toggle="modal"
+                    <td><Edit data-bs-toggle="modal"
                         data-bs-target="#exampleModal1" />&nbsp;&nbsp;
                         <Eye data-bs-toggle="modal"
                           data-bs-target="#parameterValueMaster" />
@@ -183,7 +183,7 @@ const ContentMaster = () => {
                       <td>06/09/2023</td>
                     </tr>
                     <tr key={2}>
-                    <td scope="row"><Edit data-bs-toggle="modal"
+                    <td><Edit data-bs-toggle="modal"
                         data-bs-target="#exampleModal1" />&nbsp;&nbsp;
                         <Eye data-bs-toggle="modal"
                           data-bs-target="#parameterValueMaster" />
@@ -195,7 +195,7 @@ const ContentMaster = () => {
                       <td>06/09/2023</td>
                     </tr>
                     <tr key={3}>
-                    <td scope="row"><Edit data-bs-toggle="modal"
+                    <td><Edit data-bs-toggle="modal"
                         data-bs-target="#exampleModal1" />&nbsp;&nbsp;
                         <Eye data-bs-toggle="modal"
                           data-bs-target="#parameterValueMaster" />
@@ -216,20 +216,44 @@ const ContentMaster = () => {
 
                   </div>
                   <div className='col-lg-4'>
-                    <nav aria-label="Page navigation example">
+                  <nav aria-label="Page navigation example">
                       <ul className="pagination justify-content-end">
                         <li className="page-item">
-                          <a className="page-link" href="#" aria-label="Previous">
+                          <button
+                            className="page-link"
+                            /* onClick={handlePrevious} */ aria-label="Previous"
+                          >
                             <span aria-hidden="true">&laquo;</span>
-                          </a>
+                          </button>
                         </li>
-                        <li className="page-item active"><a className="page-link" href="#">1</a></li>
-                        <li className="page-item"><a className="page-link" href="#">2</a></li>
-                        <li className="page-item"><a className="page-link" href="#">3</a></li>
+                        <li className="page-item active">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(1)} */
+                          >
+                            1
+                          </button>
+                        </li>
                         <li className="page-item">
-                          <a className="page-link" href="#" aria-label="Next">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(2)} */
+                          >
+                            2
+                          </button>
+                        </li>
+                        <li className="page-item">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(3)} */
+                          >
+                            3
+                          </button>
+                        </li>
+                        <li className="page-item">
+                          <button
+                            className="page-link"
+                            /* onClick={handleNext} */ aria-label="Next"
+                          >
                             <span aria-hidden="true">&raquo;</span>
-                          </a>
+                          </button>
                         </li>
                       </ul>
                     </nav>

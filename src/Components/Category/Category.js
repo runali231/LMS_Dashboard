@@ -1,30 +1,13 @@
-import React, { useEffect } from "react";
-import $ from "jquery";
-import "../Css/DataTable.css";
-import { Eye } from "react-bootstrap-icons";
-import { Table, Button } from "react-bootstrap";
+import React from "react";
+import { Table } from "react-bootstrap";
 import { Add, Delete, Description, Edit } from "@material-ui/icons";
-import { NavLink } from "react-router-dom";
 
 const Category = () => {
   const headerCellStyle = {
     backgroundColor: "rgb(27, 90, 144)", // Replace with your desired background color
     color: "#fff", // Optional: Set the text color to contrast with the background
   };
-  const data = [
-    { name: "John", age: 30, country: "USA" },
-    { name: "Alice", age: 25, country: "Canada" },
-    { name: "Bob", age: 40, country: "UK" },
-    // Add more data here
-  ];
 
-  useEffect(() => {
-    $("#example").DataTable({
-      destroy: true,
-      searching: false,
-      responsive: true,
-    });
-  }, []);
   return (
     <>
       <div className="container-fluid">
@@ -215,36 +198,44 @@ const Category = () => {
                   </div>
                   <div className="col-lg-4"></div>
                   <div className="col-lg-4">
-                    <nav aria-label="Page navigation example">
+                  <nav aria-label="Page navigation example">
                       <ul className="pagination justify-content-end">
                         <li className="page-item">
-                          <a
+                          <button
                             className="page-link"
-                            href="#"
-                            aria-label="Previous"
+                            /* onClick={handlePrevious} */ aria-label="Previous"
                           >
                             <span aria-hidden="true">&laquo;</span>
-                          </a>
+                          </button>
                         </li>
                         <li className="page-item active">
-                          <a className="page-link" href="#">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(1)} */
+                          >
                             1
-                          </a>
+                          </button>
                         </li>
                         <li className="page-item">
-                          <a className="page-link" href="#">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(2)} */
+                          >
                             2
-                          </a>
+                          </button>
                         </li>
                         <li className="page-item">
-                          <a className="page-link" href="#">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(3)} */
+                          >
                             3
-                          </a>
+                          </button>
                         </li>
                         <li className="page-item">
-                          <a className="page-link" href="#" aria-label="Next">
+                          <button
+                            className="page-link"
+                            /* onClick={handleNext} */ aria-label="Next"
+                          >
                             <span aria-hidden="true">&raquo;</span>
-                          </a>
+                          </button>
                         </li>
                       </ul>
                     </nav>

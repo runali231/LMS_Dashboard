@@ -208,37 +208,47 @@ const Course = () => {
                   <div className="col-lg-4"></div>
                   <div className="col-lg-4">
                     <nav aria-label="Page navigation example">
+                    <nav aria-label="Page navigation example">
                       <ul className="pagination justify-content-end">
                         <li className="page-item">
-                          <a
+                          <button
                             className="page-link"
-                            href="#"
-                            aria-label="Previous"
+                            /* onClick={handlePrevious} */ aria-label="Previous"
                           >
                             <span aria-hidden="true">&laquo;</span>
-                          </a>
+                          </button>
                         </li>
                         <li className="page-item active">
-                          <a className="page-link" href="#">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(1)} */
+                          >
                             1
-                          </a>
+                          </button>
                         </li>
                         <li className="page-item">
-                          <a className="page-link" href="#">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(2)} */
+                          >
                             2
-                          </a>
+                          </button>
                         </li>
                         <li className="page-item">
-                          <a className="page-link" href="#">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(3)} */
+                          >
                             3
-                          </a>
+                          </button>
                         </li>
                         <li className="page-item">
-                          <a className="page-link" href="#" aria-label="Next">
+                          <button
+                            className="page-link"
+                            /* onClick={handleNext} */ aria-label="Next"
+                          >
                             <span aria-hidden="true">&raquo;</span>
-                          </a>
+                          </button>
                         </li>
                       </ul>
+                    </nav>
                     </nav>
                   </div>
                 </div>

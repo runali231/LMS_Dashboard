@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
-import { Eye } from "react-bootstrap-icons";
-import { Table, Button } from "react-bootstrap";
+import React from "react";
+import { Table } from "react-bootstrap";
 import { Add, Delete, Description, Edit } from "@material-ui/icons";
-import { NavLink } from "react-router-dom";
 
 const CourseInclude = () => {
   const headerCellStyle = {
@@ -150,29 +148,41 @@ const CourseInclude = () => {
             <nav aria-label="Page navigation example">
               <ul className="pagination justify-content-end">
                 <li className="page-item">
-                  <a className="page-link" href="#" aria-label="Previous">
+                  <button
+                    className="page-link"
+                    /* onClick={handlePrevious} */ aria-label="Previous"
+                  >
                     <span aria-hidden="true">&laquo;</span>
-                  </a>
+                  </button>
                 </li>
                 <li className="page-item active">
-                  <a className="page-link" href="#">
+                  <button
+                    className="page-link" /* onClick={handlePageClick(1)} */
+                  >
                     1
-                  </a>
+                  </button>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" href="#">
+                  <button
+                    className="page-link" /* onClick={handlePageClick(2)} */
+                  >
                     2
-                  </a>
+                  </button>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" href="#">
+                  <button
+                    className="page-link" /* onClick={handlePageClick(3)} */
+                  >
                     3
-                  </a>
+                  </button>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" href="#" aria-label="Next">
+                  <button
+                    className="page-link"
+                    /* onClick={handleNext} */ aria-label="Next"
+                  >
                     <span aria-hidden="true">&raquo;</span>
-                  </a>
+                  </button>
                 </li>
               </ul>
             </nav>
