@@ -249,7 +249,7 @@ const Language = () => {
           </div>
         </div>
 
-        {/* <div
+        <div
           className="modal fade"
           id="exampleModal1"
           tabIndex="-1"
@@ -335,7 +335,7 @@ const Language = () => {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </>
   );
