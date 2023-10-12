@@ -61,7 +61,7 @@ const CourseChapter = () => {
           <tbody>
             <tr key={1}>
               <td>React Js</td>
-             <td>Introduction</td>
+              <td>Introduction</td>
 
               <td>
                 <button className="btn btn-success">Active</button>
@@ -70,7 +70,7 @@ const CourseChapter = () => {
                 <button
                   className="btn btn-success"
                   data-bs-toggle="modal"
-                  data-bs-target="#editSubCategory"
+                  data-bs-target="#editCourseChapter"
                 >
                   <Edit />
                 </button>
@@ -83,7 +83,7 @@ const CourseChapter = () => {
             </tr>
             <tr key={2}>
               <td>React Js</td>
-             <td>Introduction</td>
+              <td>Introduction</td>
 
               <td>
                 <button className="btn btn-success">Active</button>
@@ -92,7 +92,7 @@ const CourseChapter = () => {
                 <button
                   className="btn btn-success"
                   data-bs-toggle="modal"
-                  data-bs-target="#editSubCategory"
+                  data-bs-target="#editCourseChapter"
                 >
                   <Edit />
                 </button>
@@ -105,7 +105,7 @@ const CourseChapter = () => {
             </tr>
             <tr key={3}>
               <td>React Js</td>
-             <td>Introduction</td>
+              <td>Introduction</td>
 
               <td>
                 <button className="btn btn-success">Active</button>
@@ -114,7 +114,7 @@ const CourseChapter = () => {
                 <button
                   className="btn btn-success"
                   data-bs-toggle="modal"
-                  data-bs-target="#editSubCategory"
+                  data-bs-target="#editCourseChapter"
                 >
                   <Edit />
                 </button>
@@ -133,47 +133,47 @@ const CourseChapter = () => {
           </div>
           <div className="col-lg-4"></div>
           <div className="col-lg-4">
-          <nav aria-label="Page navigation example">
-                      <ul className="pagination justify-content-end">
-                        <li className="page-item">
-                          <button
-                            className="page-link"
-                            /* onClick={handlePrevious} */ aria-label="Previous"
-                          >
-                            <span aria-hidden="true">&laquo;</span>
-                          </button>
-                        </li>
-                        <li className="page-item active">
-                          <button
-                            className="page-link" /* onClick={handlePageClick(1)} */
-                          >
-                            1
-                          </button>
-                        </li>
-                        <li className="page-item">
-                          <button
-                            className="page-link" /* onClick={handlePageClick(2)} */
-                          >
-                            2
-                          </button>
-                        </li>
-                        <li className="page-item">
-                          <button
-                            className="page-link" /* onClick={handlePageClick(3)} */
-                          >
-                            3
-                          </button>
-                        </li>
-                        <li className="page-item">
-                          <button
-                            className="page-link"
-                            /* onClick={handleNext} */ aria-label="Next"
-                          >
-                            <span aria-hidden="true">&raquo;</span>
-                          </button>
-                        </li>
-                      </ul>
-                    </nav>
+            <nav aria-label="Page navigation example">
+              <ul className="pagination justify-content-end">
+                <li className="page-item">
+                  <button
+                    className="page-link"
+                    /* onClick={handlePrevious} */ aria-label="Previous"
+                  >
+                    <span aria-hidden="true">&laquo;</span>
+                  </button>
+                </li>
+                <li className="page-item active">
+                  <button
+                    className="page-link" /* onClick={handlePageClick(1)} */
+                  >
+                    1
+                  </button>
+                </li>
+                <li className="page-item">
+                  <button
+                    className="page-link" /* onClick={handlePageClick(2)} */
+                  >
+                    2
+                  </button>
+                </li>
+                <li className="page-item">
+                  <button
+                    className="page-link" /* onClick={handlePageClick(3)} */
+                  >
+                    3
+                  </button>
+                </li>
+                <li className="page-item">
+                  <button
+                    className="page-link"
+                    /* onClick={handleNext} */ aria-label="Next"
+                  >
+                    <span aria-hidden="true">&raquo;</span>
+                  </button>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
@@ -206,19 +206,85 @@ const CourseChapter = () => {
                       Chapter Name:
                       <span className="text-danger">*</span>
                     </label>
-<input type="text" className="form-control" placeholder="Enter chapter name"/>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Enter chapter name"
+                    />
                   </div>
                 </div>
-               
               </div>
               <div className="row mt-4">
-              <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 mt-4 mt-lg-0">
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 mt-4 mt-lg-0">
                   <div className="form-group form-group-sm">
                     <label className="control-label fw-bold">
                       Status:
                       <span className="text-danger">*</span>
                     </label>
-                    <br/>
+                    <br />
+                    <button className="btn btn-danger">Disable</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                className="btn btn-primary text-white me-auto"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="modal fade"
+        id="editCourseChapter"
+        tabIndex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        //  id="dialog-AddEmployee" role="dialog"
+      >
+        <div className="modal-dialog modal-lg">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title fw-bold" id="exampleModalLabel">
+                Edit New Course Chapter
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              <div className="row">
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div className="form-group form-group-sm">
+                    <label className="control-label fw-bold">
+                      Chapter Name:
+                      <span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Enter chapter name"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="row mt-4">
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 mt-4 mt-lg-0">
+                  <div className="form-group form-group-sm">
+                    <label className="control-label fw-bold">
+                      Status:
+                      <span className="text-danger">*</span>
+                    </label>
+                    <br />
                     <button className="btn btn-danger">Disable</button>
                   </div>
                 </div>

@@ -115,7 +115,7 @@ const routes1=[
     { path: '/paymentInformation', name: 'PaymentInformation', element:PaymentInformation},
     { path: '/pendingPayout', name: 'PendingPayout', element:PendingPayout},
     { path: '/pendingPayout1', name: 'PendingPayout1', element:PendingPayout1},
-    { path: '/payToInstrcutor', name: 'PayToInstrcutor', element:PayToInstructor},
+    { path: '/payToInstructor', name: 'PayToInstructor', element:PayToInstructor},
     { path: '/invoice', name: 'Invoice', element:Invoice},
     { path: '/completedPayout', name: 'CompletedPayout', element:CompletedPayout},
     { path: '/bankDetails', name: 'BankDetails', element:BankDetails},

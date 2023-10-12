@@ -69,7 +69,7 @@ const RelatedCourse = () => {
                 <button
                   className="btn btn-success"
                   data-bs-toggle="modal"
-                  data-bs-target="#editSubCategory"
+                  data-bs-target="#editRelatedCourse"
                 >
                   <Edit />
                 </button>
@@ -90,7 +90,7 @@ const RelatedCourse = () => {
                 <button
                   className="btn btn-success"
                   data-bs-toggle="modal"
-                  data-bs-target="#editSubCategory"
+                  data-bs-target="#editRelatedCourse"
                 >
                   <Edit />
                 </button>
@@ -111,7 +111,7 @@ const RelatedCourse = () => {
                 <button
                   className="btn btn-success"
                   data-bs-toggle="modal"
-                  data-bs-target="#editSubCategory"
+                  data-bs-target="#editRelatedCourse"
                 >
                   <Edit />
                 </button>
@@ -187,6 +187,87 @@ const RelatedCourse = () => {
             <div className="modal-header">
               <h5 className="modal-title fw-bold" id="exampleModalLabel">
                 Add Related Course
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              <div className="row">
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                  <div className="form-group form-group-sm">
+                    <label className="control-label fw-bold">
+                      Course:
+                      <span className="text-danger">*</span>
+                    </label>
+                    <select className="form-select" id="sel1" name="sellist1">
+                      <option>Please Select</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div className="row mt-4">
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                  <div className="form-group form-group-sm">
+                    <label className="control-label fw-bold">
+                      Related Course:
+                      <span className="text-danger">*</span>
+                    </label>
+                    <select className="form-select" id="sel1" name="sellist1">
+                      <option>Please Select</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                    <p className="mt-1">Please Choose Related Course</p>
+                  </div>
+                </div>
+              </div>
+              <div className="row mt-4">
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                  <div className="form-group form-group-sm">
+                    <label className="control-label fw-bold">
+                      Status
+                      <span className="text-danger">*</span>
+                    </label>
+                    <br />
+                    <button className="btn btn-danger">Deactive</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                className="btn btn-primary text-white me-auto"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="modal fade"
+        id="editRelatedCourse"
+        tabIndex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        //  id="dialog-AddEmployee" role="dialog"
+      >
+        <div className="modal-dialog modal-lg">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title fw-bold" id="exampleModalLabel">
+                Edit Related Course
               </h5>
               <button
                 type="button"

@@ -18,6 +18,7 @@ import 'datatables.net-responsive';
 import Home from "./Dashboard/Home";
 import SignUpForm from "./Components/Signup/Signup";
 import LoginForm from "./Components/Login/loginForm";
+import HomePage from "./Dashboard/HomePage";
 
 const App = (props) => {
   return (
@@ -25,6 +26,7 @@ const App = (props) => {
 <Router>
 <Routes>
 <Route path="/" element={<SignUpForm/>}/> 
+{/* <Route path="/" element={<Home/>}/> */}
 <Route path="/login" element={<LoginForm/>}/> 
 <Route path="/*"  element={<Home/>}/>
     {/* <Layout/> */}

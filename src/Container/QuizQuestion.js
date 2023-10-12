@@ -119,18 +119,22 @@ const QuizQuestion = () => {
                       <td>10 Minutes</td>
                       <td>A</td>
                       <td>
-                        <NavLink to="/invoice">
-                          <button className="btn btn-success">
+                       
+                          <button
+                            className="btn btn-success"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editQuizQuestion"
+                          >
                             <Edit />
                           </button>
-                        </NavLink>
+                        
                       </td>
                       <td>
-                        <NavLink to="/invoice">
+                       
                           <button className="btn btn-danger">
                             <Delete />
                           </button>
-                        </NavLink>
+                     
                       </td>
                     </tr>
                     <tr key={2}>
@@ -144,18 +148,19 @@ const QuizQuestion = () => {
                       <td>10 Minutes</td>
                       <td>A</td>
                       <td>
-                        <NavLink to="/invoice">
-                          <button className="btn btn-success">
+                        
+                          <button className="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#editQuizQuestion">
                             <Edit />
                           </button>
-                        </NavLink>
+                       
                       </td>
                       <td>
-                        <NavLink to="/invoice">
+                  
                           <button className="btn btn-danger">
                             <Delete />
                           </button>
-                        </NavLink>
+                       
                       </td>
                     </tr>
                     <tr key={3}>
@@ -169,18 +174,19 @@ const QuizQuestion = () => {
                       <td>10 Minutes</td>
                       <td>A</td>
                       <td>
-                        <NavLink to="/invoice">
-                          <button className="btn btn-success">
+                        {/* <NavLink to="/invoice"> */}
+                          <button className="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#editQuizQuestion">
                             <Edit />
                           </button>
-                        </NavLink>
+                        {/* </NavLink> */}
                       </td>
                       <td>
-                        <NavLink to="/invoice">
+                       
                           <button className="btn btn-danger">
                             <Delete />
                           </button>
-                        </NavLink>
+                       
                       </td>
                     </tr>
                   </tbody>
@@ -191,7 +197,7 @@ const QuizQuestion = () => {
                   </div>
                   <div className="col-lg-4"></div>
                   <div className="col-lg-4">
-                  <nav aria-label="Page navigation example">
+                    <nav aria-label="Page navigation example">
                       <ul className="pagination justify-content-end">
                         <li className="page-item">
                           <button
@@ -246,7 +252,10 @@ const QuizQuestion = () => {
                 <div className="modal-dialog modal-lg">
                   <div className="modal-content">
                     <div className="modal-header">
-                      <h5 className="modal-title fw-bold" id="exampleModalLabel">
+                      <h5
+                        className="modal-title fw-bold"
+                        id="exampleModalLabel"
+                      >
                         Add Question
                       </h5>
                       <button
@@ -297,7 +306,7 @@ const QuizQuestion = () => {
                               placeholder="Enter Option A"
                             />
                           </div>
-                          <br/>
+                          <br />
                           <div className="form-group form-group-sm">
                             <label className="control-label fw-bold">
                               B-Option<span className="text-danger">*</span>
@@ -308,7 +317,7 @@ const QuizQuestion = () => {
                               placeholder="Enter Option B"
                             />
                           </div>
-                          <br/>
+                          <br />
                           <div className="form-group form-group-sm">
                             <label className="control-label fw-bold">
                               C-Option<span className="text-danger">*</span>
@@ -319,7 +328,121 @@ const QuizQuestion = () => {
                               placeholder="Enter Option C"
                             />
                           </div>
-                          <br/>
+                          <br />
+                          <div className="form-group form-group-sm">
+                            <label className="control-label fw-bold">
+                              D-Option<span className="text-danger">*</span>
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Enter Option D"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="modal-footer">
+                      <button
+                        type="button"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        className="btn btn-success text-white me-auto"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="modal fade"
+                id="editQuizQuestion"
+                tabIndex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+                //  id="dialog-AddEmployee" role="dialog"
+              >
+                <div className="modal-dialog modal-lg">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5
+                        className="modal-title fw-bold"
+                        id="exampleModalLabel"
+                      >
+                        Add Question
+                      </h5>
+                      <button
+                        type="button"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div className="modal-body">
+                      <div className="row">
+                        <div className="col-lg-6 col-md-6 col-sm-12 col-12">
+                          <div className="form-group form-group-sm">
+                            <label className="control-label fw-bold">
+                              Question<span className="text-danger">*</span>
+                            </label>
+                            <textarea
+                              className="form-control"
+                              rows="5"
+                              placeholder="Enter your question"
+                            ></textarea>
+                          </div>
+                          <br />
+                          <div className="form-group form-group-sm">
+                            <label className="control-label fw-bold">
+                              Answer<span className="text-danger">*</span>
+                            </label>
+                            <select
+                              className="form-select"
+                              id="sel1"
+                              name="sellist1"
+                            >
+                              <option>Please Select Option</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className="col-lg-6 col-md-6 col-sm-12 col-12">
+                          <div className="form-group form-group-sm">
+                            <label className="control-label fw-bold">
+                              A-Option<span className="text-danger">*</span>
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Enter Option A"
+                            />
+                          </div>
+                          <br />
+                          <div className="form-group form-group-sm">
+                            <label className="control-label fw-bold">
+                              B-Option<span className="text-danger">*</span>
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Enter Option B"
+                            />
+                          </div>
+                          <br />
+                          <div className="form-group form-group-sm">
+                            <label className="control-label fw-bold">
+                              C-Option<span className="text-danger">*</span>
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Enter Option C"
+                            />
+                          </div>
+                          <br />
                           <div className="form-group form-group-sm">
                             <label className="control-label fw-bold">
                               D-Option<span className="text-danger">*</span>
