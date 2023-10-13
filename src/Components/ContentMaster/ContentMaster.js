@@ -1,19 +1,7 @@
-import React, { useEffect } from "react";
-import $ from "jquery";
-import "../Css/DataTable.css";
-import { Edit } from "@material-ui/icons";
-import { Eye } from "react-bootstrap-icons";
+import React from "react";
+import { Delete, Edit } from "@material-ui/icons";
 import { Table } from "react-bootstrap";
 const ContentMaster = () => {
-  
-
-  useEffect(() => {
-    $("#example").DataTable({
-      destroy: true,
-      searching: false,
-      responsive: true,
-    });
-  }, []);
   const headerCellStyle = {
     backgroundColor: 'rgb(27, 90, 144)', // Replace with your desired background color
     color: '#fff', // Optional: Set the text color to contrast with the background
@@ -30,7 +18,7 @@ const ContentMaster = () => {
               <div className="card-header" style={{ backgroundColor: "white" }}>
                 <div className="row align-items-center">
                   <div className="col">
-                    <h5 className="card-title">Content Master</h5>
+                    <h4 className="card-title">Content Master</h4>
                   </div>
                   <div className="col-md-2  justify-content-end">
                     <input
@@ -67,84 +55,7 @@ const ContentMaster = () => {
                 </div>
               </div>
               <div className="card-body pt-5">
-                {/* <table
-                  id="example"
-                  className="display mt-5 table-responsive hover-table"
-                  style={{ width: "100%" }}
-                >
-                  <thead
-                    className="text-light"
-                    style={{ backgroundColor: "#1B5A90" }}
-                  >
-                    <tr>
-                      <th scope="col">Action</th>
-                      <th scope="col">Title</th>
-                      <th scope="col">Description</th>
-                      <th scope="col">Notes</th>
-                      <th scope="col">Image Url</th>  
-                      <th scope="col">Video Url</th>              
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <Edit
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal2"
-                        />
-                        &nbsp;&nbsp;
-                        <Eye
-                          data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster"
-                        />
-                      </td>
-                
-                      <td>Title</td>
-                      <td>Description</td>
-                      <td>Notes</td>
-                      <td>Image Url</td>  
-                      <td>Video Url</td>     
-                    </tr>
-                    <tr>
-                      <td>
-                        <Edit
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal2"
-                        />
-                        &nbsp;&nbsp;
-                        <Eye
-                          data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster"
-                        />
-                      </td>
-
-                      <td>Title</td>
-                      <td>Description</td>
-                      <td>Notes</td>
-                      <td>Image Url</td>  
-                      <td>Video Url</td>     
-                    </tr>
-                    <tr>
-                      <td>
-                        <Edit
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal2"
-                        />
-                        &nbsp;&nbsp;
-                        <Eye
-                          data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster"
-                        />
-                      </td>
-
-                      <td>Title</td>
-                      <td>Description</td>
-                      <td>Notes</td>
-                      <td>Image Url</td>  
-                      <td>Video Url</td>     
-                    </tr>
-                  </tbody>
-                </table> */}
+               
                 <div className="row " >
                   <div className="col-lg-3 d-flex"><h6 className='mt-2'>Show</h6>&nbsp;&nbsp;<select className="form-select w-auto" aria-label="Default select example">
                     <option selected>10</option>
@@ -155,56 +66,113 @@ const ContentMaster = () => {
                     <h6 className='mt-2'>entries</h6></div>
                 </div>
                 <br />
-                <Table striped hover responsive className="border text-center" >
-                  <thead >
+                <Table striped hover responsive className="border ">
+                  <thead>
                     <tr>
-                    <th scope="col" style={headerCellStyle}>Action</th>
-                      <th scope="col" style={headerCellStyle}>Title</th>
-                      <th scope="col" style={headerCellStyle}>Description</th>
-                      <th scope="col" style={headerCellStyle}>Notes</th>
-                      <th scope="col" style={headerCellStyle}>Image Url</th>  
-                      <th scope="col" style={headerCellStyle}>Video Url</th>        
-                      
-
+                      <th scope="col" style={headerCellStyle}>
+                        Sr No.
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Title
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Description
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                       Notes
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Img Url
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Video Url
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        View
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Edit
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Delete
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
-
                     <tr key={1}>
-                    <td><Edit data-bs-toggle="modal"
-                        data-bs-target="#exampleModal1" />&nbsp;&nbsp;
-                        <Eye data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster" />
-                      </td>
                       <td>1</td>
-                      <td>BloodGroup</td>
-                      <td>Status</td>
-                      <td>Chetan</td>
-                      <td>06/09/2023</td>
+                      <td>Introduction</td>
+                      <td>Introduction</td>
+                      <td>abc</td>
+                      <td>xyz</td>
+                      <td>pqr</td>
+                      <td>
+                        <button className="btn btn-success">View</button>
+                      </td>
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editContent"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      <td>
+                        <button className="btn btn-danger">
+                          <Delete />
+                        </button>
+                      </td>
                     </tr>
                     <tr key={2}>
-                    <td><Edit data-bs-toggle="modal"
-                        data-bs-target="#exampleModal1" />&nbsp;&nbsp;
-                        <Eye data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster" />
+                      <td>2</td>
+                      <td>Introduction</td>
+                      <td>Introduction</td>
+                      <td>abc</td>
+                      <td>xyz</td>
+                      <td>pqr</td>
+                      <td>
+                        <button className="btn btn-success">View</button>
                       </td>
-                      <td>1</td>
-                      <td>BloodGroup</td>
-                      <td>Status</td>
-                      <td>Chetan</td>
-                      <td>06/09/2023</td>
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editContent"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      <td>
+                        <button className="btn btn-danger">
+                          <Delete />
+                        </button>
+                      </td>
                     </tr>
                     <tr key={3}>
-                    <td><Edit data-bs-toggle="modal"
-                        data-bs-target="#exampleModal1" />&nbsp;&nbsp;
-                        <Eye data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster" />
+                      <td>3</td>
+                      <td>Introduction</td>
+                      <td>Introduction</td>
+                      <td>abc</td>
+                      <td>xyz</td>
+                      <td>pqr</td>
+                      <td>
+                        <button className="btn btn-success">View</button>
                       </td>
-                      <td>1</td>
-                      <td>BloodGroup</td>
-                      <td>Status</td>
-                      <td>Chetan</td>
-                      <td>06/09/2023</td>
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editContent"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      <td>
+                        <button className="btn btn-danger">
+                          <Delete />
+                        </button>
+                      </td>
                     </tr>
                   </tbody>
                 </Table>
@@ -275,9 +243,9 @@ const ContentMaster = () => {
           <div className="modal-dialog modal-lg">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
+                <h4 className="modal-title" id="exampleModalLabel">
                   Add New Content
-                </h5>
+                </h4>
                 <button
                   type="button"
                   className="btn-close"
@@ -289,7 +257,7 @@ const ContentMaster = () => {
                 <div className="row">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Title<span className="text-danger">*</span>
                       </label>
                       <input
@@ -306,7 +274,7 @@ const ContentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Description<span className="text-danger">*</span>
                       </label>
                       <textarea
@@ -323,7 +291,7 @@ const ContentMaster = () => {
                 <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Notes<span className="text-danger">*</span>
                       </label>
                       <input
@@ -340,7 +308,7 @@ const ContentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Image<span className="text-danger">*</span>
                       </label>
                       <input
@@ -358,7 +326,7 @@ const ContentMaster = () => {
                 <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         video<span className="text-danger">*</span>
                       </label>
                       <input
@@ -391,7 +359,7 @@ const ContentMaster = () => {
         </div>
         <div
           className="modal fade"
-          id="exampleModal2"
+          id="editContent"
           tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
@@ -400,9 +368,9 @@ const ContentMaster = () => {
           <div className="modal-dialog modal-lg">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
+                <h4 className="modal-title" id="exampleModalLabel">
                   Edit Content
-                </h5>
+                </h4>
                 <button
                   type="button"
                   className="btn-close"
@@ -414,7 +382,7 @@ const ContentMaster = () => {
                 <div className="row">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Title<span className="text-danger">*</span>
                       </label>
                       <input
@@ -431,7 +399,7 @@ const ContentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Description<span className="text-danger">*</span>
                       </label>
                       <textarea
@@ -448,7 +416,7 @@ const ContentMaster = () => {
                 <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Notes<span className="text-danger">*</span>
                       </label>
                       <input
@@ -465,7 +433,7 @@ const ContentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Image<span className="text-danger">*</span>
                       </label>
                       <input
@@ -483,7 +451,7 @@ const ContentMaster = () => {
                 <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         video<span className="text-danger">*</span>
                       </label>
                       <input

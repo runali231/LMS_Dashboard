@@ -1,7 +1,7 @@
 import React from "react";
 import { Eye } from "react-bootstrap-icons";
 import { Table } from "react-bootstrap";
-import { Edit } from "@material-ui/icons";
+import { Delete, Edit } from "@material-ui/icons";
 
 const EmployeeMaster = () => {
   const headerCellStyle = {
@@ -53,80 +53,6 @@ const EmployeeMaster = () => {
                 </div>
               </div>
               <div className="card-body pt-3">
-                {/* <table id="example" className="display mt-5 table-responsive table-borderless hover-table" style={{ width: '100%' }}>
-
-                                    <thead className='text-light' style={{ backgroundColor: '#1B5A90' }}>
-                                        <tr>
-                                            <th scope="col">Action</th>
-                                            <th scope="col">Employee Id</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Designation</th>
-                                            <th scope="col">Date of Birth</th>
-                                            <th scope="col">Contact No.</th>
-                                            <th scope="col">Email Id</th>
-                                            <th scope="col">Address</th>
-                                            <th scope="col">Gender</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col">Remark</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td ><Edit data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal1" />&nbsp;&nbsp;
-                                                <Eye data-bs-toggle="modal"
-                                                    data-bs-target="#parameterValueMaster" />
-                                            </td>
-
-                                            <td>Employee Id</td>
-                                            <td>Name</td>
-                                            <td>Designation</td>
-                                            <td>Date of Birth</td>
-                                            <td>Contact No.</td>
-                                            <td>Email Id</td>
-                                            <td>Address</td>
-                                            <td>Gender</td>
-                                            <td>Status</td>
-                                            <td>Remark</td>
-                                        </tr>
-                                        <tr>
-                                            <td><Edit data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal1" />&nbsp;&nbsp;
-                                                <Eye data-bs-toggle="modal"
-                                                    data-bs-target="#parameterValueMaster" />
-                                            </td>
-
-                                            <td>Employee Id</td>
-                                            <td>Name</td>
-                                            <td>Designation</td>
-                                            <td>Date of Birth</td>
-                                            <td>Contact No.</td>
-                                            <td>Email Id</td>
-                                            <td>Address</td>
-                                            <td>Gender</td>
-                                            <td>Status</td>
-                                            <td>Remark</td>
-                                        </tr>
-                                        <tr>
-                                            <td ><Edit data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal1" />&nbsp;&nbsp;
-                                                <Eye data-bs-toggle="modal"
-                                                    data-bs-target="#parameterValueMaster" />
-                                            </td>
-
-                                            <td>Employee Id</td>
-                                            <td>Name</td>
-                                            <td>Designation</td>
-                                            <td>Date of Birth</td>
-                                            <td>Contact No.</td>
-                                            <td>Email Id</td>
-                                            <td>Address</td>
-                                            <td>Gender</td>
-                                            <td>Status</td>
-                                            <td>Remark</td>
-                                        </tr>
-                                    </tbody>
-                                </table> */}
                 <div className="row ">
                   <div className="col-lg-3 d-flex">
                     <h6 className="mt-2">Show</h6>&nbsp;&nbsp;
@@ -144,14 +70,12 @@ const EmployeeMaster = () => {
                   </div>
                 </div>
                 <br />
-                <Table striped hover responsive className="border text-center">
+
+                <Table striped hover responsive className="border ">
                   <thead>
                     <tr>
                       <th scope="col" style={headerCellStyle}>
-                        Action
-                      </th>
-                      <th scope="col" style={headerCellStyle}>
-                        Employee Id
+                        Id
                       </th>
                       <th scope="col" style={headerCellStyle}>
                         Name
@@ -160,7 +84,7 @@ const EmployeeMaster = () => {
                         Designation
                       </th>
                       <th scope="col" style={headerCellStyle}>
-                        Date of Birth
+                        DOB
                       </th>
                       <th scope="col" style={headerCellStyle}>
                         Contact No.
@@ -178,85 +102,112 @@ const EmployeeMaster = () => {
                         Status
                       </th>
                       <th scope="col" style={headerCellStyle}>
-                        Remark
+                        View
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Edit
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Delete
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr key={1}>
-                      <td className="d-flex">
-                        <Edit
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal1"
-                        />
-                        &nbsp;&nbsp;
-                        <Eye
-                          data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster"
-                        />
-                      </td>
-
-                      <td>1321</td>
-                      <td>Mansi</td>
-                      <td>Software Developer</td>
-                      <td>21/2/2001</td>
-                      <td>985654644</td>
-                      <td>mansi@gmail.com</td>
-                      <td>Mhape</td>
+                    <tr>
+                      <td>1</td>
+                      <td>Runali Kadam</td>
+                      <td>Frontend Developer</td>
+                      <td>21/12/1997</td>
+                      <td>9075372929</td>
+                      <td>runali@gmail.com</td>
+                      <td>Badlapur</td>
                       <td>Female</td>
-                      <td>Active</td>
-                      <td>Remark</td>
+                      <td>
+                        <button className="btn btn-success">Active</button>
+                      </td>
+                      <td>
+                        <button className="btn btn-success">
+                          <Eye />
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editEmployee"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      <td>
+                        <button className="btn btn-danger">
+                          <Delete />
+                        </button>
+                      </td>
                     </tr>
                     <tr key={2}>
-                      <td className="d-flex">
-                        <Edit
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal1"
-                        />
-                        &nbsp;&nbsp;
-                        <Eye
-                          data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster"
-                        />
-                      </td>
-
-                      <td>1321</td>
-                      <td>Mansi</td>
-                      <td>Software Developer</td>
-                      <td>21/2/2001</td>
-                      <td>985654644</td>
-                      <td>mansi@gmail.com</td>
-                      <td>Mhape</td>
+                      <td>2</td>
+                      <td>Runali Kadam</td>
+                      <td>Frontend Developer</td>
+                      <td>21/12/1997</td>
+                      <td>9075372929</td>
+                      <td>runali@gmail.com</td>
+                      <td>Badlapur</td>
                       <td>Female</td>
-                      <td>Active</td>
-                      <td>Remark</td>
+                      <td>
+                        <button className="btn btn-success">Active</button>
+                      </td>
+                      <td>
+                        <button className="btn btn-success">
+                          <Eye />
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editEmployee"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      <td>
+                        <button className="btn btn-danger">
+                          <Delete />
+                        </button>
+                      </td>
                     </tr>
                     <tr key={3}>
-                      <td className="d-flex text-center">
-                        {/* <Button>  */}
-                        <Edit
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal1"
-                        />
-                        {/* </Button> */}
-                        &nbsp;&nbsp;
-                        {/* <Button> */}
-                        <Eye
-                          data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster"
-                        />
-                        {/* </Button> */}
-                      </td>
-                      <td>1321</td>
-                      <td>Mansi</td>
-                      <td>Software Developer</td>
-                      <td>21/2/2001</td>
-                      <td>985654644</td>
-                      <td>mansi@gmail.com</td>
-                      <td>Mhape</td>
+                      <td>3</td>
+                      <td>Runali Kadam</td>
+                      <td>Frontend Developer</td>
+                      <td>21/12/1997</td>
+                      <td>9075372929</td>
+                      <td>runali@gmail.com</td>
+                      <td>Badlapur</td>
                       <td>Female</td>
-                      <td>Active</td>
-                      <td>Remark</td>
+                      <td>
+                        <button className="btn btn-success">Active</button>
+                      </td>
+                      <td>
+                        <button className="btn btn-success">
+                          <Eye />
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editEmployee"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      <td>
+                        <button className="btn btn-danger">
+                          <Delete />
+                        </button>
+                      </td>
                     </tr>
                   </tbody>
                 </Table>
@@ -325,8 +276,8 @@ const EmployeeMaster = () => {
           <div className="modal-dialog modal-lg">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                  Add New Parameter
+                <h5 className="modal-title fw-bold" id="exampleModalLabel">
+                  Add Employee
                 </h5>
                 <button
                   type="button"
@@ -339,7 +290,7 @@ const EmployeeMaster = () => {
                 <div className="row">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Employee Name <span className="text-danger">*</span>
                       </label>
                       <input
@@ -356,7 +307,7 @@ const EmployeeMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Email Id <span className="text-danger">*</span>
                       </label>
                       <input
@@ -375,7 +326,7 @@ const EmployeeMaster = () => {
                 <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Date of Birth <span className="text-danger">*</span>
                       </label>
                       <input
@@ -392,7 +343,7 @@ const EmployeeMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Contact No <span className="text-danger">*</span>
                       </label>
                       <input
@@ -411,7 +362,7 @@ const EmployeeMaster = () => {
                 <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Designation <span className="text-danger">*</span>
                       </label>
                       <input
@@ -428,7 +379,7 @@ const EmployeeMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Address <span className="text-danger">*</span>
                       </label>
                       <input
@@ -447,7 +398,7 @@ const EmployeeMaster = () => {
                 <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Gender<span className="text-danger">*</span>
                       </label>
                       <input
@@ -478,7 +429,7 @@ const EmployeeMaster = () => {
         </div>
         <div
           className="modal fade"
-          id="exampleModal2"
+          id="editEmployee"
           tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
@@ -487,8 +438,8 @@ const EmployeeMaster = () => {
           <div className="modal-dialog modal-lg">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                  Add New Parameter
+                <h5 className="modal-title fw-bold" id="exampleModalLabel">
+                  Edit Employee
                 </h5>
                 <button
                   type="button"
@@ -501,14 +452,14 @@ const EmployeeMaster = () => {
                 <div className="row">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Employee Name <span className="text-danger">*</span>
                       </label>
                       <input
                         type="text"
                         id="txtEmployeeName"
                         name="txtEmployeeName"
-                        className="form-control "
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter name"
                         required
@@ -518,7 +469,7 @@ const EmployeeMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Email Id <span className="text-danger">*</span>
                       </label>
                       <input
@@ -526,7 +477,7 @@ const EmployeeMaster = () => {
                         id="txtContactDetails"
                         name="txtContactDetails"
                         autoComplete="off"
-                        className="form-control "
+                        className="form-control mt-2"
                         placeholder="Enter contact number"
                         required
                       />
@@ -534,17 +485,17 @@ const EmployeeMaster = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row ">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Date of Birth <span className="text-danger">*</span>
                       </label>
                       <input
                         type="text"
                         id="txtEmployeeName"
                         name="txtEmployeeName"
-                        className="form-control "
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter name"
                         required
@@ -554,7 +505,7 @@ const EmployeeMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Contact No <span className="text-danger">*</span>
                       </label>
                       <input
@@ -562,7 +513,7 @@ const EmployeeMaster = () => {
                         id="txtContactDetails"
                         name="txtContactDetails"
                         autoComplete="off"
-                        className="form-control "
+                        className="form-control mt-2"
                         placeholder="Enter contact number"
                         required
                       />
@@ -570,17 +521,17 @@ const EmployeeMaster = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row ">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Designation <span className="text-danger">*</span>
                       </label>
                       <input
                         type="text"
                         id="txtEmployeeName"
                         name="txtEmployeeName"
-                        className="form-control "
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter name"
                         required
@@ -590,7 +541,7 @@ const EmployeeMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Address <span className="text-danger">*</span>
                       </label>
                       <input
@@ -598,7 +549,7 @@ const EmployeeMaster = () => {
                         id="txtContactDetails"
                         name="txtContactDetails"
                         autoComplete="off"
-                        className="form-control "
+                        className="form-control mt-2"
                         placeholder="Enter contact number"
                         required
                       />
@@ -606,17 +557,17 @@ const EmployeeMaster = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row ">
+                <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Gender<span className="text-danger">*</span>
                       </label>
                       <input
                         type="text"
                         id="txtEmployeeName"
                         name="txtEmployeeName"
-                        className="form-control"
+                        className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter name"
                         required

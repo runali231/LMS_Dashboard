@@ -184,7 +184,7 @@ const Home = (props) => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/languageMaster" onClick={() => setSidebar(!sidebar)}>
+                    <NavLink to="/language" onClick={() => setSidebar(!sidebar)}>
                       Language Master
                     </NavLink>
                   </li>

@@ -69,7 +69,7 @@ import QuizTopic from './Container/QuizTopic';
 import EditCourse from './Container/EditCourse';
 import QuizQuestion from './Container/QuizQuestion';
 import Answer from './Container/Answer';
-
+import ReviewReport from './Container/ReviewReport';
 
 const routes1=[
     { path: '/dashboard', exact: true, name: 'Home', element:HomePage },
@@ -143,6 +143,7 @@ const routes1=[
     { path: '/quizTopic', name: 'QuizTopic', element:QuizTopic},
     { path: '/quizQuestion', name: 'QuizQuestion', element:QuizQuestion},
     { path: '/answer', name: 'Answer', element:Answer},
+    { path: '/reviewReport', name: 'Answer', element:ReviewReport},
 
 ]
 export default routes1

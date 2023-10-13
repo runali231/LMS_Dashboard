@@ -1,18 +1,13 @@
-import React, { useEffect } from "react";
-import $ from "jquery";
-import "../Css/DataTable.css";
-import { Edit } from "@material-ui/icons";
+import React from "react";
+import { Delete, Edit } from "@material-ui/icons";
 import { Eye } from "react-bootstrap-icons";
+import { Table } from "react-bootstrap";
 
 const AssignmentMaster = () => {
-
-  useEffect(() => {
-    $("#example").DataTable({
-      destroy: true,
-      searching: false,
-      responsive: true,
-    });
-  }, []);
+  const headerCellStyle = {
+    backgroundColor: "rgb(27, 90, 144)", // Replace with your desired background color
+    color: "#fff", // Optional: Set the text color to contrast with the background
+  };
   return (
     <>
       <div className="container-fluid">
@@ -25,7 +20,7 @@ const AssignmentMaster = () => {
               <div className="card-header" style={{ backgroundColor: "white" }}>
                 <div className="row align-items-center">
                   <div className="col">
-                    <h5 className="card-title">Assignment Master</h5>
+                    <h4 className="card-title">Assignment Master</h4>
                   </div>
                   <div className="col-md-2  justify-content-end">
                     <input
@@ -62,80 +57,178 @@ const AssignmentMaster = () => {
                 </div>
               </div>
               <div className="card-body pt-5">
-                <table
-                  id="example"
-                  className="display mt-5 table-responsive hover-table"
-                  style={{ width: "100%" }}
-                >
-                  <thead
-                    className="text-light"
-                    style={{ backgroundColor: "#1B5A90" }}
-                  >
+               
+                <div className="row ">
+                  <div className="col-lg-3 d-flex">
+                    <h6 className="mt-2">Show</h6>&nbsp;&nbsp;
+                    <select
+                      className="form-select w-auto"
+                      aria-label="Default select example"
+                    >
+                      <option selected>10</option>
+                      <option value="1">10</option>
+                      <option value="2">50</option>
+                      <option value="3">100</option>
+                    </select>
+                    &nbsp;&nbsp;
+                    <h6 className="mt-2">entries</h6>
+                  </div>
+                </div>
+                <br />
+
+                <Table striped hover responsive className="border ">
+                  <thead>
                     <tr>
-                      <th scope="col">Action</th>
-                      <th scope="col">Assignment Name</th>
-                      <th scope="col">Assignment Description</th>
-                      <th scope="col">Start Date</th>
-                      <th scope="col">End Date</th>               
+                      <th scope="col" style={headerCellStyle}>
+                        Sr No.
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Assignment Name
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Description
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Start Date
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        End Date
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        View
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Edit
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Delete
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td >
-                        <Edit
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal2"
-                        />
-                        &nbsp;&nbsp;
-                        <Eye
-                          data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster"
-                        />
+                    <tr key={1}>
+                      <td>1</td>
+                      <td>Introduction</td>
+                      <td>Introduction</td>
+                      <td>10/8/2023</td>
+                      <td> 10/10/2023</td>
+                      <td>
+                        <button className="btn btn-success">View</button>
                       </td>
-                
-                      <td>Assignment Name</td>
-                      <td>Assignment Description</td>
-                      <td>Start Date</td>
-                      <td>End Date</td>         
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editAssignment"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      <td>
+                        <button className="btn btn-danger">
+                          <Delete />
+                        </button>
+                      </td>
                     </tr>
-                    <tr>
-                      <td >
-                        <Edit
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal2"
-                        />
-                        &nbsp;&nbsp;
-                        <Eye
-                          data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster"
-                        />
+                    <tr key={2}>
+                      <td>2</td>
+                      <td>Introduction</td>
+                      <td>Introduction</td>
+                      <td>10/8/2023</td>
+                      <td> 10/10/2023</td>
+                      <td>
+                        <button className="btn btn-success">View</button>
                       </td>
-
-                      <td>Assignment Name</td>
-                      <td>Assignment Description</td>
-                      <td>Start Date</td>
-                      <td>End Date</td>  
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editAssignment"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      <td>
+                        <button className="btn btn-danger">
+                          <Delete />
+                        </button>
+                      </td>
                     </tr>
-                    <tr>
-                      <td >
-                        <Edit
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal2"
-                        />
-                        &nbsp;&nbsp;
-                        <Eye
-                          data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster"
-                        />
+                    <tr key={3}>
+                      <td>3</td>
+                      <td>Introduction</td>
+                      <td>Introduction</td>
+                      <td>10/8/2023</td>
+                      <td> 10/10/2023</td>
+                      <td>
+                        <button className="btn btn-success">View</button>
                       </td>
-
-                      <td>Assignment Name</td>
-                      <td>Assignment Description</td>
-                      <td>Start Date</td>
-                      <td>End Date</td>  
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editAssignment"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      <td>
+                        <button className="btn btn-danger">
+                          <Delete />
+                        </button>
+                      </td>
                     </tr>
                   </tbody>
-                </table>
+                </Table>
+                <div className="row">
+                  <div className="col-lg-4">
+                    <h6>Showing 1 to 3 of 3 entries</h6>
+                  </div>
+                  <div className="col-lg-4"></div>
+                  <div className="col-lg-4">
+                    <nav aria-label="Page navigation example">
+                      <ul className="pagination justify-content-end">
+                        <li className="page-item">
+                          <button
+                            className="page-link"
+                            /* onClick={handlePrevious} */ aria-label="Previous"
+                          >
+                            <span aria-hidden="true">&laquo;</span>
+                          </button>
+                        </li>
+                        <li className="page-item active">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(1)} */
+                          >
+                            1
+                          </button>
+                        </li>
+                        <li className="page-item">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(2)} */
+                          >
+                            2
+                          </button>
+                        </li>
+                        <li className="page-item">
+                          <button
+                            className="page-link" /* onClick={handlePageClick(3)} */
+                          >
+                            3
+                          </button>
+                        </li>
+                        <li className="page-item">
+                          <button
+                            className="page-link"
+                            /* onClick={handleNext} */ aria-label="Next"
+                          >
+                            <span aria-hidden="true">&raquo;</span>
+                          </button>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -152,9 +245,9 @@ const AssignmentMaster = () => {
           <div className="modal-dialog modal-lg">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
+                <h4 className="modal-title" id="exampleModalLabel">
                   Add New Assignment
-                </h5>
+                </h4>
                 <button
                   type="button"
                   className="btn-close"
@@ -166,7 +259,7 @@ const AssignmentMaster = () => {
                 <div className="row">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Assignment Name<span className="text-danger">*</span>
                       </label>
                       <input
@@ -183,16 +276,16 @@ const AssignmentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Description<span className="text-danger">*</span>
                       </label>
                       <textarea
-                      type="text"
-                      className="form-control mt-3"
-                      id="description"
-                      placeholder="Enter Assignment Description"
-                      name="description"
-                    />
+                        type="text"
+                        className="form-control mt-3"
+                        id="description"
+                        placeholder="Enter Assignment Description"
+                        name="description"
+                      />
                       <span id="message"></span>
                     </div>
                   </div>
@@ -200,7 +293,7 @@ const AssignmentMaster = () => {
                 <div className="row mt-3">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Start Date<span className="text-danger">*</span>
                       </label>
                       <input
@@ -209,7 +302,6 @@ const AssignmentMaster = () => {
                         name="endDate"
                         className="form-control mt-3"
                         autoComplete="off"
-                        
                         required
                       />
                     </div>
@@ -217,7 +309,7 @@ const AssignmentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         End Date<span className="text-danger">*</span>
                       </label>
                       <input
@@ -232,7 +324,6 @@ const AssignmentMaster = () => {
                     </div>
                   </div>
                 </div>
-               
               </div>
               <div className="modal-footer">
                 <button
@@ -249,7 +340,7 @@ const AssignmentMaster = () => {
         </div>
         <div
           className="modal fade"
-          id="exampleModal2"
+          id="editAssignment"
           tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
@@ -258,9 +349,9 @@ const AssignmentMaster = () => {
           <div className="modal-dialog modal-lg">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
+                <h4 className="modal-title" id="exampleModalLabel">
                   Edit Assignment
-                </h5>
+                </h4>
                 <button
                   type="button"
                   className="btn-close"
@@ -272,7 +363,7 @@ const AssignmentMaster = () => {
                 <div className="row">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Assignment Name<span className="text-danger">*</span>
                       </label>
                       <input
@@ -289,16 +380,16 @@ const AssignmentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Description<span className="text-danger">*</span>
                       </label>
                       <textarea
-                      type="text"
-                      className="form-control mt-3"
-                      id="description"
-                      placeholder="Enter Assignment Description"
-                      name="description"
-                    />
+                        type="text"
+                        className="form-control mt-3"
+                        id="description"
+                        placeholder="Enter Assignment Description"
+                        name="description"
+                      />
                       <span id="message"></span>
                     </div>
                   </div>
@@ -306,7 +397,7 @@ const AssignmentMaster = () => {
                 <div className="row mt-3">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Start Date<span className="text-danger">*</span>
                       </label>
                       <input
@@ -315,7 +406,6 @@ const AssignmentMaster = () => {
                         name="endDate"
                         className="form-control mt-3"
                         autoComplete="off"
-                        
                         required
                       />
                     </div>
@@ -323,7 +413,7 @@ const AssignmentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         End Date<span className="text-danger">*</span>
                       </label>
                       <input
@@ -338,7 +428,6 @@ const AssignmentMaster = () => {
                     </div>
                   </div>
                 </div>
-               
               </div>
               <div className="modal-footer">
                 <button

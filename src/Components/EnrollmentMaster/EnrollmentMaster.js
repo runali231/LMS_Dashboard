@@ -1,5 +1,5 @@
 import React from "react";
-import { Edit } from "@material-ui/icons";
+import { Delete, Edit } from "@material-ui/icons";
 import { Eye } from "react-bootstrap-icons";
 import { Table } from 'react-bootstrap';
 
@@ -20,7 +20,7 @@ const EnrollmentMaster = () => {
               <div className="card-header" style={{ backgroundColor: "white" }}>
                 <div className="row align-items-center">
                   <div className="col">
-                    <h5 className="card-title">Enrollment Master</h5>
+                    <h4 className="card-title">Enrollment Master</h4>
                   </div>
                   <div className="col-md-2  justify-content-end">
                     <input
@@ -56,96 +56,7 @@ const EnrollmentMaster = () => {
                   </div>
                 </div>
               </div>
-              <div className="card-body pt-5">
-                {/* <table
-                  id="example"
-                  className="display mt-5 table-responsive table-bordered hover-table"
-                  style={{ width: "100%" }}
-                >
-                  <thead
-                    className="text-light"
-                    style={{ backgroundColor: "#1B5A90" }}
-                  >
-                    <tr>
-                      <th scope="col">Action</th>
-                      <th scope="col">Enrollment Id</th>
-                      <th scope="col">User Id</th>
-                      <th scope="col">Course Id</th>
-                      <th scope="col">Enrollment Date</th>
-                      <th scope="col">Type</th>
-                      <th scope="col">Source</th>
-                      <th scope="col">Completion Date</th>
-                      <th scope="col">Grade</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td >
-                        <Edit
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal2"
-                        />
-                        &nbsp;&nbsp;
-                        <Eye
-                          data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster"
-                        />
-                      </td>
-                      <td>Enrollment Id</td>
-                      <td>User Id</td>
-                      <td>Course Id</td>
-                      <td>Enrollment Date</td>
-                      <td>Type</td>
-                      <td>Source</td>
-                      <td>Completion Date</td>
-                      <td>Grade</td>
-                    </tr>
-                    <tr>
-                      <td >
-                        <Edit
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal2"
-                        />
-                        &nbsp;&nbsp;
-                        <Eye
-                          data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster"
-                        />
-                      </td>
-
-                      <td>Enrollment Id</td>
-                      <td>User Id</td>
-                      <td>Course Id</td>
-                      <td>Enrollment Date</td>
-                      <td>Type</td>
-                      <td>Source</td>
-                      <td>Completion Date</td>
-                      <td>Grade</td>
-                    </tr>
-                    <tr>
-                      <td >
-                        <Edit
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal2"
-                        />
-                        &nbsp;&nbsp;
-                        <Eye
-                          data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster"
-                        />
-                      </td>
-
-                      <td>Enrollment Id</td>
-                      <td>User Id</td>
-                      <td>Course Id</td>
-                      <td>Enrollment Date</td>
-                      <td>Type</td>
-                      <td>Source</td>
-                      <td>Completion Date</td>
-                      <td>Grade</td>
-                    </tr>
-                  </tbody>
-                </table> */}
+              <div className="card-body pt-5">                
                 <div className="row " >
                   <div className="col-lg-3 d-flex"><h6 className='mt-2'>Show</h6>&nbsp;&nbsp;<select className="form-select w-auto" aria-label="Default select example">
                     <option selected>10</option>
@@ -156,73 +67,152 @@ const EnrollmentMaster = () => {
                     <h6 className='mt-2'>entries</h6></div>
                 </div>
                 <br />
-                <Table striped hover responsive className="border text-center" >
-                  <thead >
-                    <tr>
-
-                      <th scope="col" style={headerCellStyle}>Action</th>
-                      <th scope="col" style={headerCellStyle}>Enrollment Id</th>
-                      <th scope="col" style={headerCellStyle}>Enrollment Date</th>
+                <Table striped hover responsive className="border ">
+                  <thead>
+                   <tr>
+                      <th scope="col" style={headerCellStyle}>Id</th>
                       <th scope="col" style={headerCellStyle}>Type</th>
-
                       <th scope="col" style={headerCellStyle}>Source</th>
+                      <th scope="col" style={headerCellStyle}>Enrollment Date</th>
                       <th scope="col" style={headerCellStyle}>Completion Date</th>
                       <th scope="col" style={headerCellStyle}>Grade</th>
-
-                    </tr>
+                      <th scope="col" style={headerCellStyle}>Status</th>
+                      <th scope="col" style={headerCellStyle}>Edit</th>
+                      <th scope="col" style={headerCellStyle}>Delete</th>
+                   </tr>
                   </thead>
                   <tbody>
-
-                    <tr key={1}>
-                      <td className='d-flex'><Edit data-bs-toggle="modal"
-                        data-bs-target="#exampleModal1" />&nbsp;&nbsp;
-                        <Eye data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster" />
+                  <tr key={1}>
+                      <td>
+                        1
                       </td>
+                      <td>
+                       Free
+                      </td>
+                      <td>
+                        Free
+                      </td>
+                      <td>
+                      10/8/2023
+                      </td>
+                       <td>
+                        10/10/2023
+                      </td>
+                      <td>
+                        90%
+                      </td>
+                      <td>
+                        <button className="btn btn-success">Pending</button>
+                      </td>
+                      <td>
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editEnrollment"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      </td>
+                      <td>
+                      <td>
+                        <button
+                          className="btn btn-danger"
 
-                      <td>Enrollment Id</td>
-                      <td>Enrollment Date</td>
-                      <td >Type</td>
-
-                      <td>Source</td>
-                      <td>Completion Date</td>
-                      <td >Grade</td>
+                        >
+                          <Delete />
+                        </button>
+                      </td>
+                      </td>
                     </tr>
                     <tr key={2}>
-                      <td className='d-flex'><Edit data-bs-toggle="modal"
-                        data-bs-target="#exampleModal1" />&nbsp;&nbsp;
-                        <Eye data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster" />
+                      <td>
+                        2
                       </td>
+                      <td>
+                       Free
+                      </td>
+                      <td>
+                        Free
+                      </td>
+                      <td>
+                      10/8/2023
+                      </td>
+                       <td>
+                        10/10/2023
+                      </td>
+                      <td>
+                        90%
+                      </td>
+                      <td>
+                        <button className="btn btn-success">Pending</button>
+                      </td>
+                      <td>
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editEnrollment"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      </td>
+                      <td>
+                      <td>
+                        <button
+                          className="btn btn-danger"
 
-                      <td>Enrollment Id</td>
-                      <td>Enrollment Date</td>
-                      <td >Type</td>
-
-                      <td>Source</td>
-                      <td>Completion Date</td>
-                      <td >Grade</td>
+                        >
+                          <Delete />
+                        </button>
+                      </td>
+                      </td>
                     </tr>
                     <tr key={3}>
-                      <td className='d-flex text-center'>
-                        {/* <Button>  */}
-                        <Edit data-bs-toggle="modal"
-                          data-bs-target="#exampleModal1" />
-                        {/* </Button> */}
-                        &nbsp;&nbsp;
-                        {/* <Button> */}
-                        <Eye data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster" />
-                        {/* </Button> */}
+                      <td>
+                        3
                       </td>
+                      <td>
+                       Free
+                      </td>
+                      <td>
+                        Free
+                      </td>
+                      <td>
+                      10/8/2023
+                      </td>
+                       <td>
+                        10/10/2023
+                      </td>
+                      <td>
+                        90%
+                      </td>
+                      <td>
+                        <button className="btn btn-success">Pending</button>
+                      </td>
+                      <td>
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editEnrollment"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      </td>
+                      <td>
+                      <td>
+                        <button
+                          className="btn btn-danger"
 
-                      <td>Enrollment Id</td>
-                      <td>Enrollment Date</td>
-                      <td >Type</td>
-
-                      <td>Source</td>
-                      <td>Completion Date</td>
-                      <td >Grade</td>
+                        >
+                          <Delete />
+                        </button>
+                      </td>
+                      </td>
                     </tr>
                   </tbody>
                 </Table>
@@ -293,9 +283,9 @@ const EnrollmentMaster = () => {
           <div className="modal-dialog modal-lg">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
+                <h4 className="modal-title" id="exampleModalLabel">
                   Add New Enrollment
-                </h5>
+                </h4>
                 <button
                   type="button"
                   className="btn-close"
@@ -307,7 +297,7 @@ const EnrollmentMaster = () => {
                 <div className="row">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Enrollment Id<span className="text-danger">*</span>
                       </label>
                       <input
@@ -324,7 +314,7 @@ const EnrollmentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Enrollment type<span className="text-danger">*</span>
                       </label>
                       <input
@@ -343,7 +333,7 @@ const EnrollmentMaster = () => {
                 <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Enrollment Date<span className="text-danger">*</span>
                       </label>
                       <input
@@ -360,7 +350,7 @@ const EnrollmentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Completion Date<span className="text-danger">*</span>
                       </label>
                       <input
@@ -379,7 +369,7 @@ const EnrollmentMaster = () => {
                 <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Source<span className="text-danger">*</span>
                       </label>
                       <input
@@ -396,7 +386,7 @@ const EnrollmentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Grade <span className="text-danger">*</span>
                       </label>
                       <input
@@ -415,7 +405,7 @@ const EnrollmentMaster = () => {
                 <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Enrollment status<span className="text-danger">*</span>
                       </label>
                       <select
@@ -451,7 +441,7 @@ const EnrollmentMaster = () => {
         </div>
         <div
           className="modal fade"
-          id="exampleModal2"
+          id="editEnrollment"
           tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
@@ -460,9 +450,9 @@ const EnrollmentMaster = () => {
           <div className="modal-dialog modal-lg">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                  Edit Course
-                </h5>
+                <h4 className="modal-title" id="exampleModalLabel">
+                  Edit New Enrollment
+                </h4>
                 <button
                   type="button"
                   className="btn-close"
@@ -474,13 +464,13 @@ const EnrollmentMaster = () => {
                 <div className="row">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
-                        Course Name <span className="text-danger">*</span>
+                      <label className="control-label fw-bold">
+                        Enrollment Id<span className="text-danger">*</span>
                       </label>
                       <input
                         type="text"
-                        id="courseName"
-                        name="courseName"
+                        id="enrollmentId"
+                        name="enrollmentId"
                         className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter course name"
@@ -491,13 +481,13 @@ const EnrollmentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
-                        Session Name<span className="text-danger">*</span>
+                      <label className="control-label fw-bold">
+                        Enrollment type<span className="text-danger">*</span>
                       </label>
                       <input
                         type="text"
-                        id="sessionName"
-                        name="sessionName"
+                        id="enrollmentType"
+                        name="enrollmentType"
                         autoComplete="off"
                         className="form-control mt-2"
                         placeholder="Enter session name"
@@ -510,13 +500,13 @@ const EnrollmentMaster = () => {
                 <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
-                        Course Duration<span className="text-danger">*</span>
+                      <label className="control-label fw-bold">
+                        Enrollment Date<span className="text-danger">*</span>
                       </label>
                       <input
                         type="text"
-                        id="courseDuration"
-                        name="courseDuration"
+                        id="enrollmentDate"
+                        name="enrollmentDate"
                         className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter course duration"
@@ -527,13 +517,13 @@ const EnrollmentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
-                        Course Category<span className="text-danger">*</span>
+                      <label className="control-label fw-bold">
+                        Completion Date<span className="text-danger">*</span>
                       </label>
                       <input
                         type="text"
-                        id="courseCategory"
-                        name="courseCategory"
+                        id="completionDate"
+                        name="completionDate"
                         autoComplete="off"
                         className="form-control mt-2"
                         placeholder="Enter course category"
@@ -546,13 +536,13 @@ const EnrollmentMaster = () => {
                 <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
-                        Course level <span className="text-danger">*</span>
+                      <label className="control-label fw-bold">
+                        Source<span className="text-danger">*</span>
                       </label>
                       <input
                         type="text"
-                        id="courseLevel"
-                        name="courseLevel"
+                        id="source"
+                        name="source"
                         className="form-control mt-2"
                         autoComplete="off"
                         placeholder="Enter course level"
@@ -563,13 +553,13 @@ const EnrollmentMaster = () => {
 
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
-                        Price <span className="text-danger">*</span>
+                      <label className="control-label fw-bold">
+                        Grade <span className="text-danger">*</span>
                       </label>
                       <input
                         type="text"
-                        id="price"
-                        name="price"
+                        id="Grade"
+                        name="Grade"
                         autoComplete="off"
                         className="form-control mt-2"
                         placeholder="Enter price"
@@ -582,42 +572,7 @@ const EnrollmentMaster = () => {
                 <div className="row mt-2">
                   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                     <div className="form-group form-group-sm">
-                      <label className="control-label">
-                        Study Material<span className="text-danger">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="studyMaterial"
-                        name="studyMaterial"
-                        className="form-control mt-2"
-                        autoComplete="off"
-                        placeholder="Enter study material"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
-                    <div className="form-group form-group-sm">
-                      <label className="control-label">
-                        Certificate<span className="text-danger">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="certificate"
-                        name="certificate"
-                        className="form-control mt-2"
-                        autoComplete="off"
-                        placeholder="Enter certificate"
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="row mt-2">
-                  <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
-                    <div className="form-group form-group-sm">
-                      <label className="control-label">
+                      <label className="control-label fw-bold">
                         Enrollment status<span className="text-danger">*</span>
                       </label>
                       <select

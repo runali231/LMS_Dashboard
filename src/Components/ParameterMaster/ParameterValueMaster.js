@@ -1,9 +1,11 @@
 import React from 'react'
-import { Edit} from '@material-ui/icons';
+import { Delete, Edit} from '@material-ui/icons';
 import { Eye } from 'react-bootstrap-icons';
 import { Table } from 'react-bootstrap';
 
+
 const ParameterValueMaster = () => {
+
   const headerCellStyle = {
     backgroundColor: 'rgb(27, 90, 144)', // Replace with your desired background color
     color: '#fff', // Optional: Set the text color to contrast with the background
@@ -11,13 +13,14 @@ const ParameterValueMaster = () => {
   return (
     <>
       <div className='container-fluid'>
+
         <div className="card m-3" style={{ 'boxShadow': '0px 1px 5px rgba(0, 0, 0, 0.1)' }}>
           <div className='row'>
             <div className='col-lg-12'>
               <div className="card-header" style={{ backgroundColor: 'white' }}>
                 <div className="row align-items-center">
                   <div className="col">
-                    <h5 className="card-title">Parameter Value Master</h5>
+                    <h4 className="card-title">Parameter Value Master</h4>
                   </div>
                   <div className="col-md-2  justify-content-end">
 
@@ -37,7 +40,8 @@ const ParameterValueMaster = () => {
                   </div>
                 </div>
               </div>
-              <div className='card-body pt-5'>              
+              <div className='card-body pt-5'>
+                
                 <div className="row " >
                   <div className="col-lg-3 d-flex"><h6 className='mt-2'>Show</h6>&nbsp;&nbsp;<select className="form-select w-auto" aria-label="Default select example">
                     <option selected>10</option>
@@ -48,56 +52,158 @@ const ParameterValueMaster = () => {
                     <h6 className='mt-2'>entries</h6></div>
                 </div>
                 <br />
-                <Table striped hover responsive className="border text-center" >
-                  <thead >
+                <Table striped hover responsive className="border ">
+                  <thead>
                     <tr>
-                    <th scope="col" style={headerCellStyle}>Action</th>
-                      <th scope="col" style={headerCellStyle}>Code</th>
-                      <th scope="col" style={headerCellStyle}>Name</th>
-                      <th scope="col" style={headerCellStyle}>Status</th>
-                      <th scope="col" style={headerCellStyle}>Updated by</th>
-                      <th scope="col" style={headerCellStyle}>Updated date</th>
-                      
-
+                      <th scope="col" style={headerCellStyle}>
+                        Sr.no
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Code
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Name
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Updated By
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Updated Date
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Status
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Edit
+                      </th>
+                      <th scope="col" style={headerCellStyle}>
+                        Delete
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
-
-                    <tr key={1}>
-                    <td><Edit data-bs-toggle="modal"
-                        data-bs-target="#exampleModal1" />&nbsp;&nbsp;
-                        <Eye data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster" />
+                  <tr key={1}>
+                      <td>
+                        1
                       </td>
-                      <td>1</td>
-                      <td>BloodGroup</td>
-                      <td>Status</td>
-                      <td>Chetan</td>
-                      <td>06/09/2023</td>
+                      <td>
+                        1234
+                      </td>
+                      <td>
+                        Runali Kadam
+                      </td>
+                      <td>
+                        Chetan
+                      </td>
+                       <td>
+                        13/10/2023
+                      </td>
+                      <td>
+                        <button className="btn btn-success">Active</button>
+                      </td>
+                      <td>
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editNewParameter"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      </td>
+                      <td>
+                      <td>
+                        <button
+                          className="btn btn-danger"
+
+                        >
+                          <Delete />
+                        </button>
+                      </td>
+                      </td>
                     </tr>
                     <tr key={2}>
-                    <td><Edit data-bs-toggle="modal"
-                        data-bs-target="#exampleModal1" />&nbsp;&nbsp;
-                        <Eye data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster" />
+                      <td>
+                        2
                       </td>
-                      <td>1</td>
-                      <td>BloodGroup</td>
-                      <td>Status</td>
-                      <td>Chetan</td>
-                      <td>06/09/2023</td>
+                      <td>
+                        1234
+                      </td>
+                      <td>
+                        Runali Kadam
+                      </td>
+                      <td>
+                        Chetan
+                      </td>
+                       <td>
+                        13/10/2023
+                      </td>
+                      <td>
+                        <button className="btn btn-success">Active</button>
+                      </td>
+                      <td>
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editNewParameter"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      </td>
+                      <td>
+                      <td>
+                        <button
+                          className="btn btn-danger"
+
+                        >
+                          <Delete />
+                        </button>
+                      </td>
+                      </td>
                     </tr>
                     <tr key={3}>
-                    <td><Edit data-bs-toggle="modal"
-                        data-bs-target="#exampleModal1" />&nbsp;&nbsp;
-                        <Eye data-bs-toggle="modal"
-                          data-bs-target="#parameterValueMaster" />
+                      <td>
+                        3
                       </td>
-                      <td>1</td>
-                      <td>BloodGroup</td>
-                      <td>Status</td>
-                      <td>Chetan</td>
-                      <td>06/09/2023</td>
+                      <td>
+                        1234
+                      </td>
+                      <td>
+                        Runali Kadam
+                      </td>
+                      <td>
+                        Chetan
+                      </td>
+                       <td>
+                        13/10/2023
+                      </td>
+                      <td>
+                        <button className="btn btn-success">Active</button>
+                      </td>
+                      <td>
+                      <td>
+                        <button
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editNewParameter"
+                        >
+                          <Edit />
+                        </button>
+                      </td>
+                      </td>
+                      <td>
+                      <td>
+                        <button
+                          className="btn btn-danger"
+
+                        >
+                          <Delete />
+                        </button>
+                      </td>
+                      </td>
                     </tr>
                   </tbody>
                 </Table>
@@ -167,9 +273,9 @@ const ParameterValueMaster = () => {
           <div className="modal-dialog modal-md">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                  Add New Parameter
-                </h5>
+                <h4 className="modal-title fw-bold" id="exampleModalLabel">
+                  Add New Parameter Value
+                </h4>
                 <button
                   type="button"
                   className="btn-close"
@@ -238,7 +344,7 @@ const ParameterValueMaster = () => {
         </div>
         <div
           className="modal fade"
-          id="exampleModal2"
+          id="editNewParameter"
           tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
@@ -246,9 +352,9 @@ const ParameterValueMaster = () => {
           <div className="modal-dialog modal-md">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                  Edit New Parameter
-                </h5>
+                <h4 className="modal-title" id="exampleModalLabel">
+                  Edit New Parameter Value
+                </h4>
                 <button
                   type="button"
                   className="btn-close"

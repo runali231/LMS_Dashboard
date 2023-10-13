@@ -10,6 +10,7 @@ import QuizTopic from "./QuizTopic";
 import EditCourse from "./EditCourse";
 import Answer from "./Answer";
 import NotificationMessage from "../Components/Notification/NotificationMessage";
+import ReviewReport from "./ReviewReport";
 // import CustomStyleAndJs from "./Container/CustomStyleAndJs";
 // import "../Css/SiteSetting.css"
 
@@ -230,6 +231,11 @@ const CoursesTab = () => {
                 {activeTab === "announcement" && (
                   <>
                     <NotificationMessage />
+                  </>
+                )}
+                    {activeTab === "reviewReport" && (
+                  <>
+                    <ReviewReport />
                   </>
                 )}
               </div>
